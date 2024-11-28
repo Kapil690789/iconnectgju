@@ -1,0 +1,360 @@
+#main{
+  background-image: url('img/circle_pattern.svg'); /* Replace with your SVG file */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  border-radius: 20px;
+  position: relative;
+  background-color: white;
+  color: black;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.278);
+}
+#form-content {
+  height: 400px;
+  overflow-y: auto;
+}
+
+/* For Webkit browsers (e.g., Chrome, Safari) */
+#form-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+#form-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#form-content::-webkit-scrollbar-thumb {
+  background: #402E7A;
+}
+
+#form-content::-webkit-scrollbar-thumb:hover {
+  background: #301F5A;
+}
+
+/* For Firefox */
+#form-content {
+  scrollbar-width: thin;
+  scrollbar-color: #402E7A #f1f1f1;
+}
+
+
+.form .title {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  color: #402E7A;
+}
+
+.form .title::before {
+  width: 18px;
+  height: 18px;
+}
+
+.form .title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.form .title::before,
+.form .title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #402E7A;
+}
+
+.message {
+  font-size: 14.5px;
+}
+
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 3px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding: 20px 05px 05px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input + span {
+  color: black;
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+  top: 12.5px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+  color: #402E7A;
+  top: 0px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.input {
+  font-size: medium;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+  background-color: #402E7A;
+}
+
+.submit:hover {
+  background-color: #241556;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+/* Default outline color for custom buttons */
+.custom-btn-outline {
+  color: #402E7A !important;
+  border-color: #402E7A !important;
+}
+
+/* Background color on selection for custom buttons */
+.btn-check:checked + .custom-btn-outline {
+  color: white !important;
+  background-color: #402E7A !important;
+  border-color: #402E7A !important;
+}
+
+/* Hover state for custom buttons */
+.custom-btn-outline:hover {
+  color: white !important;
+  background-color: #241556 !important;
+  border-color: #241556 !important;
+}
+
+
+*{
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+}
+
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+.-z-10 {
+  z-index: -10;
+}
+.z-10 {
+  z-index: 10;
+}
+.flex {
+  display: flex;
+}
+.h-\[50px\] {
+  height: 50px;
+}
+.h-full {
+  height: 100%;
+}
+.w-\[50px\] {
+  width: 50px;
+}
+.w-\[30px\] {
+  width: 30px;
+}
+.h-\[30px\] {
+  height: 30px;
+}
+.w-full {
+  width: 100%;
+}
+.scale-0 {
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.flex-col {
+  flex-direction: column;
+}
+.items-start {
+  align-items: flex-start;
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+.bg-neutral-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 245 245 / var(--tw-bg-opacity));
+}
+.bg-neutral-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
+}
+.bg-pink-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 231 243 / var(--tw-bg-opacity));
+}
+.bg-pink-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 207 232 / var(--tw-bg-opacity));
+}
+.bg-purple-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 232 255 / var(--tw-bg-opacity));
+}
+.bg-purple-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 213 255 / var(--tw-bg-opacity));
+}
+.fill-pink-400 {
+  fill: #f472b6;
+}
+.fill-purple-400 {
+  fill: #c084fc;
+}
+.stroke-blue-400 {
+  stroke: #60a5fa;
+}
+.stroke-neutral-400 {
+  stroke: #a3a3a3;
+}
+
+
+.opacity-0 {
+  opacity: 0;
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.shadow-\[\#00000050\] {
+  --tw-shadow-color: #00000050;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+.ring-blue-400 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(96 165 250 / var(--tw-ring-opacity));
+}
+.ring-neutral-400 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(163 163 163 / var(--tw-ring-opacity));
+}
+.ring-pink-400 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(244 114 182 / var(--tw-ring-opacity));
+}
+.ring-purple-400 {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(192 132 252 / var(--tw-ring-opacity));
+}
+.duration-300 {
+  transition-duration: 300ms;
+}
+.duration-500 {
+  transition-duration: 500ms;
+}
+.peer:checked ~ .peer-checked\:scale-110 {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.peer:checked ~ .peer-checked\:scale-\[500\%\] {
+  --tw-scale-x: 150%;
+  --tw-scale-y: 150%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.peer:checked ~ .peer-checked\:ring-2 {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}

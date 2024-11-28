@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>iConnect</title>
+    <meta name="description" content="" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="
+ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
+"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&amp;family=Montserrat:ital@1&amp;family=Sacramento&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Baloo+Chettan+2|Tangerine&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image" href="img/iconnect.jpg" />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md mt-4 position-absolute text-center justify-content-center w-100 z-3"
+    >
+      <div class="container-fluid nav-content w-75">
+        <a class="navbar-brand px-1" href="/">
+          <img
+            class="rounded-circle w-25"
+            id="iconnect-logo"
+            src="img/iconnect.jpg"
+            alt="iConnect"
+          />
+          <span>iConnect</span>
+        </a>
+        <button
+          class="navbar-toggler px-4 border-0"
+          id="nav-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="fas fa-bars"></span>
+        </button>
+          
+        <div class="collapse navbar-collapse">
+          <div class="navbar-nav me-2 mb-auto ml-auto">
+            <div class="nav-item">
+              <a class="nav-link" href="#event" id="event-link"
+                ><h5>Events</h5></a
+              >
+            </div>
+
+            <div class="nav-item">
+              <a class="nav-link" id="about-link" href="#aboutus"
+                ><h5>About Us</h5></a
+              >
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="#contactUs"><h5>Contacts</h5></a>
+            </div>
+            <div class="nav-item">
+              <a class="nav-link" href="#join-us"><h5>Join Us</h5></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="nav-items" class="d-lg-none d-md-none">
+        <div class="nav-item">
+          <a class="nav-link" href="#event" id="event-link"><h5>Events</h5></a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" id="about-link" href="#aboutus"
+            ><h5>About Us</h5></a
+          >
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#contactUs"><h5>Contacts</h5></a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#join-us"><h5>Join Us</h5></a>
+        </div>
+      </div>
+    </nav>
+    <div class="theme-button z-3">
+      <label class="switch">
+        <span class="sun"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g fill="#ffd43b">
+              <circle r="5" cy="12" cx="12"></circle>
+              <path
+                d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"
+              ></path>
+            </g></svg></span>
+        <span class="moon"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path
+              d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"
+            ></path></svg></span>
+        <input type="checkbox" id="theme_checkbox" class="input" checked />
+        <span class="slider"></span>
+      </label>
+    </div>
+    <section id="section1">
+      <img
+        id="bg-pattern"
+        class="position-absolute"
+        style="width: 100%; z-index: -1"
+        src="img/demo_line3.png"
+      />
+      <div class="head-content">
+        <div class="row justify-content-between m-0">
+          <div class="col-8">
+            <h1 class="section-bold-heading">iConnect</h1>
+            <h2 class="section-bolder-heading" style="color: #e26ee5">
+              Event[
+              <span id="typewriter" style="color: #fdb827"></span>
+              ];
+            </h2>
+          </div>
+          <div class="col d-md-none d-none d-lg-block p-0">
+            <div class="ripple-container">
+              <img class="" src="img/bunny.png" width="300" />
+            </div>
+          </div>
+        </div>
+        <section>
+          <div class="container py-5">
+            <h1 class="text-center" style="color: #e6eff0;">Welcome to the Event</h1>
+            <p class="text-center" style="color: #d5af27;">Please login or signup to continue.</p>
+            
+            <!-- Login/Signup Buttons -->
+            <div class="text-center">
+              <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">Login / Signup</button> -->
+              <button id="login-signup-btn">Login / Sign Up</button>
+            </div>
+          </div>
+        </section>
+        
+
+
+        <!-- Modal -->
+       
+      
+      
+        <div class="text-end tagline">
+          <span>Where Technology Meets Entrepreneurship and Celebration! </span>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div id="section2" class="pt-5">
+        <div class="container">
+          <div id="features-event" class="position-relative">
+            <div
+              id="features-description"
+              class="row justify-content-center bg-black text-white m-0 gap-5"
+            >
+              <div class="col-auto">
+                <div class="d-flex flex-column justify-content-between h-100">
+                  <div class="featured-events">⭐ Featured Events</div>
+                  <h1>E-summit</h1>
+                  <a
+                    href="/events.html"
+                    id="get-register-btn"
+                    class="btn btn-light"
+                  >
+                    Register
+                  </a>
+                </div>
+              </div>
+              <div class="col">
+                <div>Starts In...</div>
+                <!-- <br /> -->
+                <!-- <div class="timer">
+                  <span class="time">10</span> Days
+                  <span class="time">06</span> Hours
+                </div> -->
+
+                <div class="counter">
+                  <div class="days">
+                    <div class="value">00</div>
+                    <span class="label">Days</span>
+                  </div>
+
+                  <div class="hours">
+                    <div class="value">00</div>
+                    <span class="label">Hours</span>
+                  </div>
+
+                  <div class="minutes">
+                    <div class="value">00</div>
+                    <span class="label">Minutes</span>
+                  </div>
+
+                  <div class="seconds">
+                    <div class="value">00</div>
+                    <span class="label">Seconds</span>
+                  </div>
+                </div>
+
+                <div class="event-details">
+                  <div class="location">
+                    <i class="fa-solid fa-location-dot"></i> PDUIIC, GJUS&T
+                  </div>
+                  <div class="time">
+                    <i class="fa-regular fa-clock"></i> 12:30pm GMT
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="event-image d-none d-lg-block">
+              <img src="img/Esummit_featured.png" />
+            </div>
+          </div>
+          <div id="records">
+            <div class="row align-items-center">
+              <div class="col-5">
+                <h1>We are Society</h1>
+              </div>
+              <div class="col">
+                <h1>15+</h1>
+                <span>Events</span>
+              </div>
+              <div class="col">
+                <h1>2000+</h1>
+                <span>Students</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="custom-shape-divider-bottom">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+            opacity=".4"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+            opacity=".6"
+            class="shape-fill"
+          ></path>
+          <path
+            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+    <section id="section3">
+      <div id="event" class="event-display">
+        <div class="row text-center m-0">
+          <div class="event-head">
+            <div id="recent-opp-head" class="event-head-item active">
+              <i class="material-icons work-icon"> work </i>
+              <span class="event-head-text">Upcoming Event</span>
+            </div>
+            <div id="past-event-head" class="event-head-item">
+              <i class="material-icons history-icon"> work_history </i>
+              <span class="event-head-text">Past Event</span>
+            </div>
+          </div>
+        </div>
+        <div class="row m-0">
+          <div id="upcoming-event-body" class="active">
+            <div class="row justify-content-center">
+              <div class="col-auto p-0">
+                <div class="card border-0 shadow event-card rounded-3 m-3">
+                  <img
+                    class="card-img-top rounded-3"
+                    src="img/events_logo/bussiness_quiz.png"
+                  />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h5>Bussiness Quiz</h5>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card border-0 shadow event-card rounded-3 m-3">
+                  <img
+                    class="card-img-top rounded-3"
+                    src="img/events_logo/elivator_pitch.png"
+                  />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h5>Elivator Pitch</h5>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card border-0 shadow event-card rounded-3 m-3">
+                  <img
+                    class="card-img-top rounded-3"
+                    src="img/events_logo/startup_auction.png"
+                  />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h5>Startup Auction</h5>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card border-0 shadow event-card rounded-3 m-3">
+                  <img
+                    class="card-img-top rounded-3"
+                    src="img/events_logo/startup_space.png"
+                  />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h5>Startup Space</h5>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card border-0 shadow event-card rounded-3 m-3">
+                  <img
+                    class="card-img-top rounded-3"
+                    src="img/events_logo/startup_spotlight.png"
+                  />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h5>Startup Spotlight</h5>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img
+                    class="card-img-top rounded-3"
+                    src="img/events_logo/trade_titans.png"
+                  />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h5>Trade Titans</h5>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="past-event-body">
+            <div class="row justify-content-center">
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h4>abc</h4>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h4>abc</h4>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
+                  <div class="card-body">
+                    <span>Offline | Free</span>
+                    <h4>abc</h4>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h4>abc</h4>
+                    <span>7th August</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="separator-y"></div>
+      </div>
+      <div id="aboutus" class="container px-0 pt-3">
+        <div class="row px-0 align-items-center">
+          <div class="col-lg-6 px-0">
+            <div class="m-5">
+              <span id="aboutus-heading">About Us</span>
+              <h1>What is iConnect??</h1>
+              <br />
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+                numquam molestias itaque odio pariatur voluptates esse deserunt
+                harum dolores, in aliquid quam porro vero quae laborum dicta
+                ratione maxime earum.
+              </p>
+              <a href="/aboutus.html">
+                <button
+                  type="button"
+                  class="btn btn-primary btn-lg rounded-pill"
+                >
+                  Read More
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6 px-0 text-center">
+            <img
+              class="img-fluid w-75"
+              style="border-radius: 40% 5% 30% 50%"
+              src="img/rabit_about.jpg"
+            />
+            <div class="splide">
+              <div class="splide__slider">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="separator-y"></div>
+      </div>
+      <div class="container pb-5">
+        <h1>Our Sponsers</h1>
+        <div class="splide sponsers">
+          <div class="splide__slider">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+                <li class="splide__slide">
+                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section4">
+      <div id="join-card">
+        <div class="row m-0 position-relative">
+          <div class="position-absolute text-center">
+            <h1 class="" style="color: white; mix-blend-mode: difference">
+              You can Join Us as an Instructor or a Student
+            </h1>
+            
+          </div>
+          <div class="col">
+            <div class="text-center p-5">
+              <div class="hexagon">
+                <img class="w-50" src="img/rabit_invest2_upscale.jpg" />
+              </div>
+              <div class="m-3">
+                <button class="btn btn-primary">Instructor</button>
+              </div>
+            </div>
+          </div>
+          <div class="col bg-black">
+            <div class="circle">
+              <h1>🥕</h1>
+            </div>
+            <div class="text-center p-5">
+              <div class="hexagon">
+                <img class="w-50" src="img/rabit_invest2_upscale.jpg" />
+              </div>
+              <div class="m-3">
+                <button class="btn btn-primary">Student</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+     <section id="section5">
+      <div class="container px-0">
+        <div class="row px-0 align-items-center">
+          <div class="col-lg-6 px-0 order-2 order-lg-1 text-center">
+            <img
+              class="img-fluid w-75"
+              style="border-radius: 40% 50% 30% 5%"
+              src="img/rabit_invest1_upscale.jpg"
+            />
+          </div>
+          <div class="col-lg-6 px-0 order-1 order-lg-2">
+            <div class="m-5">
+              <h1 class="">Our Vision</h1>
+              <br />
+              <p class="ml-5 mr-5">
+                What if an eccentric chocolatier and a daredevil pop star had a
+                whirlwind romance, got married while skydiving, and had a
+                glamorous, glittering love child who grew up to rule a small
+                nation? Welcome to Museum of Candy, where colossal candyfloss
+                constructions meld with a tantalizing taffy twistedness!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container px-0">
+        <div class="d-lg-none d-block text-center">
+          <h1>
+            GALLERY<span class="text-danger">/</span>OF<span class="text-danger"
+              >/</span
+            >EVENTS
+          </h1>
+        </div>
+        <div class="row px-0 align-items-center justify-content-center">
+          <div class="col-md-6 px-0 order-2 order-md-1 d-none d-lg-block">
+            <div class="text-center">
+              <h1>
+                GALLERY<span class="text-danger">/</span>OF<span
+                  class="text-danger"
+                  >/</span
+                >EVENTS
+              </h1>
+              <h1>
+                GALLERY<span class="text-danger">/</span>OF<span
+                  class="text-danger"
+                  >/</span
+                >EVENTS
+              </h1>
+              <h1>
+                GALLERY<span class="text-danger">/</span>OF<span
+                  class="text-danger"
+                  >/</span
+                >EVENTS
+              </h1>
+              <h1>
+                GALLERY<span class="text-danger">/</span>OF<span
+                  class="text-danger"
+                  >/</span
+                >EVENTS
+              </h1>
+              <h1>
+                GALLERY<span class="text-danger">/</span>OF<span
+                  class="text-danger"
+                  >/</span
+                >EVENTS
+              </h1>
+              <h1>
+                GALLERY<span class="text-danger">/</span>OF<span
+                  class="text-danger"
+                  >/</span
+                >EVENTS
+              </h1>
+            </div>
+          </div>
+
+          <div class="col-md-6 px-0 order-1 order-md-2 text-center">
+            <div class="splide">
+              <div class="splide__slider">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+    <section id="section4">
+      <div class="container">
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <div class="buttons">
+              <span class="close"></span>
+              <span class="minimize"></span>
+              <span class="maximize"></span>
+            </div>
+            <div class="title">
+              <span>About-Us</span>
+            </div>
+          </div>
+          <div class="terminal-body">
+            <div class="command-line">
+              <!-- <div class="prompt">$</div> -->
+              <span>
+                <!-- mysql -u admin -p -e
+                <span class="text-success">"SELECT * FROM about_us;"</span> -->
+                iconnect_society
+              </span>
+            </div>
+            <div id="aboutus-body" class="">
+              <div class="row m-0">
+                <div class="col p-5">
+                  <h1>Lorem ipsum abc</h1>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Aspernatur aliquam necessitatibus harum aut porro rem amet
+                    repellat iusto odit, repellendus recusandae quidem nulla
+                    explicabo esse suscipit ducimus mollitia dolor ipsum.
+                  </p>
+                  <button class="btn btn-dark">Read More</button>
+                </div>
+                <div class="col-lg text-center">
+                  <img class="rounded-3" src="https://placehold.co/300x400" />
+                </div>
+              </div>
+            </div>
+            <div id="sponsers">
+              <div class="row align-items-center m-0 text-center mt-5">
+                <div class="col">
+                  <p>Our Sponsers</p>
+                </div>
+                <div class="col">
+                  <img class="rounded-3" src="https://placehold.co/150x100" />
+                </div>
+                <div class="col">
+                  <img class="rounded-3" src="https://placehold.co/150x100" />
+                </div>
+                <div class="col">
+                  <img class="rounded-3" src="https://placehold.co/150x100" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+
+    <footer class="footer text-center text-white p-5 mt-5" id="contactUs">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col">
+            <a href="#" target="_blank"
+              ><i class="fab fa-facebook icon facebook"></i
+            ></a>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="col">
+            <a href="https://x.com/iconnectgjust" target="_blank"
+              ><i class="fab fa-x-twitter icon social-link" id="twitter"></i
+            ></a>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="col">
+            <a href="https://www.instagram.com/iconnectgjust/" target="_blank"
+              ><i class="fab fa-instagram icon social-link" id="instagram"></i
+            ></a>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="col">
+            <a
+              href="https://whatsapp.com/channel/0029VaELUPEGU3BNfgEAmU0h"
+              target="_blank"
+              ><i class="fab fa-whatsapp icon social-link" id="whatsapp"></i
+            ></a>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="col">
+            <a
+              href="https://www.linkedin.com/company/iconnect-gjust/"
+              target="_blank"
+              ><i class="fab fa-linkedin icon social-link" id="linkedin"></i
+            ></a>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="col">
+            <a href="https://youtube.com/@iConnectGJUST" target="_blank"
+              ><i class="fab fa-youtube icon social-link" id="youtube"></i
+            ></a>
+          </div>
+        </div>
+        <div class="row align-items-center mt-5">
+          <div class="col m-3">
+            <h2>Contact Us</h2>
+            <p>
+              <i class="fas fa-map-marker-alt"></i> PDUCIC,Guru Jambheshwar
+              University,Hisar,Haryana
+            </p>
+            <p><i class="fas fa-phone"></i> +919467905906</p>
+            <p><i class="fas fa-envelope"></i>support@iconnectgjust.in</p>
+          </div>
+          <div class="separator"></div>
+          <div class="col p-5">
+            <a class="nav-link" href="/index.html"><h5>Home</h5></a>
+            <a class="nav-link" href="#event"><h5>Events</h5></a>
+            <a class="nav-link" href="#about"><h5>About Us</h5></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="
+      https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      var splide = new Splide(".splide", {
+        type: "loop",
+        autoplay: "True",
+        perPage: 1,
+        // noDrag: 1,
+        // arrows: 0,
+      });
+      var sponser_splide = new Splide(".sponsers", {
+        type: "loop",
+        autoplay: "True",
+        perPage: 6,
+        perMove: 1,
+        noDrag: 1,
+        arrows: 0,
+        interval: 1000,
+        speed: 1000,
+        easing: "linear",
+        pagination: 0,
+      });
+      // splide.on("autoplay:playing", function (rate) {
+      //   console.log(rate); // 0-1
+      // });
+
+      splide.mount();
+      sponser_splide.mount();
+      function getTimeRemaining(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+        return {
+          total: t,
+          days: days,
+          hours: hours,
+          minutes: minutes,
+          seconds: seconds,
+        };
+      }
+
+      function formatNumber(num) {
+        return num < 10 ? "0" + num : num;
+      }
+
+      function initializeClock(endtime) {
+        var timeinterval = setInterval(function () {
+          var t = getTimeRemaining(endtime);
+          document.querySelector(".days > .value").innerText = formatNumber(
+            t.days
+          );
+          document.querySelector(".hours > .value").innerText = formatNumber(
+            t.hours
+          );
+          document.querySelector(".minutes > .value").innerText = formatNumber(
+            t.minutes
+          );
+          document.querySelector(".seconds > .value").innerText = formatNumber(
+            t.seconds
+          );
+          if (t.total <= 0) {
+            clearInterval(timeinterval);
+          }
+        }, 1000);
+      }
+
+      // Set endtime to a specific date, e.g., December 1, 2024
+      var endtime = new Date(2024, 11, 1); // December is month 11 (0-based index)
+      initializeClock(endtime);
+    </script>
+  </body>
+</html>
