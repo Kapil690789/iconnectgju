@@ -22,13 +22,32 @@ const switchToSignup = document.getElementById('switch-to-signup');
 const switchToLogin = document.getElementById('switch-to-login');
 
 // Theme Toggle Event Listener
-theme_checkbox.addEventListener('click', () => {
-  if (theme_checkbox.checked) {
-    document.body.classList.toggle("dark-theme");
+tdocument.addEventListener("DOMContentLoaded", () => {
+  // Check stored theme preference
+  const savedTheme = localStorage.getItem('theme');
+  const isDarkTheme = savedTheme === 'dark';
+
+  if (isDarkTheme) {
+    document.body.classList.add("dark-theme");
+    theme_checkbox.checked = true; // Update the checkbox state
     navbar.classList.remove('navbar-dark');
   } else {
-    document.body.classList.toggle("dark-theme");
+    document.body.classList.remove("dark-theme");
+    theme_checkbox.checked = false; // Update the checkbox state
     navbar.classList.add('navbar-dark');
+  }
+});
+
+// Theme Toggle Event Listener
+theme_checkbox.addEventListener('click', () => {
+  if (theme_checkbox.checked) {
+    document.body.classList.add("dark-theme");
+    navbar.classList.remove('navbar-dark');
+    localStorage.setItem('theme', 'dark'); // Save preference
+  } else {
+    document.body.classList.remove("dark-theme");
+    navbar.classList.add('navbar-dark');
+    localStorage.setItem('theme', 'light'); // Save preference
   }
 });
 
