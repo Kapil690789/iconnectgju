@@ -1,16 +1,16 @@
-:root{
+:root {
   --primary-color: #5842a2;
   --secondary-color: black;
   --card-color: #ffffff;
   --card-text: black;
-  /* --card-color: #3333335f; */
   --element-bg: white;
   --text-color: white;
   --nav-color: rgba(255, 255, 255, 0.779);
   --nav-shadow: rgba(0, 0, 0, 0.3);
   --filter-pattern: brightness(100%);
 }
-.dark-theme{
+
+.dark-theme {
   --primary-color: black;
   --secondary-color: #ffffff;
   --card-color: #1c1c1c;
@@ -21,33 +21,170 @@
   --bg-pattern: brightness(50%);
 }
 
-body{
-  background-color: var(--primary-color);
-  color: var(--card-text);
-  /* background-color: black; */
+/* General Navbar Styling */
+.navbar {
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent; 
+  box-shadow: none; 
 }
-#iconnect-logo{
+.navbar {
+   /* Semi-transparent background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.nav-link {
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #f0ad4e; /* Highlight color on hover */
+}
+
+#iconnect-logo {
+  object-fit: cover;
+}
+
+
+.navbar .nav-heading {
+  color: black;
+  transition: color 0.3s;
+}
+
+.navbar-brand .brand-text {
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.dark-theme .navbar {
+  background-color: transparent;
+}
+
+.dark-theme .navbar .nav-heading {
+  color: white;
+}
+
+.dark-theme .navbar-brand .brand-text {
+  color: white;
+}
+
+.navbar-brand img {
+  max-width: 50px;
+  height: auto;
+  transition: filter 0.3s;
+}
+
+.dark-theme .navbar-brand img {
+  filter: invert(1);
+}
+
+/* Navbar Responsiveness */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav .nav-heading {
+    font-size: 1rem;
+  }
+
+  #nav-items {
+    position: absolute;
+    top: 60px;
+    background-color: transparent;
+    width: 100%;
+    z-index: 10;
+    display: none;
+    padding: 10px 0;
+  }
+
+  .dark-theme #nav-items {
+    background-color: transparent;
+  }
+
+  #nav-items.active {
+    display: block;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-brand img {
+    width: 40px;
+  }
+
+  .navbar-brand span {
+    font-size: 1.2rem;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .container-fluid {
+    padding: 10px;
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .navbar-brand span {
+    font-size: 1.4rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+  }
+
+  .navbar-collapse {
+    flex-grow: 0;
+  }
+}
+
+/* Default styles (for desktops and larger screens) */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: var(--primary-color);
+}
+
+#iconnect-logo {
   max-width: 50px;
 }
-.btn-primary{
+
+.btn-primary {
   background-color: var(--primary-color);
   color: white;
   border: 0;
 }
-.btn-primary:hover, .btn-primary:active{
+
+.btn-primary:hover, .btn-primary:active {
   background-color: #241556 !important;
 }
 
-.navbar-toggler:focus{
+.navbar-toggler:focus {
   box-shadow: none;
 }
-.navbar-collapse{
+
+.navbar-collapse {
   flex-grow: 0;
 }
-#nav-items{
+
+#nav-items {
   position: absolute;
-  top:80px;
-  right:-100%;
+  top: 80px;
+  right: -100%;
   padding: 30px 80px 30px 30px;
   background-color: var(--nav-color);
   color: var(--text-color);
@@ -55,48 +192,55 @@ body{
   transition: right 0.5s ease-in-out;
   z-index: 99;
 }
-.nav-item{
-  transition:all 0.3s ease-in-out;
+
+.nav-item {
+  transition: all 0.3s ease-in-out;
 }
-/* .nav-item:hover{
-  font-size: 3rem;
-} */
-.nav-content{
+
+.nav-content {
   background-color: var(--nav-color);
   margin: 0 50px;
   padding: 10px;
   border-radius: 40px;
   box-shadow: 0px 10px 10px -3px var(--nav-shadow);
-  /* display: flex; */
 }
+
 .theme-button {
   position: absolute;
-  right: 20px; /* Adjust distance from the right as needed */
-  top: 45px; /* Adjust distance from the top as needed */
+  top: 50px; /* Adjusted distance from the top */
+  right: 6px; /* Adjusted distance from the right */
+  z-index: 1000; /* Ensures it's above other elements */
+  display: flex;
+  align-items: center;
+
 }
-#light-theme, #dark-theme{
-  font-size:20px;
+
+#light-theme, #dark-theme {
+  font-size: 20px;
   transition: background-color ease-out 0.5s;
 }
-#light-theme.active, #dark-theme.active{
+
+#light-theme.active, #dark-theme.active {
   background-color: white;
 }
-#bg-pattern{
+
+#bg-pattern {
   transition: filter 0.4s ease-in-out;
   filter: var(--bg-pattern) drop-shadow(-5px -5px 20px #ffffff3a);
 }
 
-
-.head-content{
+.head-content {
   padding: 200px 0 0 5%;
   font-weight: bold;
   margin: 0;
 }
-.section-bold-heading{
+
+.section-bold-heading {
   font-size: 60px;
   font-weight: bolder;
   color: white;
 }
+
 .ripple-container {
   position: relative;
   display: inline-block;
@@ -109,58 +253,113 @@ body{
 }
 
 .ripple-container::before, .ripple-container::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 200%;
-      height: 200%;
-      background: rgba(64, 46, 122, 0.81);
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      z-index: 0;
-      animation: ripple 3s infinite ease-in-out;
-    }
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(64, 46, 122, 0.81);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  z-index: 0;
+  animation: ripple 3s infinite ease-in-out;
+}
 
 .ripple-container::after {
-    animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
-.tagline{
+
+.tagline {
   padding-top: 8%;
   padding-right: 50px;
   font-size: 20px;
-  /* color: var(--text-color); */
   color: white;
 }
-.card-title{
+
+.card-title {
   color: var(--text-color);
 }
-.section-bolder-heading{
+
+.section-bolder-heading {
   font-size: 50px;
   font-weight: bold;
-  
 }
+
+/* Additional Mobile and Tablet Fixes */
+
+@media (max-width: 1024px) {
+  .section-bold-heading {
+    font-size: 45px;
+  }
+
+  .tagline {
+    font-size: 16px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .section-bolder-heading {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .head-content {
+    padding: 100px 0 0 5%;
+  }
+
+  .section-bold-heading {
+    font-size: 35px;
+  }
+
+  .tagline {
+    font-size: 14px;
+    padding-right: 20px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .section-bolder-heading {
+    font-size: 35px;
+  }
+}
+
 /* section{
   padding: 10% 0 0 0;
 } */
-#section1, #section3, #section4{
+/* Section Styles */
+#section1, #section3, #section4 {
   min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-#section1{
+
+/* Section 1 Styling */
+#section1 {
   overflow: hidden;
-  /* background-attachment: fixed;
-  background-image: url(img/demo_line3.png);;
-  background-position:initial;
-  background-size:cover; */
+  /* Uncomment and set background image as needed */
+  /* background-image: url(img/demo_line3.png); */
+  background-position: initial;
+  background-size: cover;
 }
+
+/* Event Header (Event Head) */
 .event-head {
   display: flex;
   flex-direction: row;
   margin: auto;
   padding: 25px 5%;
+  /* Border radius for event head is optional */
   /* border-top-left-radius: 30px; 
-  border-top-right-radius: 30px; */
-  
+     border-top-right-radius: 30px; */
+  flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
 }
 
 .event-head-item {
@@ -172,15 +371,21 @@ body{
   margin: 0 10px;
   cursor: pointer;
   transition: all 0.2s ease-out;
+  text-align: center;
 }
-.event-head-item:hover{
+
+/* Hover effect for event header items */
+.event-head-item:hover {
   border-radius: 30px;
   box-shadow: 0px 10px 16px -3px var(--nav-shadow);
 }
-#past-event-head{
+
+/* Disabled state for past event */
+#past-event-head {
   cursor: not-allowed;
 }
 
+/* Event head text */
 .event-head-text {
   font-size: 20px;
   margin: auto;
@@ -190,11 +395,14 @@ body{
   transition: all 0.3s ease;
 }
 
+/* Material Icon Styling */
 .material-icons {
   display: inline;
   font-size: 32px;
   transition: color .3s;
 }
+
+/* Active event header item */
 .event-head-item.active {
   flex-grow: 2;
   border-radius: 30px;
@@ -202,65 +410,210 @@ body{
   justify-content: flex-start;
   box-shadow: inset 0px 10px 16px -3px rgba(0, 0, 0, 0.278);
 }
-.material-icons.work-icon, .material-icons.history-icon{
+
+/* Styling for specific icons in active state */
+.material-icons.work-icon,
+.material-icons.history-icon {
   color: var(--secondary-color);
 }
-.event-head-item.active > .material-icons.work-icon, .event-head-item.active > .work-icon ~ .event-head-text {
-  color: #5a35b5;
+
+.event-head-item.active > .material-icons.work-icon,
+.event-head-item.active > .work-icon ~ .event-head-text {
+  color: #5a35b5; /* Work icon active color */
 }
 
-.event-head-item.active > .material-icons.history-icon, .event-head-item.active > .history-icon ~ .event-head-text{
-  color: #C64B47;
+.event-head-item.active > .material-icons.history-icon,
+.event-head-item.active > .history-icon ~ .event-head-text {
+  color: #C64B47; /* History icon active color */
 }
 
-#section2{
+/* Responsive Styles */
+
+/* For Tablet and Larger Devices (min-width: 768px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .event-head {
+    padding: 20px 10%; /* Adjust padding on larger tablets */
+  }
+
+  .event-head-item {
+    font-size: 16px; /* Adjust font size for tablets */
+    padding: 10px;
+  }
+
+  .event-head-text {
+    font-size: 18px; /* Smaller font size on tablets */
+  }
+}
+
+/* For Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+  #section1, #section3, #section4 {
+    min-height: auto;
+    padding: 10px;
+  }
+
+  .event-head {
+    flex-direction: column; /* Stack the event items vertically on small screens */
+    padding: 20px 10%;
+  }
+
+  .event-head-item {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 8px;
+    margin: 5px 0; /* Reduce margin for mobile screens */
+  }
+
+  .material-icons {
+    font-size: 24px; /* Smaller icons on mobile */
+  }
+
+  .event-head-text {
+    font-size: 16px; /* Adjust text size for small screens */
+  }
+}
+
+/* For Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .event-head-item {
+    font-size: 12px; /* Further reduce font size */
+    padding: 6px;
+  }
+
+  .material-icons {
+    font-size: 20px; /* Even smaller icons for tiny screens */
+  }
+
+  .event-head-text {
+    font-size: 14px; /* Adjust text size even more */
+  }
+}
+/* Default button style */
+.btn-primary {
+  background-color: white;
+  color: #333; /* Dark text for contrast */
+  border: 2px solid #d5af27; /* Add a border for better visibility */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect */
+.btn-primary:hover {
+  background-color: #d5af27; /* Yellow background on hover */
+  color: white; /* White text on hover */
+}
+
+
+.dropdown-menu {
+  border-radius: 10px;
+  background-color: #f8f9fa; /* Light gray background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  font-size: 16px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #e6eff0; /* Slight hover effect */
+  color: #0056b3;
+}
+
+/* Section 2 Styling */
+/* Section Styling */
+#section2 {
   border-radius: 50px;
-  padding:40px;
+  padding: 40px;
   margin: 2%;
   background-color: rgba(255, 255, 255, 0.038);
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-
+  flex-direction: column; /* Stack items vertically on small screens */
+  width: 100vw; /* Ensure section takes the full viewport width */
+  height: 70vh; /* Optional: Make it take the full height of the viewport */
+  position: relative; /* Allows absolute positioning inside */
+  overflow: hidden;  /* Stack items vertically on small screens */
 }
-#features-description{
+
+#features-description {
   padding: 30px;
   border-radius: 0 30px 30px 30px;
-  max-width: 90%;
+  max-width: 90%; /* Adjust width for smaller screens */
+  text-align: center;
+  
 }
-#get-register-btn{
+
+#get-register-btn {
   background-color: white;
   border-radius: 30px;
   font-weight: bold;
+  padding: 10px 20px;
 }
-#records{
+
+/* Records Styling */
+#records {
   margin-top: 30px;
   padding: 30px;
   border-radius: 30px;
-  background-color:#ffffff;
+  background-color: #ffffff;
 }
+
+#records .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#records .col {
+  text-align: center;
+}
+
+#records h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#records span {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Event Image Styling */
+/* Event Image Styling */
 .event-image {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 20px; /* Adjust spacing from right */
   transform: translateY(-50%);
-  width: 250px;
-  height: auto;
+  width: 250px; /* Adjust width as needed */
+  z-index: 1; /* Ensure it's above other content */
 }
 
 .event-image img {
   width: 100%;
   height: auto;
-  border-radius: 30px 30px 0 30px;
+  border-radius: 30px 30px 0 30px; /* Rounded corners */
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
 }
+
+/* Adjust spacing to accommodate image */
+#features-description {
+  padding-right: 280px; /* Add space to prevent overlapping */
+}
+
+
+/* Timer Styling */
 .timer {
   display: flex;
   gap: 5px;
   font-size: 24px;
   margin-top: 10px;
 }
+
+/* Event Details */
 .event-details {
   margin-top: 20px;
 }
@@ -273,32 +626,19 @@ body{
   font-size: 16px;
 }
 
-.event-display{
-  /* max-width: 95%; */
-  /* background-color: var(--card-color); */
+/* Event Display Styling */
+.event-display {
   border-radius: 30px;
-  /* box-shadow: 0px 5px 40px var(--nav-shadow); */
   padding-top: 30px;
-
+  background-color: var(--card-color);
+  box-shadow: 0px 5px 40px var(--nav-shadow);
 }
-.col{
+
+.col {
   padding: 0;
 }
-#upcoming-event-body, #past-event-body{
-  display: none;
-  /* padding: 50px; */
-  /* background-color: var(--card-color); */
-  color: var(--card-text);
-  border-radius: 0px 0 20px 20px;
-  /* border-bottom: 0.2px solid rgba(255, 255, 255);
-  border-top:    0.2px solid  rgba(255, 255, 255);
-  border-right:  0.2px solid rgba(255, 255, 255);
-  
-  border-left:   0.2px solid  rgba(255, 255, 255); */
-}
-#upcoming-event-body.active, #past-event-body.active{
-  display: block;
-}
+
+/* Slide Visibility for Events */
 .slide-hidden {
   opacity: 0;
   max-height: 0;
@@ -311,11 +651,251 @@ body{
   max-height: 500px;
   transition: opacity 0.5s ease, max-height 0.5s ease;
 }
-.event-card{
+
+/* Event Card */
+.event-card {
   width: 200px;
 }
 
+/* Responsive Styles */
 
+/* For Tablets (min-width: 768px and max-width: 1024px) */
+@media (max-width: 1024px) {
+  #section2 {
+    flex-direction: row; /* Display items side-by-side on larger tablets and laptop screens */
+    align-items: flex-start;
+    padding: 30px;
+  }
+
+  #features-description {
+    padding: 20px;
+    max-width: 50%; /* Limit width for better alignment */
+  }
+
+  .event-image {
+    width: 250px;
+    position: relative;
+    top: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .event-details {
+    margin-top: 10px;
+  }
+
+  /* Adjust font sizes */
+  #features-description .featured-events {
+    font-size: 1.5rem;
+  }
+
+  #features-description h1 {
+    font-size: 2rem;
+  }
+
+  /* Records layout */
+  #records .row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  #records .col-5 {
+    flex: 1;
+    text-align: center;
+  }
+
+  #records .col {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+/* For Tablets and Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  #section2 {
+    flex-direction: column; /* Stack the items vertically on mobile */
+    padding: 15px;
+  }
+
+  #features-description {
+    margin: 50px auto; /* Top margin and horizontal centering */
+    max-width: 90%; /* Restrict width for better fit on large screens */
+  }
+  
+
+  .event-image {
+    display: none; /* Hide the event image on smaller screens */
+  }
+
+  .event-details {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  #features-description h1 {
+    font-size: 1.8rem; /* Smaller font for mobile */
+  }
+
+  /* Adjust the record section */
+  #records .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #records .col {
+    margin-bottom: 10px;
+  }
+
+  #records h1 {
+    font-size: 1.5rem;
+  }
+
+  #records span {
+    font-size: 0.9rem;
+  }
+
+  #get-register-btn {
+    padding: 8px 15px;
+    font-size: 1rem;
+  }
+}
+
+/* For Phones (max-width: 480px) */
+@media (max-width: 480px) {
+  #features-description .featured-events {
+    font-size: 1.2rem;
+  }
+
+  #features-description h1 {
+    font-size: 1.5rem;
+  }
+
+  .timer {
+    font-size: 18px;
+  }
+
+  .event-details {
+    font-size: 12px;
+  }
+}
+  /* Stack event information vertically */
+  #section2 {
+    flex-direction: row; /* Arrange horizontally on larger devices */
+    gap: 20px;
+  }
+
+
+/* Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Section 2 should stack items vertically on mobile */
+  #section2 {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  /* Event Image Adjustments */
+  .event-image {
+    position: relative;
+    width: 100%; /* Ensure image takes full width of its container */
+    max-width: 300px; /* Set a maximum width for the image */
+    height: auto;
+    z-index: 1; /* Ensure the image is layered correctly */
+    margin: 0 auto; /* Center image horizontally */
+  }
+  
+  /* Image adjustments for larger screens */
+  .event-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px 30px 0 30px; /* Rounded corners */
+    object-fit: contan; /* Ensure the image scales correctly without stretching */
+  }
+  
+
+  /* Adjust timer font size on mobile */
+  .timer {
+    font-size: 18px;
+  }
+  .event-image img {
+    width: 100%;
+    max-width: 300px; /* Control the maximum width on large screens */
+  }
+
+  /* Update event details font size */
+  .event-details .location,
+  .event-details .time {
+    font-size: 14px;
+  }
+
+  /* Make event cards responsive */
+  .event-card {
+    width: 100%; /* Make event cards take full width on mobile */
+    margin-bottom: 20px;
+  }
+
+
+  /* Adjust section padding */
+  #records {
+    padding: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .event-image {
+    display: none; /* Hide image on tablets and smaller screens */
+  }
+}
+
+/* For Phones (Max width 480px), Adjust the Image Size */
+@media (max-width: 480px) {
+  .event-image {
+    width: 150px; /* Reduce the image size on very small screens */
+    margin: 0 auto; /* Center image horizontally */
+  }
+
+  .event-image img {
+    border-radius: 15px; /* More rounded corners on small screens */
+  }
+}
+/* Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Further reduce the event image size */
+  .event-image {
+    width: 150px;
+    top: 5%;
+  }
+
+  /* Reduce font sizes for very small screens */
+  .timer {
+    font-size: 16px;
+  }
+
+  .event-details .location,
+  .event-details .time {
+    font-size: 12px;
+  }
+
+  .event-card {
+    width: 100%; /* Full width on small screens */
+    margin-bottom: 15px;
+  }
+
+  /* Adjust the padding for small screens */
+  #section2 {
+    padding: 15px;
+  }
+
+  #features-description {
+    padding: 15px;
+    max-width: 100%; /* Ensure description fits on small screens */
+  }
+
+  #get-register-btn {
+    padding: 8px 15px;
+  }
+}
+
+
+/* Custom Shape Divider */
 .custom-shape-divider-bottom {
   position: relative;
   bottom: 0;
@@ -326,43 +906,66 @@ body{
   transform: rotate(180deg);
 }
 
+/* SVG styling for responsive design */
 .custom-shape-divider-bottom svg {
   position: relative;
   display: block;
-  width: calc(100% + 2.3px);
-  min-width: 800px;
+  width: 100%; /* Allow SVG to scale based on screen size */
   height: 200px;
-  
+  min-width: 0; /* Remove the min-width to make it more responsive */
 }
 
-.custom-shape-divider-bottom .shape-fill {
-  fill: var(--card-color);
+/* Optional: Adjust the height for smaller screens */
+@media (max-width: 768px) {
+  .custom-shape-divider-bottom svg {
+    height: 150px; /* Reduce height for smaller screens */
+  }
 }
-#section3{
-  background-color:var(--card-color);
+
+/* Optional: Adjust the height even further for very small screens */
+@media (max-width: 480px) {
+  .custom-shape-divider-bottom svg {
+    height: 120px; /* Further reduce height for mobile screens */
+  }
+}
+
+/* Shape-fill color customization (adjust based on needs) */
+.custom-shape-divider-bottom .shape-fill {
+  fill: #ffffff; /* Add desired fill color */
+  opacity: 0.4;
+}
+
+
+/* Section 3 */
+#section3 {
+  background-color: var(--card-color);
   border-radius: 0 0 40px 40px;
   margin-bottom: 30px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-
 }
-#section4{
+
+/* Section 4 - Flexbox Layout */
+#section4 {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#join-card{
+
+/* Join Card Styling */
+#join-card {
   width: 90%;
   height: 90%;
-  background-color:white;
+  background-color: white;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 2px 10px 0px rgba(255, 255, 255, 0.278);
 }
-.hexagon{
+
+/* Hexagon Shape */
+.hexagon {
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
+
+/* Circle Styling */
 .circle {
   position: absolute;
   top: 30%;
@@ -376,14 +979,17 @@ body{
   align-items: center;
   justify-content: center;
 }
-#section5{
+
+/* Section 5 - Positioned and Styled */
+#section5 {
   position: relative;
-  background-color:var(--card-color);
+  background-color: var(--card-color);
   border-radius: 0 0 40px 40px;
   margin-bottom: 30px;
   color: var(--card-text);
-
 }
+
+/* Arrow Shape for Section 5 */
 #section5::before {
   content: '';
   position: absolute;
@@ -394,24 +1000,26 @@ body{
   border-color: var(--primary-color) transparent transparent transparent;
   left: calc(50% - 40px);
 }
-#aboutus-heading{
-  /* background-color: #5935b5; */
+
+/* About Us Heading Styling */
+#aboutus-heading {
   color: #5935b5;
-  /* padding: 5px; */
   border-radius: 30px;
   font-weight: 500;
   font-size: small;
 }
-.custom-head{
+
+/* Custom Header Styling */
+.custom-head {
   background-color: var(--card-color);
   color: var(--card-text);
   border-radius: 20px 20px 0 0;
-  /* bottom: -0.8px; */
-  border-top:    0.2px solid  rgba(255, 255, 255);
-  border-right:  0.2px solid rgba(255, 255, 255);
-  border-left:   0.2px solid  rgba(255, 255, 255);
+  border-top: 0.2px solid rgba(255, 255, 255);
+  border-right: 0.2px solid rgba(255, 255, 255);
+  border-left: 0.2px solid rgba(255, 255, 255);
 }
 
+/* Keyframes for Ripple Animation */
 @keyframes ripple {
   0% {
     transform: translate(-50%, -50%) scale(0);
@@ -422,107 +1030,264 @@ body{
     opacity: 0;
   }
 }
-.icon{
+
+/* Responsive Styles */
+
+/* Tablet (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Adjust the width of the join card on tablets */
+  #join-card {
+    width: 80%;
+    height: 80%;
+  }
+
+  /* Ensure the SVG in the custom shape divider fits on tablets */
+  .custom-shape-divider-bottom svg {
+    width: calc(100% + 1.5px);
+  }
+
+  /* Adjust hexagon and circle positioning for tablet screens */
+  .circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  #section5 {
+    margin-bottom: 20px;
+  }
+
+  #aboutus-heading {
+    font-size: 18px;
+  }
+}
+
+/* Mobile Devices (max-width: 767px) */
+@media (max-width: 767px) {
+  /* Adjust the width of the join card on mobile */
+  #join-card {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Reduce the size of the SVG to fit better on smaller screens */
+  .custom-shape-divider-bottom svg {
+    width: 100%;
+    min-width: 100%;
+    height: 150px;
+  }
+
+  /* Ensure proper scaling for hexagon and circle on small screens */
+  .circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Adjust Section 3 and Section 5 for mobile */
+  #section3 {
+    margin-bottom: 20px;
+  }
+
+  #section5 {
+    margin-bottom: 10px;
+  }
+
+  /* Adjust about us heading font size for mobile */
+  #aboutus-heading {
+    font-size: 16px;
+  }
+
+  /* Make the section headings responsive */
+  .custom-head {
+    font-size: 14px;
+  }
+}
+
+/* Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .custom-shape-divider-bottom svg {
+    height: 120px; /* Adjust height for very small screens */
+  }
+
+  /* Further reduce the circle size on very small screens */
+  .circle {
+    width: 40px;
+    height: 40px;
+  }
+
+  #aboutus-heading {
+    font-size: 14px;
+  }
+}
+
+/* Icon Styling */
+.icon {
   font-size: 40px;
   color: darkgray;
 }
-.footer-divider{
+
+/* Divider Styling */
+.footer-divider {
   width: 3px;
   height: 60px;
   background-color: hsla(0, 0%, 96.5%, 0.2);
   transform: rotate(20deg);
   padding: 0;
 }
-.separator{
+
+.separator {
   width: 2px;
   height: 100px;
   background-color: hsla(0, 0%, 96.5%, 0.2);
-  padding:0;
+  padding: 0;
 }
-.separator-y{
+
+.separator-y {
   height: 2px;
-  width:70%;
+  width: 70%;
   background-color: var(--nav-shadow);
-  padding:0;
+  padding: 0;
   margin: 50px 0;
 }
+
+/* Splide Slider Styling */
 .splide__slider {
   overflow: hidden;
   border-radius: 10px;
 }
+
+/* Phone Frame Styling */
 .phone {
-  max-height:400px;
-	overflow: hidden;
-	border: 8px solid #21262b;
-	border-radius: 40px;
-	box-shadow: 0 0 20px rgba(rgb(0, 0, 0), .4);
-	position: relative;
-	background: white;
+  max-height: 400px;
+  overflow: hidden;
+  border: 8px solid #21262b;
+  border-radius: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  background: white;
 }
+
+/* Media Query for Tablets (768px to 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
-  #features-description{
+  #features-description {
     max-width: 100%;
   }
-  .section-bolder-heading{
+
+  .section-bolder-heading {
     font-size: 30px;
   }
 }
+
+/* Media Query for Mobile Devices (max-width: 767px) */
 @media (max-width: 767px) {
-  .section-bolder-heading{
-    font-size: 20px;
+  .section-bolder-heading {
+    font-size: 20px; /* Smaller font size on mobile */
   }
-  .tagline{
+
+  .tagline {
     font-size: 16px;
     padding-right: 5px;
   }
+  
+  /* Adjustments for the Phone frame */
+  .phone {
+    max-height: 300px;
+  }
 }
+
+/* Counter Styling */
 .counter {
   width: 500px;
   user-select: none;
   font-weight: 700;
   min-height: 80px;
-  .days,
-  .hours,
-  .minutes,
-  .seconds {
-    width: 25%;
-    float: left;
-    text-align: center;
-    .value {
-      display: block;
-      font-size: 36pt;
-      display: block;
-    }
-    span {
-      font-size: 8pt;
-      opacity: 0.8;
-      width: 100%;
-      display: block;
-    }
-  }
-  .hours::before,
-  .minutes::before,
-  .seconds::before {
-    content: ":";
-    float: left;
-    font-size: 20pt;
-    position: relative;
-    margin-top: 20px;
-    opacity: 0.7;
-    animation :blink 1s ease-in-out infinite;
-  }
 }
-@keyframes blink { 
-  0% { 
-  opacity:1;
+
+.counter .days,
+.counter .hours,
+.counter .minutes,
+.counter .seconds {
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+
+.counter .value {
+  display: block;
+  font-size: 36pt;
+}
+
+.counter span {
+  font-size: 8pt;
+  opacity: 0.8;
+  width: 100%;
+  display: block;
+}
+
+.counter .hours::before,
+.counter .minutes::before,
+.counter .seconds::before {
+  content: ":";
+  float: left;
+  font-size: 20pt;
+  position: relative;
+  margin-top: 20px;
+  opacity: 0.7;
+  animation: blink 1s ease-in-out infinite;
+}
+
+/* Keyframes for Blink Animation */
+@keyframes blink {
+  0% {
+    opacity: 1;
   }
-  50% { 
-  opacity:0.5;
+  50% {
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
   }
 }
+
+/* Responsive adjustments for the counter */
+@media (max-width: 767px) {
+  .counter {
+    width: 100%;
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  .counter .days,
+  .counter .hours,
+  .counter .minutes,
+  .counter .seconds {
+    width: 20%;
+  }
+
+  .counter .value {
+    font-size: 24pt; /* Adjust font size of counter values for smaller screens */
+  }
+
+  .counter span {
+    font-size: 6pt; /* Smaller span font size for mobile */
+  }
+
+  .counter .hours::before,
+  .counter .minutes::before,
+  .counter .seconds::before {
+    font-size: 16pt; /* Adjust punctuation size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .counter .value {
+    font-size: 20pt; /* Further reduce the counter font size */
+  }
+
+  .counter span {
+    font-size: 5pt; /* Even smaller text for span on very small screens */
+  }
+}
+
 /* Button Styling */
 #login-signup-btn {
   background-color: #f8f8f8; /* Light white background */
@@ -532,19 +1297,44 @@ body{
   border: none; /* Remove border */
   border-radius: 8px; /* Rounded corners */
   cursor: pointer; /* Change cursor to pointer when hovering over button */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for hover effects */
 }
 
 /* Button Hover Effect */
 #login-signup-btn:hover {
   background-color: #ffcc00; /* Yellow background on hover */
   transform: scale(1.05); /* Slightly enlarge the button for a more interactive feel */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for hover effect */
 }
 
 /* Button Active Effect */
 #login-signup-btn:active {
   background-color: #e6b800; /* Darker yellow color when the button is clicked */
+  transform: scale(1); /* Prevent scaling on click to make it look more solid */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* More prominent shadow when active */
 }
+
+/* Button Focus Effect for accessibility */
+#login-signup-btn:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.6); /* Add a bright outline for focus state */
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  #login-signup-btn {
+    font-size: 14px; /* Slightly smaller font size on smaller screens */
+    padding: 8px 16px; /* Adjust padding to make the button more compact */
+  }
+}
+
+@media (max-width: 480px) {
+  #login-signup-btn {
+    font-size: 12px; /* Further reduce font size for mobile screens */
+    padding: 6px 12px; /* Even more compact padding */
+  }
+}
+
 
 /* model */
 
@@ -674,6 +1464,8 @@ input:checked + .slider:before {
   display: inline-block;
   width: 64px;
   height: 34px;
+  /* Added margin for spacing */
+  margin: 10px;
 }
 
 .switch input {
@@ -690,7 +1482,7 @@ input:checked + .slider:before {
   right: 0;
   bottom: 0;
   background-color: #4a4a4a;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 30px;
 }
 
@@ -704,7 +1496,7 @@ input:checked + .slider:before {
   bottom: 2px;
   z-index: 2;
   background-color: #e8e8e8;
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .sun svg {
@@ -731,34 +1523,28 @@ input:checked + .slider:before {
 }
 
 @keyframes rotate {
- 
   0% {
     transform: rotate(0);
   }
-
   100% {
     transform: rotate(360deg);
   }
 }
 
-/* .switch:hover */.moon svg {
+.moon svg {
   animation: tilt 5s linear infinite;
 }
 
 @keyframes tilt {
- 
   0% {
     transform: rotate(0deg);
   }
-
   25% {
     transform: rotate(-10deg);
   }
-
   75% {
     transform: rotate(10deg);
   }
-
   100% {
     transform: rotate(0deg);
   }
@@ -774,4 +1560,48 @@ input:checked + .slider:before {
 
 .input:checked + .slider:before {
   transform: translateX(30px);
+}
+
+/* Media Queries for Responsiveness */
+
+/* For screens 768px and below (tablets and small laptops) */
+@media (max-width: 768px) {
+  .switch {
+    width: 54px; /* Slightly smaller switch */
+    height: 30px; /* Adjust height accordingly */
+  }
+
+  .slider:before {
+    height: 26px; /* Smaller circle */
+    width: 26px; /* Smaller circle */
+    left: 2px;
+    bottom: 2px;
+  }
+
+  .sun svg,
+  .moon svg {
+    width: 20px; /* Smaller icons */
+    height: 20px;
+  }
+}
+
+/* For screens 480px and below (mobile screens) */
+@media (max-width: 480px) {
+  .switch {
+    width: 44px; /* Even smaller for mobile */
+    height: 24px; /* Smaller height */
+  }
+
+  .slider:before {
+    height: 20px; /* Even smaller circle */
+    width: 20px; /* Even smaller circle */
+    left: 2px;
+    bottom: 2px;
+  }
+
+  .sun svg,
+  .moon svg {
+    width: 18px; /* Even smaller icons */
+    height: 18px;
+  }
 }

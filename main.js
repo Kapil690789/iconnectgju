@@ -22,34 +22,49 @@ const switchToSignup = document.getElementById('switch-to-signup');
 const switchToLogin = document.getElementById('switch-to-login');
 
 // Theme Toggle Event Listener
-tdocument.addEventListener("DOMContentLoaded", () => {
+// Theme Toggle Persistence
+document.addEventListener("DOMContentLoaded", () => {
+  const themeCheckbox = document.getElementById('theme_checkbox');
+  const navbar = document.querySelector('.navbar');
+  const logo = document.getElementById('iconnect-logo');
+
+  // Define logo paths
+  const lightLogo = 'img/iconnect-light.jpg';
+  const darkLogo = 'img/iconnect-dark.jpg';
+
   // Check stored theme preference
   const savedTheme = localStorage.getItem('theme');
   const isDarkTheme = savedTheme === 'dark';
 
   if (isDarkTheme) {
     document.body.classList.add("dark-theme");
-    theme_checkbox.checked = true; // Update the checkbox state
+    themeCheckbox.checked = true; // Update the checkbox state
     navbar.classList.remove('navbar-dark');
+ 
   } else {
     document.body.classList.remove("dark-theme");
-    theme_checkbox.checked = false; // Update the checkbox state
+    themeCheckbox.checked = false; // Update the checkbox state
     navbar.classList.add('navbar-dark');
+  
   }
+
+  // Theme Toggle Event Listener
+  themeCheckbox.addEventListener('click', () => {
+    if (themeCheckbox.checked) {
+      document.body.classList.add("dark-theme");
+      navbar.classList.remove('navbar-dark');
+ 
+      localStorage.setItem('theme', 'dark'); // Save preference
+    } else {
+      document.body.classList.remove("dark-theme");
+      navbar.classList.add('navbar-dark');
+
+      localStorage.setItem('theme', 'light'); // Save preference
+    }
+  });
 });
 
-// Theme Toggle Event Listener
-theme_checkbox.addEventListener('click', () => {
-  if (theme_checkbox.checked) {
-    document.body.classList.add("dark-theme");
-    navbar.classList.remove('navbar-dark');
-    localStorage.setItem('theme', 'dark'); // Save preference
-  } else {
-    document.body.classList.remove("dark-theme");
-    navbar.classList.add('navbar-dark');
-    localStorage.setItem('theme', 'light'); // Save preference
-  }
-});
+
 
 // Navbar Toggler Event Listener
 nav_toggler.addEventListener('click', () => {
@@ -161,3 +176,19 @@ switchToLogin.addEventListener('click', () => {
   switchToSignup.style.display = 'inline-block';
   switchToLogin.style.display = 'none';
 });
+const login = async (email, password) => {
+  try {
+    const response = await fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+    console.log('Login Successful:', data);
+  } catch (error) {
+    console.error('Error logging in:', error);
+  }
+};

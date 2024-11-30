@@ -2,115 +2,133 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>iConnect</title>
-    <meta name="description" content="" />
+    <meta name="description" content="iConnect - Your platform for collaboration" />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <!-- Splide Carousel -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-      href="
- https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
       rel="stylesheet"
     />
+
+    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&amp;family=Montserrat:ital@1&amp;family=Sacramento&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat:ital@1&family=Sacramento&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat|Baloo+Chettan+2|Tangerine&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image" href="img/iconnect.jpg" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="main.css" />
+
+    <!-- Bootstrap JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" type="image" href="img/iconnect.jpg" />
-    <link rel="stylesheet" href="main.css" />
-  </head>
+</head>
+
   <body>
     <nav
-      class="navbar navbar-expand-md mt-4 position-absolute text-center justify-content-center w-100 z-3"
+     class="navbar navbar-expand-md mt-4 position-absolute text-center justify-content-center w-100 z-3">
+     <div class="container-fluid nav-content w-75">
+      <a class="navbar-brand px-1" href="/">
+        <img
+          class="rounded-circle w-25"
+          id="iconnect-logo"
+          src="img/iconnect.jpg"
+          alt="iConnect"
+        />
+        <span class="brand-text">iConnect</span>
+      </a>
+      <button
+      class="navbar-toggler px-2 border-0"
+      id="nav-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-      <div class="container-fluid nav-content w-75">
-        <a class="navbar-brand px-1" href="/">
-          <img
-            class="rounded-circle w-25"
-            id="iconnect-logo"
-            src="img/iconnect.jpg"
-            alt="iConnect"
-          />
-          <span>iConnect</span>
-        </a>
-        <button
-          class="navbar-toggler px-4 border-0"
-          id="nav-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="fas fa-bars"></span>
-        </button>
-          
-        <div class="collapse navbar-collapse">
-          <div class="navbar-nav me-2 mb-auto ml-auto">
-            <div class="nav-item">
-              <a class="nav-link" href="#event" id="event-link"
-                ><h5>Events</h5></a
-              >
-            </div>
-
-            <div class="nav-item">
-              <a class="nav-link" id="about-link" href="#aboutus"
-                ><h5>About Us</h5></a
-              >
-            </div>
-            <div class="nav-item">
-              <a class="nav-link" href="#contactUs"><h5>Contacts</h5></a>
-            </div>
-            <div class="nav-item">
-              <a class="nav-link" href="#join-us"><h5>Join Us</h5></a>
-            </div>
+      <span class="fas fa-sun d-none" id="sun-icon"></span> <!-- Sun icon initially hidden -->
+      <span class="fas fa-moon d-block" id="moon-icon"></span> <!-- Moon icon initially visible -->
+    </button>
+    
+  
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="navbar-nav ms-auto">
+          <div class="nav-item">
+            <a class="nav-link" href="#event" id="event-link">
+              <h5 class="nav-heading">Events</h5>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" id="about-link" href="#aboutus">
+              <h5 class="nav-heading">About Us</h5>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="#contactUs">
+              <h5 class="nav-heading">Contacts</h5>
+            </a>
+          </div>
+          <div class="nav-item">
+            <a class="nav-link" href="#join-us">
+              <h5 class="nav-heading">Join Us</h5>
+            </a>
           </div>
         </div>
       </div>
-      <div id="nav-items" class="d-lg-none d-md-none">
-        <div class="nav-item">
-          <a class="nav-link" href="#event" id="event-link"><h5>Events</h5></a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" id="about-link" href="#aboutus"
-            ><h5>About Us</h5></a
-          >
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" href="#contactUs"><h5>Contacts</h5></a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" href="#join-us"><h5>Join Us</h5></a>
-        </div>
-      </div>
-    </nav>
+    </div>
+  <div id="nav-items" class="d-lg-none d-md-none">
+    <div class="nav-item">
+      <a class="nav-link" href="#event" id="event-link">
+        <h5 class="nav-heading">Events</h5>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" id="about-link" href="#aboutus">
+        <h5 class="nav-heading">About Us</h5>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" href="#contactUs">
+        <h5 class="nav-heading">Contacts</h5>
+      </a>
+    </div>
+    <div class="nav-item">
+      <a class="nav-link" href="#join-us">
+        <h5 class="nav-heading">Join Us</h5>
+      </a>
+    </div>
+  </div>
+</nav>
+
     <div class="theme-button z-3">
       <label class="switch">
         <span class="sun"
@@ -154,16 +172,27 @@
           </div>
         </div>
         <section>
-          <div class="container py-5">
-            <h1 class="text-center" style="color: #e6eff0;">Welcome to the Event</h1>
-            <p class="text-center" style="color: #d5af27;">Please login or signup to continue.</p>
-            
-            <!-- Login/Signup Buttons -->
-            <div class="text-center">
-              <!-- <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#authModal">Login / Signup</button> -->
-              <button id="login-signup-btn">Login / Sign Up</button>
+          <div class="text-center">
+            <h1 style="color: #e6eff0;">Welcome to the Event</h1>
+  <p class="" style="color: #d5af27;">Please login or signup to continue.</p>
+
+            <div class="dropdown">
+              <button
+                class="btn btn-primary dropdown-toggle"
+                type="button"
+                id="loginSignupDropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Login / Sign Up
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="loginSignupDropdown">
+                <li><a class="dropdown-item" href="https://forms.gle/your-google-form-link" target="_blank">Google Form</a></li>
+                <li><a class="dropdown-item" href="login.html">Login / Sign Up</a></li>
+              </ul>
             </div>
           </div>
+          
         </section>
         
 
@@ -172,93 +201,81 @@
        
       
       
-        <div class="text-end tagline">
-          <span>Where Technology Meets Entrepreneurship and Celebration! </span>
+        <div class="text-center  tagline">
+          <span >Where Technology Meets Entrepreneurship and Celebration! </span>
         </div>
       </div>
     </section>
     <section>
-      <div id="section2" class="pt-5">
-        <div class="container">
-          <div id="features-event" class="position-relative">
-            <div
-              id="features-description"
-              class="row justify-content-center bg-black text-white m-0 gap-5"
-            >
-              <div class="col-auto">
-                <div class="d-flex flex-column justify-content-between h-100">
-                  <div class="featured-events">⭐ Featured Events</div>
-                  <h1>E-summit</h1>
-                  <a
-                    href="/events.html"
-                    id="get-register-btn"
-                    class="btn btn-light"
-                  >
-                    Register
-                  </a>
+      <div class="container-fluid text-center">
+        <!-- Features Event Section -->
+        <div id="features-event" class="position-relative mx-auto">
+        <div
+          id="features-description"
+          class="row justify-content-center bg-black text-white m-0 gap-5 position-relative mx-3 mt-4"
+        >
+            <div class="col-auto">
+              <div class="d-flex flex-column justify-content-between h-100">
+                <div class="featured-events">⭐ Featured Events</div>
+                <h1>E-summit</h1>
+                <a href="/events.html" id="get-register-btn" class="btn btn-light">
+                  Register
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <div>Starts In...</div>
+              <div class="counter">
+                <div class="days">
+                  <div class="value">00</div>
+                  <span class="label">Days</span>
+                </div>
+                <div class="hours">
+                  <div class="value">00</div>
+                  <span class="label">Hours</span>
+                </div>
+                <div class="minutes">
+                  <div class="value">00</div>
+                  <span class="label">Minutes</span>
+                </div>
+                <div class="seconds">
+                  <div class="value">00</div>
+                  <span class="label">Seconds</span>
                 </div>
               </div>
-              <div class="col">
-                <div>Starts In...</div>
-                <!-- <br /> -->
-                <!-- <div class="timer">
-                  <span class="time">10</span> Days
-                  <span class="time">06</span> Hours
-                </div> -->
-
-                <div class="counter">
-                  <div class="days">
-                    <div class="value">00</div>
-                    <span class="label">Days</span>
-                  </div>
-
-                  <div class="hours">
-                    <div class="value">00</div>
-                    <span class="label">Hours</span>
-                  </div>
-
-                  <div class="minutes">
-                    <div class="value">00</div>
-                    <span class="label">Minutes</span>
-                  </div>
-
-                  <div class="seconds">
-                    <div class="value">00</div>
-                    <span class="label">Seconds</span>
-                  </div>
+              <div class="event-details">
+                <div class="location">
+                  <i class="fa-solid fa-location-dot"></i> PDUIIC, GJUS&T
                 </div>
-
-                <div class="event-details">
-                  <div class="location">
-                    <i class="fa-solid fa-location-dot"></i> PDUIIC, GJUS&T
-                  </div>
-                  <div class="time">
-                    <i class="fa-regular fa-clock"></i> 12:30pm GMT
-                  </div>
+                <div class="time">
+                  <i class="fa-regular fa-clock"></i> 12:30pm GMT
                 </div>
               </div>
             </div>
             <div class="event-image d-none d-lg-block">
-              <img src="img/Esummit_featured.png" />
+              <img src="img/Esummit_featured.png" alt="E-summit Featured" />
             </div>
           </div>
-          <div id="records">
-            <div class="row align-items-center">
-              <div class="col-5">
-                <h1>We are Society</h1>
-              </div>
-              <div class="col">
-                <h1>15+</h1>
-                <span>Events</span>
-              </div>
-              <div class="col">
-                <h1>2000+</h1>
-                <span>Students</span>
-              </div>
+        </div>
+      
+        <!-- Records Section -->
+        <div id="records" class="mt-5 mx-auto">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-4">
+              <h1>We are Society</h1>
+            </div>
+            <div class="col-md-4">
+              <h1>15+</h1>
+              <span>Events</span>
+            </div>
+            <div class="col-md-4">
+              <h1>2000+</h1>
+              <span>Students</span>
             </div>
           </div>
         </div>
       </div>
+      
       <div class="custom-shape-divider-bottom">
         <svg
           data-name="Layer 1"
