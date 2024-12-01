@@ -262,28 +262,15 @@
   border-bottom: 2px solid #000; 
   margin: auto; 
 }
-.sm-custom{
+/* .sm-custom{
   border-radius: 10px;
   background-color: rgb(238, 238, 238);
   box-shadow:0.2em 0.3em goldenrod;
-}
+} */
 .shape-container {
   position: relative;
   width: 120px;
   height: 120px;
-}
-
-.circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  position: absolute;
-}
-
-.pink {
-  background-color: #ff66b2;
-  left: 5px;
-  z-index: -1;
 }
 .small-red {
   background-color: #65558F;
@@ -292,15 +279,50 @@
   top: 50px;
   right: 100px;
 }
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+}
+
+.pink {
+  background-color: #ff66b2;
+}
+
 .gold {
   background-color: rgb(255, 216, 117);
-  left: 5px;
-  z-index: -1;
 }
+
 .purple {
   background-color: #997aff;
-  left: 5px;
-  z-index: -1;
+}
+
+.position-relative {
+  position: relative;
+  display: inline-block;
+  width: 100px;  /* Ensure a proper size for each circle container */
+  height: 100px; /* Ensure a proper size for each circle container */
+}
+
+h4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  color: white; /* Make the text color white to stand out on the circle */
+  font-size: 18px; /* Adjust size of the numbers */
+}
+
+.small {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
 }
 
 .striped {
