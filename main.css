@@ -1343,6 +1343,15 @@ body {
     padding: 6px 12px; /* Even more compact padding */
   }
 }
+.map-link {
+  color: black; /* Make the text black */
+  text-decoration: none; /* Remove underline */
+}
+
+.map-link:hover {
+  /* text-decoration: underline; Add underline on hover for better UX */
+  color: #ffd700; /* Light yellow color */
+}
 
 
 /* model */
