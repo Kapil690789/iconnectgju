@@ -595,8 +595,8 @@ body {
   position: absolute;
   bottom: -1%; /* Adjust this value to move the image lower */
   right: -10%; /* Push the image outside the box */
-  width: 50%; /* Adjust size */
-  max-width: 300px; /* Restrict the maximum size */
+  width: 100%; /* Adjust size */
+  max-width: 350px; /* Restrict the maximum size */
   z-index: 7; /* Ensure it's not behind other elements */
 }
 
