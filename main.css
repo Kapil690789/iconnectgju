@@ -350,14 +350,14 @@ body {
   background-size: cover;
 }
 #bg-pattern {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the background image covers the section */
-  z-index: -1;
-}
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the background image covers the section */
+        z-index: -1;
+    }
 /* Event Header (Event Head) */
 .event-head {
   display: flex;
@@ -593,12 +593,13 @@ body {
 /* Event Image Styling */
 .event-image {
   position: absolute;
-  top: 50%;
-  right: 20px; /* Adjust spacing from right */
-  transform: translateY(-50%);
-  width: 250px; /* Adjust width as needed */
-  z-index: 1; /* Ensure it's above other content */
+  bottom: -1%; /* Adjust this value to move the image lower */
+  right: -10%; /* Push the image outside the box */
+  width: 50%; /* Adjust size */
+  max-width: 300px; /* Restrict the maximum size */
+  z-index: 1; /* Ensure it's not behind other elements */
 }
+
 
 .event-image img {
   width: 100%;
@@ -682,11 +683,10 @@ body {
   }
 
   .event-image {
-    width: 250px;
-    position: relative;
-    top: 0;
-    right: 0;
-    transform: none;
+    margin-left: 0; /* Reset margin for smaller screens */
+    margin-top: 10px; /* Reduce top spacing */
+    width: 60%; /* Adjust size for smaller devices */
+    max-width: 100px; /* Restrict size further */
   }
 
   .event-details {
