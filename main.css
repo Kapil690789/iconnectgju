@@ -349,7 +349,15 @@ body {
   background-position: initial;
   background-size: cover;
 }
-
+#bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the background image covers the section */
+  z-index: -1;
+}
 /* Event Header (Event Head) */
 .event-head {
   display: flex;
