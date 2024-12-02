@@ -597,7 +597,7 @@ body {
   right: -10%; /* Push the image outside the box */
   width: 50%; /* Adjust size */
   max-width: 300px; /* Restrict the maximum size */
-  z-index: 1; /* Ensure it's not behind other elements */
+  z-index: 7; /* Ensure it's not behind other elements */
 }
 
 
