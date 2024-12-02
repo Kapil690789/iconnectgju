@@ -1344,7 +1344,7 @@ body {
   }
 }
 .map-link {
-  color: black; /* Make the text black */
+  color: white; /* Default text color for light mode */
   text-decoration: none; /* Remove underline */
 }
 
@@ -1352,6 +1352,18 @@ body {
   /* text-decoration: underline; Add underline on hover for better UX */
   color: #ffd700; /* Light yellow color */
 }
+
+/* Styles for dark mode */
+@media (prefers-color-scheme: dark) {
+  .map-link {
+    color: white; /* Text color for dark mode */
+  }
+
+  .map-link:hover {
+    color: #ffd700; /* Light yellow hover color for dark mode */
+  }
+}
+
 
 
 /* model */
