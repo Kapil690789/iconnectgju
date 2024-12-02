@@ -274,6 +274,8 @@
   line-height: 1;
 }
 
+/* Our Team Card */
+/* Our Team Card */
 .our-team {
   padding: 30px 20px;
   margin-bottom: 30px;
@@ -287,7 +289,7 @@
 
 .our-team:hover {
   transform: translateY(-10px); /* Card rises slightly on hover */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  box-shadow: 0 8px 20px rgba(255, 223, 0, 0.6); /* Gold light shadow on hover */
 }
 
 /* Semicircle above card */
@@ -322,12 +324,13 @@
   border: 5px solid #ffffff; /* Border around image */
   border-radius: 50%; /* Make it a circle */
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Initial shadow */
+  transition: transform 3s ease, box-shadow 0.3s ease; /* Transition for shadow and scale */
 }
 
 .our-team:hover .picture {
   transform: scale(1.1); /* Slight zoom on hover */
+  box-shadow: 0 8px 20px rgba(255, 223, 0, 0.6); /* Gold light shadow on hover */
 }
 
 /* Image inside the circle */
@@ -357,13 +360,13 @@
   width: 100%;
   background-color: #000000;
   position: absolute;
-  bottom: -100px;
+  bottom: -120px;
   left: 0;
   transition: all 0.5s ease;
 }
 
 .our-team:hover .social {
-  bottom: 0;
+  bottom: -10px;
 }
 
 .our-team .social li {
