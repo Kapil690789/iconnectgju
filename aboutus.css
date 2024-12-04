@@ -364,6 +364,14 @@
   left: 0;
   transition: all 0.5s ease;
 }
+.team-image {
+  background-image: url('img/team/kapil.jpeg');
+  background-size: cover; /* Ensures the image covers the div */
+  background-position: center; /* Centers the image */
+  width: 120px; /* Width of the image container */
+  height: 150px; /* Height of the image container */
+  border-radius: 30%; /* Makes the div circular */
+}
 
 .our-team:hover .social {
   bottom: -10px;
