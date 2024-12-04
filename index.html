@@ -52,14 +52,23 @@
     ></script>
     <script>
   // Remove the splash screen after 3 seconds
-  window.addEventListener("load", () => {
-    const splashScreen = document.getElementById("splash-screen");
+  // Remove the splash screen after 3 seconds
+window.addEventListener("load", () => {
+  const splashScreen = document.getElementById("splash-screen");
+
+  // Initial display time for the splash screen
+  setTimeout(() => {
+    // Start fading out the splash screen
+    splashScreen.style.transition = "opacity 1s ease"; // Smooth fade-out transition
+    splashScreen.style.opacity = "0"; // Fade out the splash screen
+
+    // After the fade-out completes, remove the splash screen from the DOM
     setTimeout(() => {
-      splashScreen.style.opacity = "0"; // Fade-out effect
-      splashScreen.style.transition = "opacity 0.5s ease"; // Smooth transition
-      setTimeout(() => splashScreen.remove(), 500); // Remove from DOM after fade-out
-    }, 2000); // Change this time (in ms) as needed
-  });
+      splashScreen.remove(); // Removes the splash screen element from the page
+    }, 1000); // Wait for 1 second (fade-out time) before removing the element
+  }, 1000); // Display splash screen for 3 seconds
+});
+
 </script>
 
 </head>
