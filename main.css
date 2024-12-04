@@ -20,6 +20,32 @@
   --nav-shadow: rgba(255, 255, 255, 0.185);
   --bg-pattern: brightness(50%);
 }
+/* Splash Screen */
+/* Splash Screen */
+/* Splash Screen */
+/* Splash Screen */
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #69a4d1; /* Blue background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Ensure it's on top of everything */
+}
+
+#splash-screen img {
+  width: 20%; /* 50% of the container width */
+  height: 20%; /* 50% of the container height */
+  border-radius: 10px; /* Adds rounded corners */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); Adds a soft shadow */
+  object-fit: contain; /* Ensures the image scales proportionally */
+}
+
+/*  */
 
 /* General Navbar Styling */
 .navbar {

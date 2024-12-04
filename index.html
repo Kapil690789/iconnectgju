@@ -50,9 +50,24 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script>
+  // Remove the splash screen after 3 seconds
+  window.addEventListener("load", () => {
+    const splashScreen = document.getElementById("splash-screen");
+    setTimeout(() => {
+      splashScreen.style.opacity = "0"; // Fade-out effect
+      splashScreen.style.transition = "opacity 0.5s ease"; // Smooth transition
+      setTimeout(() => splashScreen.remove(), 500); // Remove from DOM after fade-out
+    }, 3000); // Change this time (in ms) as needed
+  });
+</script>
+
 </head>
 
   <body>
+    <div id="splash-screen">
+      <img src="img/iconnect.jpg" alt="Splash Image" />
+    </div>
     <nav
      class="navbar navbar-expand-md mt-4 position-absolute text-center justify-content-center w-100 z-3">
      <div class="container-fluid nav-content w-75">
