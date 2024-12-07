@@ -78,18 +78,20 @@ window.addEventListener("load", () => {
       <img src="img/iconnect.jpg" alt="Splash Image" />
     </div>
     <nav
-     class="navbar navbar-expand-md mt-4 position-absolute text-center justify-content-center w-100 z-3">
-     <div class="container-fluid nav-content w-75">
-      <a class="navbar-brand px-1" href="/">
-        <img
-          class="rounded-circle w-25"
-          id="iconnect-logo"
-          src="img/iconnect.jpg"
-          alt="iConnect"
-        />
-        <span class="brand-text">iConnect</span>
-      </a>
-      <button
+  class="navbar navbar-expand-md mt-4 position-absolute text-center justify-content-center w-100 z-3">
+  <div class="container-fluid nav-content w-75">
+    <a class="navbar-brand px-1 d-flex align-items-center" href="/">
+      <img
+        class="rounded-circle w-25"
+        id="iconnect-logo"
+        src="img/iconnect.jpg"
+        alt="iConnect"
+      />
+      <span class="brand-text ms-2">iConnect</span>
+    </a>
+
+    <!-- Add Hamburger Menu -->
+    <button
       class="navbar-toggler px-2 border-0"
       id="nav-toggler"
       type="button"
@@ -99,59 +101,61 @@ window.addEventListener("load", () => {
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="fas fa-sun d-none" id="sun-icon"></span> <!-- Sun icon initially hidden -->
-      <span class="fas fa-moon d-block" id="moon-icon"></span> <!-- Moon icon initially visible -->
+      <!-- Hamburger Menu -->
+      <span class="fas fa-bars" id="menu-icon"></span>
     </button>
     
-  
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <div class="navbar-nav ms-auto">
-          <div class="nav-item">
-            <a class="nav-link" href="#event" id="event-link">
-              <h5 class="nav-heading">Events</h5>
-            </a>
-          </div>
-          <div class="nav-item">
-            <a class="nav-link" id="about-link" href="#aboutus">
-              <h5 class="nav-heading">About Us</h5>
-            </a>
-          </div>
-          <div class="nav-item">
-            <a class="nav-link" href="#contactUs">
-              <h5 class="nav-heading">Contacts</h5>
-            </a>
-          </div>
-          <div class="nav-item">
-            <a class="nav-link" href="#join-us">
-              <h5 class="nav-heading">Join Us</h5>
-            </a>
-          </div>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav ms-auto">
+        <div class="nav-item">
+          <a class="nav-link" href="#event" id="event-link">
+            <h5 class="nav-heading">Events</h5>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" id="about-link" href="#aboutus">
+            <h5 class="nav-heading">About Us</h5>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#contactUs">
+            <h5 class="nav-heading">Contacts</h5>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="#join-us">
+            <h5 class="nav-heading">Join Us</h5>
+          </a>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Mobile Nav Items -->
   <div id="nav-items" class="d-lg-none d-md-none">
     <div class="nav-item">
       <a class="nav-link" href="#event" id="event-link">
-        <h5 class="nav-heading">Events</h5>
+
       </a>
     </div>
     <div class="nav-item">
       <a class="nav-link" id="about-link" href="#aboutus">
-        <h5 class="nav-heading">About Us</h5>
+        
       </a>
     </div>
     <div class="nav-item">
       <a class="nav-link" href="#contactUs">
-        <h5 class="nav-heading">Contacts</h5>
+     
       </a>
     </div>
     <div class="nav-item">
       <a class="nav-link" href="#join-us">
-        <h5 class="nav-heading">Join Us</h5>
+
       </a>
     </div>
   </div>
 </nav>
+
 
 <div class="theme-button z-3">
   <label class="switch">

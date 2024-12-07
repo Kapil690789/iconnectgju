@@ -12,6 +12,21 @@
   margin: 4rem;
 } */
 /* Base Styles (Desktop) */
+/* Keyframe for upward animation */
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Add animation to the card */
+
+
 
 .display-heading {
   font-family: "Sedgwick Ave Display", cursive;
@@ -427,6 +442,7 @@
     height: 40px;
   }
 }
+/* Initial state for the door-like effect */
 
 /* Responsive Design for Mobile Phones (max-width: 480px) */
 @media (max-width: 480px) {
