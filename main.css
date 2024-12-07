@@ -201,9 +201,25 @@ body {
   background-color: #241556 !important;
 }
 
-.navbar-toggler:focus {
-  box-shadow: none;
+/* Navbar Toggler Button */
+.navbar-toggler {
+  color: var(--text-color); /* Use dynamic color for light/dark mode */
+  border: none; /* Remove the border */
+  background: transparent; /* Ensure no background color */
+  padding: 5px; /* Optional: Adjust padding for alignment */
 }
+
+.navbar-toggler:focus {
+  outline: none; /* Remove focus outline when clicked */
+}
+
+.navbar-toggler .fas {
+  font-size: 1.5rem; /* Ensure icon size is appropriate */
+  color: var(--text-color); /* Dynamic color for light/dark mode */
+  transition: color 0.3s ease;
+}
+
+
 
 .navbar-collapse {
   flex-grow: 0;
@@ -557,7 +573,14 @@ body {
 
 /* Section 2 Styling */
 /* Section Styling */
+#features-event {
+  margin-top: 100px; /* Shift the features-event section downward */
+}
 
+/* Adjust spacing for records section */
+#records {
+  margin-top: 20px; /* Add space between features-event and records section */
+}
 #section2 {
   border-radius: 50px;
   padding: 40px;
@@ -1213,7 +1236,12 @@ body {
     font-size: 30px;
   }
 }
-
+.tagline {
+  margin-top: 50px; /* Shift the tagline downward */
+  font-size: 3.2rem; /* Optional: Adjust font size for better visibility */
+  font-weight: bold; /* Optional: Add emphasis */
+   /* Adjust color for light and dark themes */
+}
 /* Media Query for Mobile Devices (max-width: 767px) */
 @media (max-width: 767px) {
   .section-bolder-heading {
@@ -1221,8 +1249,8 @@ body {
   }
 
   .tagline {
-    font-size: 16px;
-    padding-right: 5px;
+    margin-top: 20px; /* Reduce margin for smaller screens */
+    font-size: 1rem; /* Adjust font size for mobile */
   }
   
   /* Adjustments for the Phone frame */
@@ -1646,8 +1674,11 @@ input:checked + .slider:before {
 /* For screens 480px and below (mobile screens) */
 @media (max-width: 480px) {
   .switch {
-    width: 44px; /* Even smaller for mobile */
+    width: 54px; /* Even smaller for mobile */
     height: 24px; /* Smaller height */
+     /* Adjust as needed for spacing from the top */
+     /* Adjust as needed for spacing from the right */
+   left: 10px;
   }
 
   .slider:before {
@@ -1660,6 +1691,6 @@ input:checked + .slider:before {
   .sun svg,
   .moon svg {
     width: 18px; /* Even smaller icons */
-    height: 18px;
+    height: 15px;
   }
 }

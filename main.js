@@ -159,6 +159,32 @@ loginSignupForm.addEventListener('submit', function (event) {
     alert('Please fill out all fields');
   }
 });
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top < window.innerHeight && rect.bottom > 0;
+}
+
+// Apply the animation on scroll
+document.addEventListener("scroll", function () {
+  const teams = document.querySelectorAll(".our-team");
+  teams.forEach((team) => {
+    if (isInViewport(team)) {
+      team.classList.add("show"); // Add animation
+    } else {
+      team.classList.remove("show"); // Reset when out of view
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.querySelector(".navbar-toggler");
+  const navItems = document.querySelector("#navbarNav");
+
+  toggleButton.addEventListener("click", () => {
+    navItems.classList.toggle("show"); // Bootstrap uses 'show' for toggle
+  });
+});
 
 // Switch between Login and Signup forms
 switchToSignup.addEventListener('click', () => {
