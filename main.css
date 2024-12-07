@@ -540,19 +540,31 @@ body {
   }
 }
 /* Default button style */
+.word {
+  margin-top: 70px; /* Shifting content downward */
+}
+.event-title {
+  color: #e6eff0;
+  margin-bottom: 20px;
+}
+
+.event-subtitle {
+  color: #d5af27;
+  margin-bottom: 20px;
+}
 .btn-primary {
-  background-color: white;
-  color: #333; /* Dark text for contrast */
-  border: 2px solid #d5af27; /* Add a border for better visibility */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #ffd900ab;
+  border-color: #007bff;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 25px;
+   transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Hover effect */
 .btn-primary:hover {
-  background-color: #d5af27; /* Yellow background on hover */
-  color: white; /* White text on hover */
+  background-color: #000000;
+  border-color: #000000;
 }
-
 
 .dropdown-menu {
   border-radius: 10px;
@@ -1237,11 +1249,14 @@ body {
   }
 }
 .tagline {
-  margin-top: 50px; /* Shift the tagline downward */
-  font-size: 3.2rem; /* Optional: Adjust font size for better visibility */
+  margin-top: 60px; /* Shift the tagline downward */
+  font-size: 2.5rem; /* Larger font size for better visibility on larger screens */
   font-weight: bold; /* Optional: Add emphasis */
-   /* Adjust color for light and dark themes */
+  text-align: center; /* Center-align text */
+  line-height: 1.2; /* Adjust line spacing */
+  word-wrap: break-word; /* Ensure proper word wrapping */
 }
+
 /* Media Query for Mobile Devices (max-width: 767px) */
 @media (max-width: 767px) {
   .section-bolder-heading {
@@ -1249,8 +1264,10 @@ body {
   }
 
   .tagline {
-    margin-top: 20px; /* Reduce margin for smaller screens */
-    font-size: 1rem; /* Adjust font size for mobile */
+    margin-top: 100px; /* Reduce margin for smaller screens */
+    font-size: 1.5ƒrem; /* Adjust font size for mobile */
+    line-height: 1.5; /* Increase line spacing for better readability */
+    word-break: break-word; /* Break long words if necessary */
   }
   
   /* Adjustments for the Phone frame */
@@ -1258,6 +1275,7 @@ body {
     max-height: 300px;
   }
 }
+
 
 /* Counter Styling */
 .counter {

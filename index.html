@@ -200,29 +200,56 @@ window.addEventListener("load", () => {
             </div>
           </div>
         </div>
-        <section>
+        <section class="word">
           <div class="text-center mt-20">
-            <h1 style="color: #e6eff0;">Welcome to the Event</h1>
-  <p class="" style="color: #d5af27;">Please login or signup to continue.</p>
-
-            <div class="dropdown">
-              <button
-                class="btn btn-primary dropdown-toggle"
-                type="button"
-                id="loginSignupDropdown"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Login / Sign Up
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="loginSignupDropdown">
-                <li><a class="dropdown-item" href="https://forms.gle/your-google-form-link" target="_blank">Google Form</a></li>
-                <li><a class="dropdown-item" href="registration.html">Login / Sign Up</a></li>
-              </ul>
+            <h1 class="event-title">Welcome to the Event</h1>
+            <p class="event-subtitle">Please login or signup to continue.</p>
+        
+            <!-- Button to Open Modal -->
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#loginSignupModal"
+            >
+              Login / Sign Up
+            </button>
+          </div>
+        
+          <!-- Modal Structure -->
+          <div class="modal fade" id="loginSignupModal" tabindex="-1" aria-labelledby="loginSignupModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h5 class="modal-title" id="loginSignupModalLabel">Login / Sign Up</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <div class="modal-body">
+                  <p>Please select an option below to continue:</p>
+                  <ul class="list-unstyled">
+                    <li class="mb-3">
+                      <a href="https://forms.gle/your-google-form-link" target="_blank" class="btn btn-outline-primary w-100">
+                        Google Form
+                      </a>
+                    </li>
+                    <li>
+                      <a href="registration.html" class="btn btn-outline-success w-100">
+                        Login / Sign Up
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- Modal Footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+              </div>
             </div>
           </div>
-          
         </section>
+        
         
 
 
