@@ -1266,7 +1266,7 @@ body {
   }
 
   .tagline {
-    margin-top: 30px; /* Reduce margin for smaller screens */
+    margin-top: 120px; /* Reduce margin for smaller screens */
     font-size: 1.2rem; /* Adjust font size for mobile */
     line-height: 1.5; /* Increase line spacing for better readability */
     word-break: break-word; /* Break long words if necessary */
