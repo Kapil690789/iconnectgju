@@ -198,7 +198,7 @@ body {
 }
 
 .btn-primary:hover, .btn-primary:active {
-  background-color: #241556 !important;
+  background-color: #000000 !important;
 }
 
 /* Navbar Toggler Button */
@@ -274,9 +274,10 @@ body {
 }
 
 .head-content {
-  padding: 200px 0 0 5%;
-  font-weight: bold;
-  margin: 0;
+  padding: 150px 0 0 5%; /* Adjust top padding for downward shift and left alignment */
+  font-weight: bold; /* Maintain bold text */
+  margin: 20px; /* Reset any extra margin */
+  text-align: left; /* Ensure content aligns to the left */
 }
 
 .section-bold-heading {
@@ -371,6 +372,7 @@ body {
   .section-bolder-heading {
     font-size: 35px;
   }
+  
 }
 
 /* section{
@@ -541,7 +543,7 @@ body {
 }
 /* Default button style */
 .word {
-  margin-top: 70px; /* Shifting content downward */
+  margin-top: 80px; /* Shifting content downward */
 }
 .event-title {
   color: #e6eff0;
@@ -1250,8 +1252,8 @@ body {
 }
 .tagline {
   margin-top: 60px; /* Shift the tagline downward */
-  font-size: 2.5rem; /* Larger font size for better visibility on larger screens */
-  font-weight: bold; /* Optional: Add emphasis */
+  font-size: 2.5rem; /* Larger font size for larger screens */
+  font-weight: bold; /* Add emphasis */
   text-align: center; /* Center-align text */
   line-height: 1.2; /* Adjust line spacing */
   word-wrap: break-word; /* Ensure proper word wrapping */
@@ -1264,15 +1266,16 @@ body {
   }
 
   .tagline {
-    margin-top: 100px; /* Reduce margin for smaller screens */
-    font-size: 1.5ƒrem; /* Adjust font size for mobile */
+    margin-top: 30px; /* Reduce margin for smaller screens */
+    font-size: 1.2rem; /* Adjust font size for mobile */
     line-height: 1.5; /* Increase line spacing for better readability */
     word-break: break-word; /* Break long words if necessary */
+    color: #D4AF37;
   }
-  
+
   /* Adjustments for the Phone frame */
   .phone {
-    max-height: 300px;
+    max-height: 300px; /* Ensure it fits within mobile layout */
   }
 }
 
