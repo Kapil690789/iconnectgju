@@ -5,8 +5,8 @@ error_reporting(E_ALL);
 
 // Database connection
 $servername = "localhost";
-$username = "root";
-$password = "Kapil123@";
+$username = "kapil";
+$password = "Kapilsharma123@";
 $dbname = "event_registration";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

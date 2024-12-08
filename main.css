@@ -473,7 +473,7 @@ body {
 
 .event-head-item.active > .material-icons.work-icon,
 .event-head-item.active > .work-icon ~ .event-head-text {
-  color: #5a35b5; /* Work icon active color */
+  color: #e9eeee; /* Work icon active color */
 }
 
 .event-head-item.active > .material-icons.history-icon,
@@ -1009,7 +1009,95 @@ body {
   opacity: 0.4;
 }
 
+/* General styles for all screen sizes */
+.event-display {
+  padding: 20px;
+}
 
+.event-head {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.event-head-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.event-head-item.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.event-card {
+  max-width: 300px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-img-top {
+  max-height: 150px;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+
+.btn-light {
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Medium devices (tablets) */
+@media (max-width: 768px) {
+  .event-head {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .event-card {
+      max-width: 90%;
+      margin: 0 auto;
+  }
+}
+
+/* Small devices (phones) */
+@media (max-width: 576px) {
+  .event-head {
+      flex-direction: column;
+  }
+
+  .event-head-item {
+      width: 100%;
+      justify-content: center;
+  }
+
+  .card-body span,
+  .card-body h5 {
+      font-size: 0.9rem;
+  }
+
+  .btn-light {
+      font-size: 0.8rem;
+  }
+}
 /* Section 3 */
 #section3 {
   background-color: var(--card-color);
