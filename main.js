@@ -202,19 +202,4 @@ switchToLogin.addEventListener('click', () => {
   switchToSignup.style.display = 'inline-block';
   switchToLogin.style.display = 'none';
 });
-const login = async (email, password) => {
-  try {
-    const response = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
 
-    const data = await response.json();
-    console.log('Login Successful:', data);
-  } catch (error) {
-    console.error('Error logging in:', error);
-  }
-};
