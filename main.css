@@ -1388,9 +1388,10 @@ body {
 /* Counter styles */
 /* Counter styles */
 /* Counter styles */
+/* Counter styles */
 .counter {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center-align the pairs */
   align-items: center;
   margin: 20px 0;
 }
@@ -1398,10 +1399,6 @@ body {
 .counter > div {
   text-align: center;
   flex: 1;
-}
-
-.counter > div:not(:last-child) {
-  margin-right: 10px;
 }
 
 .value {
@@ -1421,6 +1418,7 @@ body {
   color: #fff;
   animation: blink 1s infinite; /* Blinking effect */
   vertical-align: middle; /* Adjust vertical alignment */
+  margin: 0 10px; /* Add spacing around the colon */
 }
 
 /* Blinking light animation */
@@ -1449,14 +1447,10 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-  .counter > div {
-    flex: 1 0 calc(50% - 10px); /* Two items per row on tablets */
-    margin-bottom: 15px;
-  }
-  
   .counter {
     flex-wrap: wrap; /* Allows wrapping for smaller screens */
     justify-content: center;
+    margin-bottom: 15px;
   }
 
   .colon {
@@ -1469,11 +1463,11 @@ body {
   .value {
     font-size: 2rem;
   }
-  
+
   .label {
     font-size: 0.9rem;
   }
-  
+
   .countdown-wrapper {
     padding: 15px;
   }
@@ -1483,6 +1477,7 @@ body {
     animation: blink 1s infinite; /* Retain blinking effect */
   }
 }
+
 /* Button Styling */
 #login-signup-btn {
   background-color: #f8f8f8; /* Light white background */
