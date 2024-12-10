@@ -289,6 +289,7 @@ body {
   filter: var(--bg-pattern) drop-shadow(-5px -5px 20px #ffffff3a);
 }
 
+
 .head-content {
   padding: 150px 0 0 5%; /* Adjust top padding for downward shift and left alignment */
   font-weight: bold; /* Maintain bold text */
@@ -297,7 +298,7 @@ body {
 }
 
 .section-bold-heading {
-  font-size: 60px;
+  font-size: 60px; /* Default size for larger screens */
   font-weight: bolder;
   color: white;
 }
@@ -351,7 +352,7 @@ body {
 
 @media (max-width: 1024px) {
   .section-bold-heading {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .tagline {
@@ -388,6 +389,51 @@ body {
   .section-bolder-heading {
     font-size: 35px;
   }
+  
+}
+.section-bolder-heading {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap; /* Prevent wrapping of brackets */
+  display: flex;
+  align-items: center; /* Vertically align text and brackets */
+}
+#typewriter {
+  font-size: inherit; /* Match the parent font size */
+  display: inline-block;
+  white-space: nowrap;
+}
+.section-bolder-heading span {
+  display: inline-block;
+  font-size: inherit; /* Match size of the parent */
+  color: #fdb827; /* Typewriter effect text color */
+}
+@media (max-width: 1024px) {
+  .section-bolder-heading {
+    font-size: 40px;
+    line-height: 1.2; /* Adjust line spacing for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .section-bold-heading {
+    font-size: 45px; /* Reduce font size for tablets */
+  }
+  .section-bolder-heading {
+    font-size: 35px; /* Smaller font size for mobile */
+    line-height: 1.2; /* Maintain good spacing */
+  }
+  .section-bolder-heading span {
+    font-size: inherit; /* Ensure proportionality */
+  }
+}
+
+@media (max-width: 576px) {
+  .section-bolder-heading {
+    font-size: 30px; /* Further reduce font size for smaller devices */
+  }
+
   
 }
 
@@ -1421,6 +1467,11 @@ body {
   margin: 0 10px; /* Add spacing around the colon */
 }
 
+/* Hide the mobile colon by default */
+.mobile-colon {
+  display: none;
+}
+
 /* Blinking light animation */
 @keyframes blink {
   0%, 30% {
@@ -1453,6 +1504,14 @@ body {
     margin-bottom: 15px;
   }
 
+  .desktop-colon {
+    display: none; /* Hide the third colon on smaller screens */
+  }
+
+  .mobile-colon {
+    display: inline-block; /* Show the second colon for mobile views */
+  }
+
   .colon {
     font-size: 2.5rem; /* Adjust size for tablets */
     animation: blink 1s infinite; /* Retain blinking effect */
@@ -1477,7 +1536,6 @@ body {
     animation: blink 1s infinite; /* Retain blinking effect */
   }
 }
-
 /* Button Styling */
 #login-signup-btn {
   background-color: #f8f8f8; /* Light white background */
