@@ -24,26 +24,42 @@
 /* Splash Screen */
 /* Splash Screen */
 /* Splash Screen */
+/* Splash screen container */
+/* Splash screen container */
+/* Splash screen container */
+/* Splash screen container */
 #splash-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0c0d0e; /* Blue background */
+  background-color: #ffffff; /* White background */
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999; /* Ensure it's on top of everything */
   opacity: 1;
+  overflow: hidden; /* Hide any overflow */
 }
 
+/* Loading container to control slide */
+.loading-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%); /* Start above the screen */
+  transition: transform 1s ease-in-out; /* Smooth sliding down */
+}
 
+/* Image styles */
 #splash-screen img {
-  width: 20%; /* 50% of the container width */
-  height: 20%; /* 50% of the container height */
-  border-radius: 10px; /* Optional: Adds rounded corners */
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); Optional: Adds shadow */
+  width: 20%; /* Scaled width */
+  height: 20%; /* Scaled height */
+  border-radius: 10px; /* Adds rounded corners */
   object-fit: contain; /* Ensures the image scales proportionally */
 }
 
@@ -273,6 +289,7 @@ body {
   filter: var(--bg-pattern) drop-shadow(-5px -5px 20px #ffffff3a);
 }
 
+
 .head-content {
   padding: 150px 0 0 5%; /* Adjust top padding for downward shift and left alignment */
   font-weight: bold; /* Maintain bold text */
@@ -281,7 +298,7 @@ body {
 }
 
 .section-bold-heading {
-  font-size: 60px;
+  font-size: 60px; /* Default size for larger screens */
   font-weight: bolder;
   color: white;
 }
@@ -335,7 +352,7 @@ body {
 
 @media (max-width: 1024px) {
   .section-bold-heading {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .tagline {
@@ -372,6 +389,51 @@ body {
   .section-bolder-heading {
     font-size: 35px;
   }
+  
+}
+.section-bolder-heading {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: nowrap; /* Prevent wrapping of brackets */
+  display: flex;
+  align-items: center; /* Vertically align text and brackets */
+}
+#typewriter {
+  font-size: inherit; /* Match the parent font size */
+  display: inline-block;
+  white-space: nowrap;
+}
+.section-bolder-heading span {
+  display: inline-block;
+  font-size: inherit; /* Match size of the parent */
+  color: #fdb827; /* Typewriter effect text color */
+}
+@media (max-width: 1024px) {
+  .section-bolder-heading {
+    font-size: 40px;
+    line-height: 1.2; /* Adjust line spacing for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .section-bold-heading {
+    font-size: 45px; /* Reduce font size for tablets */
+  }
+  .section-bolder-heading {
+    font-size: 35px; /* Smaller font size for mobile */
+    line-height: 1.2; /* Maintain good spacing */
+  }
+  .section-bolder-heading span {
+    font-size: inherit; /* Ensure proportionality */
+  }
+}
+
+@media (max-width: 576px) {
+  .section-bolder-heading {
+    font-size: 30px; /* Further reduce font size for smaller devices */
+  }
+
   
 }
 
@@ -1369,99 +1431,111 @@ body {
 
 
 /* Counter Styling */
+/* Counter styles */
+/* Counter styles */
+/* Counter styles */
+/* Counter styles */
 .counter {
-  width: 500px;
-  user-select: none;
-  font-weight: 700;
-  min-height: 80px;
+  display: flex;
+  justify-content: center; /* Center-align the pairs */
+  align-items: center;
+  margin: 20px 0;
 }
 
-.counter .days,
-.counter .hours,
-.counter .minutes,
-.counter .seconds {
-  width: 25%;
-  float: left;
+.counter > div {
   text-align: center;
+  flex: 1;
 }
 
-.counter .value {
-  display: block;
-  font-size: 36pt;
+.value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
 }
 
-.counter span {
-  font-size: 8pt;
-  opacity: 0.8;
-  width: 100%;
-  display: block;
+.label {
+  font-size: 1rem;
+  color: #fff;
 }
 
-.counter .hours::before,
-.counter .minutes::before,
-.counter .seconds::before {
-  content: ":";
-  float: left;
-  font-size: 20pt;
-  position: relative;
-  margin-top: 20px;
-  opacity: 0.7;
-  animation: blink 1s ease-in-out infinite;
+.colon {
+  font-size: 3rem;
+  font-weight: normal; /* Lighter font weight */
+  color: #fff;
+  animation: blink 1s infinite; /* Blinking effect */
+  vertical-align: middle; /* Adjust vertical alignment */
+  margin: 0 10px; /* Add spacing around the colon */
 }
 
-/* Keyframes for Blink Animation */
+/* Hide the mobile colon by default */
+.mobile-colon {
+  display: none;
+}
+
+/* Blinking light animation */
 @keyframes blink {
-  0% {
-    opacity: 1;
+  0%, 30% {
+    opacity: 1; /* Fully visible */
+    color: #fff; /* White when visible */
   }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
+  50.01%, 100% {
+    opacity: 0; /* Fully hidden */
+    color: #ccc; /* Light gray when hidden */
   }
 }
 
-/* Responsive adjustments for the counter */
-@media (max-width: 767px) {
+/* Event details */
+.event-details {
+  text-align: center;
+  font-size: 1rem;
+  color: #fdfdfd;
+}
+
+.event-details i {
+  margin-right: 5px;
+  color: #fdfdfd;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
   .counter {
-    width: 100%;
-    font-size: 14px; /* Reduce font size for smaller screens */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    justify-content: center;
+    margin-bottom: 15px;
   }
 
-  .counter .days,
-  .counter .hours,
-  .counter .minutes,
-  .counter .seconds {
-    width: 20%;
+  .desktop-colon {
+    display: none; /* Hide the third colon on smaller screens */
   }
 
-  .counter .value {
-    font-size: 24pt; /* Adjust font size of counter values for smaller screens */
+  .mobile-colon {
+    display: inline-block; /* Show the second colon for mobile views */
   }
 
-  .counter span {
-    font-size: 6pt; /* Smaller span font size for mobile */
-  }
-
-  .counter .hours::before,
-  .counter .minutes::before,
-  .counter .seconds::before {
-    font-size: 16pt; /* Adjust punctuation size on mobile */
+  .colon {
+    font-size: 2.5rem; /* Adjust size for tablets */
+    animation: blink 1s infinite; /* Retain blinking effect */
   }
 }
 
-@media (max-width: 480px) {
-  /* Further adjustments for very small screens */
-  .counter .value {
-    font-size: 20pt; /* Further reduce the counter font size */
+@media (max-width: 576px) {
+  .value {
+    font-size: 2rem;
   }
 
-  .counter span {
-    font-size: 5pt; /* Even smaller text for span on very small screens */
+  .label {
+    font-size: 0.9rem;
+  }
+
+  .countdown-wrapper {
+    padding: 15px;
+  }
+
+  .colon {
+    font-size: 2rem; /* Smaller font size for mobile */
+    animation: blink 1s infinite; /* Retain blinking effect */
   }
 }
-
 /* Button Styling */
 #login-signup-btn {
   background-color: #f8f8f8; /* Light white background */

@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twilio/sdk": "^8.3",
+        "getbrevo/brevo-php": "^2.0"
+    }
+}

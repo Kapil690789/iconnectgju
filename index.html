@@ -43,6 +43,9 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
     <!-- Bootstrap JS -->
     <script
@@ -51,22 +54,26 @@
       crossorigin="anonymous"
     ></script>
     <script>
-  // Remove the splash screen after 3 seconds
-  // Remove the splash screen after 3 seconds
+  
 window.addEventListener("load", () => {
   const splashScreen = document.getElementById("splash-screen");
+  const loadingContainer = document.querySelector(".loading-container");
 
-  // Initial display time for the splash screen
+  // Start the sliding animation after the initial load
   setTimeout(() => {
-    // Start fading out the splash screen
-    splashScreen.style.transition = "opacity 1s ease"; // Smooth fade-out transition
-    splashScreen.style.opacity = "0"; // Fade out the splash screen
+    loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
 
-    // After the fade-out completes, remove the splash screen from the DOM
+    // After the sliding completes, fade out the splash screen
     setTimeout(() => {
-      splashScreen.remove(); // Removes the splash screen element from the page
-    }, 1000); // Wait for 1 second (fade-out time) before removing the element
-  }, 1000); // Display splash screen for 3 seconds
+      splashScreen.style.transition = "opacity 1s ease"; // Smooth fade-out transition
+      splashScreen.style.opacity = "0"; // Fade out the splash screen
+
+      // After the fade-out completes, remove the splash screen from the DOM
+      setTimeout(() => {
+        splashScreen.remove(); // Removes the splash screen element from the page
+      }, 1000); // Wait for 1 second (fade-out time) before removing the element
+    }, 1000); // Wait for sliding animation to complete
+  }, 1000); // Start animation after a brief delay
 });
 
 </script>
@@ -74,9 +81,13 @@ window.addEventListener("load", () => {
 </head>
 
   <body>
-    <div id="splash-screen">
-      <img src="img/iconnect.jpg" alt="Splash Image" />
-    </div>
+   <div id="splash-screen">
+  <div class="loading-container">
+    <img src="img/iconnect.jpg" alt="Splash Image" />
+  </div>
+</div>
+
+
     <nav
   class="navbar navbar-expand-md mt-4 position-absolute text-center justify-content-center w-100 z-3">
   <div class="container-fluid nav-content w-75">
@@ -236,7 +247,7 @@ window.addEventListener("load", () => {
                     </li>
                     <li>
                       <a href="registration.html" class="btn btn-outline-success w-100">
-                        Login / Sign Up
+                        Registration from
                       </a>
                     </li>
                   </ul>
@@ -273,7 +284,7 @@ window.addEventListener("load", () => {
       <div class="col-md-4">
         <div class="d-flex flex-column justify-content-between h-100 text-center text-md-start">
           <div class="featured-events">⭐ Featured Events</div>
-          <h1>E-summit</h1>
+          <h1>Konark</h1>
           <div class="dropdown-off mt-3">
             <button
               id="get-register-btn"
@@ -293,34 +304,29 @@ window.addEventListener("load", () => {
         </div>
       </div>
       <div class="col-md-4 text-center">
-        <div>Starts In...</div>
-        <div class="counter">
-          <div class="days">
-            <div class="value">00</div>
-            <span class="label">Days</span>
-          </div>
-          <div class="hours">
-            <div class="value">00</div>
-            <span class="label">Hours</span>
-          </div>
-          <div class="minutes">
-            <div class="value">00</div>
-            <span class="label">Minutes</span>
-          </div>
-          <div class="seconds">
-            <div class="value">00</div>
-            <span class="label">Seconds</span>
-          </div>
-        </div>
-        <div class="event-details mt-3">
-          <div class="location">
-            <i class="fa-solid fa-location-dot"></i> PDUCIC, GJUS&T
-          </div>
-          <div class="time">
-            <i class="fa-regular fa-clock"></i> 12:30pm GMT
-          </div>
-        </div>
-      </div>
+  <div>Starts In...</div>
+<div class="counter">
+  <div class="days">
+    <div class="value">00</div>
+    <span class="label">Days</span>
+  </div>
+  <span class="colon colon-1">:</span> <!-- First colon -->
+  <div class="hours">
+    <div class="value">00</div>
+    <span class="label">Hours</span>
+  </div>
+  <span class="colon colon-2">:</span> <!-- Second colon -->
+  <div class="minutes">
+    <div class="value">00</div>
+    <span class="label">Minutes</span>
+  </div>
+  <span class="colon colon-3">:</span> <!-- Third colon -->
+  <div class="seconds">
+    <div class="value">00</div>
+    <span class="label">Seconds</span>
+  </div>
+</div>
+
       <div class="col-md-4 text-center event-image">
         <img src="img/Esummit_featured.png" alt="E-summit Featured" />
       </div>
@@ -376,12 +382,12 @@ window.addEventListener("load", () => {
         <div class="row text-center m-0">
           <div class="event-head">
             <div id="recent-opp-head" class="event-head-item active">
-              <i class="material-icons work-icon"> work </i>
-              <span class="event-head-text">Upcoming Event</span>
+              <i class="material-icons work-icon">  work_history </i>
+              <span class="event-head-text">Past Event</span>
             </div>
             <div id="past-event-head" class="event-head-item">
-              <i class="material-icons history-icon"> work_history </i>
-              <span class="event-head-text">Past Event</span>
+              <i class="material-icons history-icon"> work </i>
+              <span class="event-head-text">Upcoming Event</span>
             </div>
           </div>
         </div>
@@ -885,7 +891,7 @@ window.addEventListener("load", () => {
           </div>
           <div class="col bg-black">
             <div class="circle">
-              <h1>🥕</h1>
+              <h1>ЁЯеХ</h1>
             </div>
             <div class="text-center p-5">
               <div class="hexagon">
@@ -1199,48 +1205,51 @@ window.addEventListener("load", () => {
       splide.mount();
       sponser_splide.mount();
       function getTimeRemaining(endtime) {
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor((t / 1000) % 60);
-        var minutes = Math.floor((t / 1000 / 60) % 60);
-        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-        var days = Math.floor(t / (1000 * 60 * 60 * 24));
-        return {
-          total: t,
-          days: days,
-          hours: hours,
-          minutes: minutes,
-          seconds: seconds,
-        };
-      }
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    total: t,
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds,
+  };
+}
 
-      function formatNumber(num) {
-        return num < 10 ? "0" + num : num;
-      }
+// Function to format numbers (add leading zero if needed)
+function formatNumber(num) {
+  return num < 10 ? "0" + num : num;
+}
 
-      function initializeClock(endtime) {
-        var timeinterval = setInterval(function () {
-          var t = getTimeRemaining(endtime);
-          document.querySelector(".days > .value").innerText = formatNumber(
-            t.days
-          );
-          document.querySelector(".hours > .value").innerText = formatNumber(
-            t.hours
-          );
-          document.querySelector(".minutes > .value").innerText = formatNumber(
-            t.minutes
-          );
-          document.querySelector(".seconds > .value").innerText = formatNumber(
-            t.seconds
-          );
-          if (t.total <= 0) {
-            clearInterval(timeinterval);
-          }
-        }, 1000);
-      }
+// Initialize the countdown timer
+function initializeClock(endtime) {
+  var timeinterval = setInterval(function () {
+    var t = getTimeRemaining(endtime);
 
-      // Set endtime to a specific date, e.g., December 1, 2024
-      var endtime = new Date(2024, 11, 1); // December is month 11 (0-based index)
-      initializeClock(endtime);
+    // Update the HTML elements with the remaining time
+    document.querySelector(".days > .value").innerText = formatNumber(t.days);
+    document.querySelector(".hours > .value").innerText = formatNumber(t.hours);
+    document.querySelector(".minutes > .value").innerText = formatNumber(
+      t.minutes
+    );
+    document.querySelector(".seconds > .value").innerText = formatNumber(
+      t.seconds
+    );
+
+    // Stop the countdown when the time is up
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+      document.querySelector(".counter").innerHTML = "Event Started!";
+    }
+  }, 1000);
+}
+
+// Set the end date to February 7, 2025
+var endtime = new Date(2025, 1, 7); // February is month 1 (0-based index)
+initializeClock(endtime);
     </script>
   </body>
 </html>

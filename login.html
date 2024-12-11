@@ -67,150 +67,18 @@
   </head>
   <body>
     <!-- Main content -->
-    <section>
-      <div class="container py-5">
-        <h1 class="text-center">Welcome to the Event</h1>
-        <p class="text-center">Please login or signup to continue.</p>
 
-        <!-- Login/Signup Buttons -->
-        <div class="text-center">
-          <button class="btn btn-primary" id="login-signup-btn">Login / Signup</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Modal (Login/Signup Popup) -->
-    <div id="loginModal" class="modal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Login / Signup</h5>
-            <button type="button" class="btn-close close" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <!-- Tab navigation for Login / Signup -->
-            <ul class="nav nav-tabs" id="authTab" role="tablist">
-              <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Login</a>
-              </li>
-              <li class="nav-item" role="presentation">
-                <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup" role="tab" aria-controls="signup" aria-selected="false">Signup</a>
-              </li>
-            </ul>
-            <div class="tab-content mt-3" id="authTabContent">
-              <!-- Login Form -->
-              <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-                <form id="loginForm">
-                  <div class="mb-3">
-                    <label for="loginEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="loginPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
-                  </div>
-                  <!-- If the login is successful, this button will just redirect to the main page -->
-                  <button type="submit" class="btn btn-primary w-100" onclick="window.location.href='/';">Login</button>
-
-                </form>
-              </div>
-              <!-- Signup Form -->
-              <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-                <form id="signupForm">
-                  <div class="mb-3">
-                    <label for="signupName" class="form-label">Full Name</label>
-                    <input type="text" class="form-control" id="signupName" placeholder="Enter your name" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="signupEmail" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="signupPassword" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="signupPassword" placeholder="Password" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="signupConfirmPassword" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" id="signupConfirmPassword" placeholder="Confirm password" required>
-                  </div>
-                  <button type="submit" class="btn btn-primary w-100">Signup</button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      // Modal JavaScript
-      var modal = document.getElementById("loginModal");
-      var btn = document.getElementById("login-signup-btn");
-      var span = document.getElementsByClassName("close")[0];
-
-      // When the user clicks the button, open the modal
-      btn.onclick = function() {
-        modal.style.display = "block";
-      }
-
-      // When the user clicks on <span> (x), close the modal
-      span.onclick = function() {
-        modal.style.display = "none";
-      }
-
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
-
-      // Login functionality
-      const login = async (email, password) => {
-        try {
-          const response = await fetch('http://localhost:3000/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-          });
-
-          const data = await response.json();
-          console.log('Login Successful:', data);
-          if (data.success) {
-            // Redirect to home or dashboard after successful login
-            window.location.href = '/dashboard'; // Modify this according to your app's structure
-          } else {
-            alert('Login failed! Please check your credentials.');
-          }
-        } catch (error) {
-          console.error('Error logging in:', error);
-        }
-      };
-
-      // Handle form submission for login
-      document.getElementById('loginForm').addEventListener('submit', function (e) {
-        e.preventDefault(); // Prevent the default form submission
-
-        const email = document.getElementById('loginEmail').value;
-        const password = document.getElementById('loginPassword').value;
-
-        // Call the login function with email and password
-        login(email, password);
-        
-      });
-
-      // Add form validation for the Signup form
-      document.getElementById('signupForm').addEventListener('submit', function(e) {
-        const password = document.getElementById('signupPassword').value;
-        const confirmPassword = document.getElementById('signupConfirmPassword').value;
-
-        if (password !== confirmPassword) {
-          e.preventDefault();
-          alert('Passwords do not match!');
-        }
-      });
-    </script>
+    <form action="login.php" method="POST">
+      <label>
+          <input type="text" name="unique_id" required />
+          <span>Unique ID</span>
+      </label>
+      <label>
+          <input type="password" name="password" required />
+          <span>Password</span>
+      </label>
+      <button type="submit">Login</button>
+  </form>
+    
   </body>
 </html>
