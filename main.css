@@ -1379,11 +1379,136 @@ body.dark-mode .event-head-item.active {
 }
 
 /* About Us Heading Styling */
-#aboutus-heading {
-  color: #5935b5;
+/* #aboutus-heading {
+  color: black;
   border-radius: 30px;
   font-weight: 500;
   font-size: small;
+} */
+
+#aboutus .left-box {
+  margin-bottom: 600px;
+  margin-left: 40px;
+}
+
+#aboutus .left-box h1 {
+  font-weight: 700;
+  margin-left: 500px;
+  margin-bottom: 40px;
+}
+
+#aboutus .left-box h2 {
+  font-weight: 600;
+  margin-top: 60px;
+}
+
+#aboutus .left-box p {
+  width: 700px;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+#aboutus .left-box a button {
+  margin-top: 30px;
+}
+
+#aboutus .right-box {
+  width: 600px;
+  margin-bottom: 10px;
+  margin-left: 70px;
+}
+
+#aboutus .right-box img {
+  margin-bottom: 40px;
+  width: 90%;
+  height: 500px;
+}
+
+#aboutus .right-box .splide {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: -500px;
+  margin-right: -80px;
+}
+
+#aboutus {
+  margin-top: 20px;
+  margin-bottom: -530px;
+}
+
+/* Media Query for 480px and below */
+@media (max-width: 480px) {
+  #aboutus {
+    margin: 0;
+    padding: 10px;
+    margin-bottom: -70px;
+  }
+
+  /* Left Box Styling */
+  #aboutus .left-box {
+    margin: 0 auto 30px auto; /* Center align and adjust spacing */
+    padding: 10px;
+  }
+
+  #aboutus .left-box h1 {
+    font-size: 24px;
+    margin-left: 0;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    text-align: center; /* Center the heading */
+  }
+
+  #aboutus .left-box h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center; /* Center the subheading */
+  }
+
+  #aboutus .left-box p {
+    width: 100%; /* Full width on smaller screens */
+    font-size: .9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: justify; /* Adjust readability */
+    margin-bottom: 15px;
+  }
+
+  #aboutus .left-box a button {
+    margin-top: 20px;
+    width: 100%; /* Full width button */
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Right Box Styling */
+  #aboutus .right-box {
+    width: 100%; /* Take full width */
+    margin: 0 auto 20px auto; /* Adjust spacing */
+    padding: 10px;
+  }
+
+  #aboutus .right-box img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  #aboutus .right-box .splide {
+    padding: 0; /* Remove extra padding */
+    margin: 0 auto; /* Center the splide container */
+  }
+
+  #aboutus .right-box .splide__slider {
+    overflow: hidden;
+  }
+
+  /* Adjust Splide Images */
+  #aboutus .right-box .splide__slide img {
+    width: 100%; /* Full width inside splide */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+  }
 }
 
 /* Custom Header Styling */
@@ -1479,6 +1604,93 @@ body.dark-mode .event-head-item.active {
   }
 }
 
+/* iconnect-society styling */
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+#iconnect_society-body p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+/* Terminal Body Styling */
+.terminal-body {
+  padding: 30px;
+  background: #2c3e50;
+  border-radius: 10px;
+  color: white;
+  max-width: 1200px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.command-line {
+  background: #1abc9c;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Main Section Styling */
+#iconnect_society-body {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+}
+
+.image {
+  text-align: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.image img:hover {
+  transform: scale(1.1);
+}
+
+/* Button Styling */
+button {
+  background-color: #1abc9c;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #16a085;
+}
+
 /* Very Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
   .custom-shape-divider-bottom svg {
@@ -1491,9 +1703,15 @@ body.dark-mode .event-head-item.active {
     height: 40px;
   }
 
-  #aboutus-heading {
-    font-size: 14px;
+  .container .sponser {
+    font-size: 1.3rem;
+    margin-top: -20px;
   }
+}
+
+.container .sponser {
+  font-weight: 600;
+  margin-bottom: 30px;
 }
 
 /* Icon Styling */
@@ -1511,11 +1729,219 @@ body.dark-mode .event-head-item.active {
   padding: 0;
 }
 
+
+.footer .footer-top {
+  margin-bottom: -30px;
+  margin-top: 30px;
+}
+
+.footer .footer-top a i {
+  font-size: 2rem;
+}
+
+.footer .footer-top a .fa-facebook:hover {
+  color: rgb(66, 66, 180);
+}
+
+.footer .footer-top a i:hover {
+  transform: scale(1.4);
+}
+
+.footer .footer-mid {
+  margin-top: 40px;
+}
+
+.footer .footer-mid-left .contact-heading {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.footer .footer-mid-left p {
+  line-height: 1.3;
+}
+
+.footer .footer-mid-right {
+  margin-top: -30px;
+}
+
+.footer .footer-mid-right p {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: -20px;
+}
+
+.footer .footer-mid-right a h5{
+  font-size: 1.1rem;
+}
+
 .separator {
   width: 2px;
-  height: 100px;
+  height: 50px;
   background-color: hsla(0, 0%, 96.5%, 0.2);
   padding: 0;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+@media (max-width: 352px) {
+  .footer-divider {
+    width: 3px;
+    height: 30px;
+    background-color: hsla(0, 0%, 96.5%, 0.2);
+    transform: rotate(20deg);
+    padding: 0;
+  }
+  
+  .footer .footer-top a i {
+    font-size: 1.3rem;
+  }
+  
+  .footer .footer-top a .fa-facebook:hover {
+    color: rgb(66, 66, 180);
+  }
+  
+  .footer .footer-top a i:hover {
+    transform: scale(1.4);
+  }
+  
+  .footer .footer-mid {
+    margin-top: 10px;
+  }
+  
+  .footer .footer-mid-left .contact-heading {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .footer .footer-mid-left p {
+    line-height: 1.2;
+    font-size: .6rem;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  
+  .footer .footer-mid-right {
+    margin-right: 10px;
+    text-align: center;
+  }
+  
+  .footer .footer-mid-right p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .footer .footer-mid-right a h5{
+    font-size: .8rem;
+    text-align: center;
+  }
+
+  .footer .footer-bottom {
+    margin-top: 10px;
+  }
+
+  .footer .footer-bottom h6 {
+    font-size: .6rem;
+    margin-bottom: -10px;
+    text-align: center;
+  }
+  
+  .separator {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .footer-divider {
+    width: 3px;
+    height: 30px;
+    background-color: hsla(0, 0%, 96.5%, 0.2);
+    transform: rotate(20deg);
+    padding: 0;
+  }
+
+  .footer .separator-top {
+    display: none;
+  }
+  
+  .footer .footer-top {
+    margin-bottom: -30px;
+    margin-top: 30px;
+  }
+  
+  .footer .footer-top a i {
+    font-size: 1.3rem;
+  }
+  
+  .footer .footer-top a .fa-facebook:hover {
+    color: rgb(66, 66, 180);
+  }
+  
+  .footer .footer-top a i:hover {
+    transform: scale(1.4);
+  }
+  
+  .footer .footer-mid {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer .footer-mid-left .contact-heading {
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer .footer-mid-left {
+    margin-top: 20px;
+  }
+  
+  .footer .footer-mid-left p {
+    line-height: 1.2;
+    font-size: .6rem;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .footer .footer-mid-right {
+    margin-top: 20px;
+    margin-bottom: -10px;
+  }
+  
+  .footer .footer-mid-right p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .footer .footer-mid-right a h5{
+    font-size: .8rem;
+    text-align: center;
+  }
+
+  .footer .footer-bottom {
+    margin-top: 10px;
+  }
+  
+  .footer .footer-bottom .separator-bottom {
+    display: none;
+  }
+
+  .footer .footer-bottom h6 {
+    font-size: .8rem;
+    margin-bottom: 2px;
+    text-align: center;
+    padding-top: -60px;
+  }
+  
+  .separator {
+    display: none;
+  }
 }
 
 .separator-y {
