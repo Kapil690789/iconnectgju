@@ -1236,6 +1236,7 @@ body.dark-mode .event-head-item.active {
   justify-content: center;
   gap: 20px;
   margin-bottom: 20px;
+  background-color: #5842a2;
 }
 
 .event-head-item {
