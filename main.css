@@ -1631,7 +1631,8 @@ h1 {
 /* Terminal Body Styling */
 .terminal-body {
   padding: 30px;
-  background: #2c3e50;
+  /* background: #2c3e50; */
+  background-color: white;
   border-radius: 10px;
   color: white;
   max-width: 1200px;
@@ -1652,10 +1653,18 @@ h1 {
 
 /* Main Section Styling */
 #iconnect_society-body {
-  background: white;
+  background-color: #5842a2;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#iconnect_society-body h1 {
+  color: white;
+}
+
+#iconnect_society-body p {
+  color: white;
 }
 
 .row {
@@ -1686,19 +1695,20 @@ h1 {
 }
 
 /* Button Styling */
-button {
-  background-color: #1abc9c;
+/* Button Styling */
+#iconnect_society-body button {
+  background-color:  rgb(197, 197, 39);
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
   color: white;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #16a085;
+#iconnect_society-body button:hover {
+  background-color: black;
 }
 
 /* Very Small Screens (max-width: 480px) */
