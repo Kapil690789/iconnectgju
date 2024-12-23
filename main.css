@@ -1231,7 +1231,7 @@ body.dark-mode .event-head-item.active {
 }
 
 .event-head {
-  background: #2c3e50;
+  border-radius: 40px;
   display: flex;
   justify-content: center;
   gap: 20px;
