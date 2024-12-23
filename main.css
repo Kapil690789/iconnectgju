@@ -1442,6 +1442,7 @@ body.dark-mode .event-head-item.active {
     margin: 0;
     padding: 10px;
     margin-bottom: -70px;
+    color: white;
   }
 
   /* Left Box Styling */
@@ -1456,6 +1457,7 @@ body.dark-mode .event-head-item.active {
     margin-bottom: 20px;
     margin-top: -20px;
     text-align: center; /* Center the heading */
+    color: white;
   }
 
   #aboutus .left-box h2 {
@@ -1706,6 +1708,8 @@ button:hover {
   .container .sponser {
     font-size: 1.3rem;
     margin-top: -20px;
+    color: white;
+    font-size: 1rem;
   }
 }
 
