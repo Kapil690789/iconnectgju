@@ -1369,13 +1369,13 @@ body.dark-mode .event-head-item.active {
 .card-body a{
   color: white;
   text-decoration: none;
-  background-color: #f0ad4e;
+  background-color: black;
   padding: 10px 20px;
   border-radius: 20px; 
 }
 
 .card-body a:hover {
-  background-color: black;
+  background-color: #f0ad4e;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
