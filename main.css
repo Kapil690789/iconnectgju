@@ -828,7 +828,7 @@ body.dark-mode .event-head-item.active {
 
 #features-description {
   padding: 30px;
-  border-radius: 0 30px 30px 30px;
+  border-radius: 0 20px 20px 20px;
   max-width: 90%; /* Adjust width for smaller screens */
   text-align: center;
   
@@ -843,10 +843,11 @@ body.dark-mode .event-head-item.active {
 
 /* Records Styling */
 #records {
-  margin-top: 30px;
+   margin-top: 30px;
   padding: 30px;
-  border-radius: 30px;
+  border-radius: 20px;
   background-color: #ffffff;
+  max-width: 98%;
 }
 
 #records .row {
@@ -891,9 +892,21 @@ body.dark-mode .event-head-item.active {
 
 /* Adjust spacing to accommodate image */
 #features-description {
-  padding-right: 280px; /* Add space to prevent overlapping */
+  padding-right: 400px; 
 }
 
+#features-description button {
+  color: black;
+}
+
+#features-description a {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 90px;
+  font-weight: 600;
+}
 
 /* Timer Styling */
 .timer {
@@ -1051,12 +1064,45 @@ body.dark-mode .event-head-item.active {
 
 /* For Phones (max-width: 480px) */
 @media (max-width: 480px) {
+
+  #features-description {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  #features-event {
+    margin-top: -30px;
+    margin-bottom: 40px;
+  }
+
   #features-description .featured-events {
     font-size: 1.2rem;
   }
 
-  #features-description h1 {
+  #features-description h2 {
     font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  #records { 
+    max-width: 92%;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  #records span {
+    color: black;
+  }
+
+  .counter .value {
+    font-size: 1.1rem;
+  }
+
+  .counter .label {
+    font-size: .7rem;
+  }
+
+  .counter span {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
   }
 
   .timer {
