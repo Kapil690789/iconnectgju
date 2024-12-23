@@ -1257,10 +1257,17 @@ body.dark-mode .event-head-item.active {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
 .card-body {
   text-align: center;
+  padding: 20px;
+  font-weight: 700;
+}
+
+.card-body .dropdown {
+  margin-top: 10px;
 }
 
 .card-img-top {
