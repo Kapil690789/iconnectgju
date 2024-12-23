@@ -203,3 +203,12 @@ switchToLogin.addEventListener('click', () => {
   switchToLogin.style.display = 'none';
 });
 
+document.querySelector("form").addEventListener("submit", function(event) {
+  let eventName = document.querySelector("input[name='event_name']").value;
+  let eventDescription = document.querySelector("textarea[name='event_description']").value;
+
+  if (!eventName || !eventDescription) {
+      alert("Please fill out all fields.");
+      event.preventDefault();  // Prevent form submission
+  }
+});

@@ -21,29 +21,26 @@
   --bg-pattern: brightness(50%);
 }
 /* Splash Screen */
-/* Splash Screen */
-/* Splash Screen */
-/* Splash Screen */
-/* Splash screen container */
-/* Splash screen container */
-/* Splash screen container */
-/* Splash screen container */
+
+/* Splash Screen Styles */
+/* Splash Screen Styles */
+/* Splash Screen Styles */
 #splash-screen {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff; /* White background */
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* Ensure it's on top of everything */
+  z-index: 9999;
   opacity: 1;
-  overflow: hidden; /* Hide any overflow */
+  overflow: hidden;
+  transition: opacity 1s ease;
 }
 
-/* Loading container to control slide */
 .loading-container {
   position: relative;
   width: 100%;
@@ -51,17 +48,96 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-100%); /* Start above the screen */
-  transition: transform 1s ease-in-out; /* Smooth sliding down */
+  transform: translateY(-100%);
+  transition: transform 1s ease-in-out;
 }
 
-/* Image styles */
 #splash-screen img {
-  width: 20%; /* Scaled width */
-  height: 20%; /* Scaled height */
-  border-radius: 10px; /* Adds rounded corners */
-  object-fit: contain; /* Ensures the image scales proportionally */
+  width: 20%;
+  height: 20%;
+  border-radius: 10px;
+  object-fit: contain;
 }
+
+/* iConnect Text Styles */
+.hidden {
+  display: none;
+}
+
+/* Base styling for the iconnect text */
+#iconnect-text-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 100;
+}
+
+.iconnect-text {
+  font-size: 3rem; /* Default size for desktops/laptops */
+  color: rgb(229, 227, 124);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+/* Styles for each letter */
+.letter {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Animation for disappearing letters */
+.letter.hide {
+  opacity: 0;
+}
+
+/* Responsive Design for mobile/tablets */
+@media (max-width: 1024px) {
+  /* Tablet - Reduce font size slightly */
+  .iconnect-text {
+    font-size: 2.5rem;
+  }
+  /* Adjust positioning of the iconnect text on tablet-sized screens */
+  #iconnect-text-container {
+    top: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile - Further reduce font size */
+  .iconnect-text {
+    font-size: 2rem;
+  }
+  /* Adjust positioning on smaller screens to ensure it stays above tagline */
+  #iconnect-text-container {
+    top: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small mobile screens - Make it even smaller */
+  .iconnect-text {
+    font-size: 1.5rem;
+  }
+  /* Adjust positioning for very small screens */
+  #iconnect-text-container {
+    top: 38%;
+  }
+}
+
+/* Adjust tagline styling */
+.tagline {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem; /* Adjust size for readability */
+  color: #333;
+}
+
 
 /*  */
 
@@ -467,15 +543,21 @@ body {
         z-index: -1;
     }
 /* Event Header (Event Head) */
+/* General Styles */
+/* General Styles */
+/* General Styles */
 .event-head {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /* Default to row for larger screens */
   margin: auto;
   padding: 25px 5%;
-  /* Border radius for event head is optional */
-  /* border-top-left-radius: 30px; 
-     border-top-right-radius: 30px; */
-  flex-wrap: wrap; /* Allows the items to wrap on smaller screens */
+  flex-wrap: wrap;
+  background-color: var(--element-bg);
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .event-head {
+  background-color: var(--element-bg);
 }
 
 .event-head-item {
@@ -490,15 +572,73 @@ body {
   text-align: center;
 }
 
-/* Hover effect for event header items */
-.event-head-item:hover {
-  border-radius: 30px;
-  box-shadow: 0px 10px 16px -3px var(--nav-shadow);
+/* Persistent Shadow for Upcoming Event */
+#recent-opp-head {
+  box-shadow: 0px 5px 8px -3px var(--nav-shadow); /* Default shadow */
 }
 
-/* Disabled state for past event */
-#past-event-head {
-  cursor: not-allowed;
+body.dark-mode #recent-opp-head {
+  box-shadow: 0px 10px 16px -3px var(--nav-shadow); /* Persistent shadow in dark mode */
+  background-color: var(--card-color); /* Ensure consistent background color */
+}
+
+/* Hover effect for Upcoming Event */
+#recent-opp-head:hover {
+  border-radius: 30px;
+  box-shadow: 0px 12px 20px -3px var(--nav-shadow); /* Enhance shadow on hover */
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+#recent-opp-head:hover .material-icons {
+  color: var(--text-color);
+}
+
+body.dark-mode #recent-opp-head:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode #recent-opp-head:hover .material-icons {
+  color: var(--primary-color);
+}
+
+/* Hover effect for Past Event */
+#past-event-head:hover {
+  border-radius: 30px;
+  box-shadow: 0px 10px 16px -3px var(--nav-shadow); /* Standard hover shadow */
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+.event-card {
+  background-color: var(--card-color);
+  transition: transform 0.6s ease, box-shadow 0.6s ease; /* Slow and smooth transition */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Default shadow */
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Ensure smooth edges */
+}
+body.dark-mode .event-card {
+  background-color: var(--element-bg);
+  box-shadow: 0px 5px 15px rgba(5, 33, 158, 0.3); /* Enhanced shadow for dark mode */
+}
+.event-card:hover {
+  transform: translateY(-10px); /* Lift on hover */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Elevated shadow on hover */
+}
+#past-event-head:hover .material-icons {
+  color: var(--text-color);
+}
+body.dark-mode .event-card .card-body {
+  color: rgb(165, 41, 41); /* Ensures the text is white in dark mode */
+}
+
+body.dark-mode #past-event-head:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode #past-event-head:hover .material-icons {
+  color: var(--primary-color);
 }
 
 /* Event head text */
@@ -510,12 +650,36 @@ body {
   color: var(--secondary-color);
   transition: all 0.3s ease;
 }
+.event-card .card-img-top {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.event-card:hover .card-img-top {
+  transform: scale(1.1); /* Zoom effect on hover */
+  filter: brightness(0.9); /* Slight dimming for effect */
+}
+
+
+/* Hover effect for entire div */
+#recent-opp-head:hover .event-head-text,
+#past-event-head:hover .event-head-text {
+  color: white; /* Change text color to white when hovering over the parent div */
+}
+
+body.dark-mode .event-head-text {
+  color: var(--card-text);
+}
 
 /* Material Icon Styling */
 .material-icons {
   display: inline;
   font-size: 32px;
-  transition: color .3s;
+  transition: color 0.3s;
+  color: var(--secondary-color);
+}
+
+body.dark-mode .material-icons {
+  color: var(--card-text);
 }
 
 /* Active event header item */
@@ -527,7 +691,11 @@ body {
   box-shadow: inset 0px 10px 16px -3px rgba(0, 0, 0, 0.278);
 }
 
-/* Styling for specific icons in active state */
+body.dark-mode .event-head-item.active {
+  background: var(--card-color);
+}
+
+/* Specific icons styling in active state */
 .material-icons.work-icon,
 .material-icons.history-icon {
   color: var(--secondary-color);
@@ -535,48 +703,31 @@ body {
 
 .event-head-item.active > .material-icons.work-icon,
 .event-head-item.active > .work-icon ~ .event-head-text {
-  color: #e9eeee; /* Work icon active color */
+  color: #e9eeee;
 }
 
 .event-head-item.active > .material-icons.history-icon,
 .event-head-item.active > .history-icon ~ .event-head-text {
-  color: #C64B47; /* History icon active color */
+  color: #C64B47;
 }
 
 /* Responsive Styles */
 
-/* For Tablet and Larger Devices (min-width: 768px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .event-head {
-    padding: 20px 10%; /* Adjust padding on larger tablets */
-  }
-
-  .event-head-item {
-    font-size: 16px; /* Adjust font size for tablets */
-    padding: 10px;
-  }
-
-  .event-head-text {
-    font-size: 18px; /* Smaller font size on tablets */
-  }
-}
-
 /* For Mobile Devices (max-width: 767px) */
 @media (max-width: 767px) {
-  #section1, #section3, #section4 {
-    min-height: auto;
-    padding: 10px;
-  }
-
   .event-head {
-    flex-direction: column; /* Stack the event items vertically on small screens */
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center the items */
     padding: 20px 10%;
   }
 
   .event-head-item {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 8px;
-    margin: 5px 0; /* Reduce margin for mobile screens */
+    flex-grow: 1; /* Ensure equal spacing */
+    font-size: 14px; /* Adjust font size */
+    padding: 10px;
+    margin: 10px 0; /* Add vertical spacing for stacked layout */
+    width: 100%; /* Make the items span the full width */
+    text-align: center;
   }
 
   .material-icons {
@@ -591,16 +742,17 @@ body {
 /* For Very Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
   .event-head-item {
-    font-size: 12px; /* Further reduce font size */
-    padding: 6px;
+    font-size: 12px; /* Reduce font size for tiny screens */
+    padding: 8px;
+    margin: 8px 0; /* Ensure consistent spacing */
   }
 
   .material-icons {
-    font-size: 20px; /* Even smaller icons for tiny screens */
+    font-size: 20px; /* Smaller icons for very small screens */
   }
 
   .event-head-text {
-    font-size: 14px; /* Adjust text size even more */
+    font-size: 14px; /* Adjust text size */
   }
 }
 /* Default button style */
@@ -628,6 +780,7 @@ body {
 .btn-primary:hover {
   background-color: #000000;
   border-color: #000000;
+  
 }
 
 .dropdown-menu {
@@ -1876,4 +2029,12 @@ input:checked + .slider:before {
     width: 18px; /* Even smaller icons */
     height: 15px;
   }
+}
+.visitor-counter {
+  font-size: 14px;
+  color: var(--text-color);
+  margin: 0;
+  display: inline-block;
+  text-align: right;
+  margin-right: 280px;
 }

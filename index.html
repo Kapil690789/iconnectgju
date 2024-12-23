@@ -55,9 +55,14 @@
     ></script>
     <script>
   
-window.addEventListener("load", () => {
+     window.addEventListener("load", () => {
   const splashScreen = document.getElementById("splash-screen");
   const loadingContainer = document.querySelector(".loading-container");
+  const iconnectTextContainer = document.getElementById("iconnect-text-container");
+  const letters = document.querySelectorAll(".letter");
+
+  // Set the duration for iConnect text display (2 seconds for all devices)
+  const iconnectDisplayTime = 2000; // 2 seconds
 
   // Start the sliding animation after the initial load
   setTimeout(() => {
@@ -68,24 +73,70 @@ window.addEventListener("load", () => {
       splashScreen.style.transition = "opacity 1s ease"; // Smooth fade-out transition
       splashScreen.style.opacity = "0"; // Fade out the splash screen
 
-      // After the fade-out completes, remove the splash screen from the DOM
+      // After the fade-out completes, display the iConnect text
       setTimeout(() => {
-        splashScreen.remove(); // Removes the splash screen element from the page
-      }, 1000); // Wait for 1 second (fade-out time) before removing the element
-    }, 1000); // Wait for sliding animation to complete
-  }, 1000); // Start animation after a brief delay
+        splashScreen.remove(); // Removes the splash screen element
+        iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
+        iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
+
+        // Wait for 2 seconds before starting the letter disappearing animation
+        setTimeout(() => {
+          // Make each letter disappear one by one
+          letters.forEach((letter, index) => {
+            setTimeout(() => {
+              letter.classList.add("hide"); // Hide the letter with a delay
+            }, index * 500); // Add a delay of 500ms between each letter
+          });
+
+         
+          setTimeout(() => {
+            iconnectTextContainer.remove(); 
+          }, letters.length * 500);  
+        }, iconnectDisplayTime); 
+      }, 1000); 
+    }, 1000); 
+  }, 1000); 
 });
+
+      
+      
 
 </script>
 
 </head>
 
   <body>
-   <div id="splash-screen">
-  <div class="loading-container">
-    <img src="img/iconnect.jpg" alt="Splash Image" />
-  </div>
-</div>
+    <div id="splash-screen">
+      <div class="loading-container">
+        <img src="img/iconnect.jpg" alt="Splash Image" />
+      </div>
+    </div>
+    <div id="iconnect-text-container" class="hidden">
+      <h1 class="iconnect-text">
+        <span class="letter">K</span>
+        <span class="letter">o</span>
+        <span class="letter">n</span>
+        <span class="letter">a</span>
+        <span class="letter">r</span>
+        <span class="letter">k</span>
+        <span class="letter">&nbsp;</span>
+        <span class="letter">2</span>
+        <span class="letter">.</span>
+        <span class="letter">O</span>
+  
+      </h1>
+      <h2 class="iconnect-text">
+          <span class="letter">C</span>
+          <span class="letter">o</span>
+          <span class="letter">m</span>
+          <span class="letter">i</span>
+          <span class="letter">n</span>
+          <span class="letter">g</span>
+      </h2>
+    </div>
+        
+    
+    
 
 
     <nav
@@ -284,7 +335,7 @@ window.addEventListener("load", () => {
       <div class="col-md-4">
         <div class="d-flex flex-column justify-content-between h-100 text-center text-md-start">
           <div class="featured-events">⭐ Featured Events</div>
-          <h1>Konark</h1>
+          <h1>Konark 2.O</h1>
           <div class="dropdown-off mt-3">
             <button
               id="get-register-btn"
@@ -379,32 +430,50 @@ window.addEventListener("load", () => {
     </section>
     <section id="section3">
       <div id="event" class="event-display">
+        <!-- Event Head Section -->
         <div class="row text-center m-0">
           <div class="event-head">
-            <div id="recent-opp-head" class="event-head-item active">
-              <i class="material-icons work-icon">  work_history </i>
-              <span class="event-head-text">Past Event</span>
-            </div>
-            <div id="past-event-head" class="event-head-item">
-              <i class="material-icons history-icon"> work </i>
-              <span class="event-head-text">Upcoming Event</span>
-            </div>
+            <button id="upcoming-events-btn" class="event-head-item active btn">
+              <i class="material-icons work-icon">work_history</i>
+              <span class="event-head-text">Upcoming Events</span>
+            </button>
+            <button id="past-events-btn" class="event-head-item btn">
+              <i class="material-icons history-icon">history</i>
+              <span class="event-head-text">Past Events</span>
+            </button>
           </div>
         </div>
+        <!-- Event Body Section -->
         <div class="row m-0">
-          <div id="upcoming-event-body" class="active">
+          <!-- Upcoming Events -->
+          <div id="upcoming-event-body" class="event-body active">
             <div class="row justify-content-center">
               <div class="col-auto p-0">
-                <div class="card border-0 shadow event-card rounded-3 m-3">
-                  <img
-                    class="card-img-top rounded-3"
-                    src="img/events_logo/bussiness_quiz.png"
-                  />
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
                   <div class="card-body">
                     <span>Online | Free</span>
-                    <h5>Bussiness Quiz</h5>
+                    <h4>abc</h4>
                     <span>7th August</span>
-                    <div class="dropdown ">
+                    <div class="dropdown">
+                      <button class="btn btn-light bg-black text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Register Here
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://forms.gle/your-google-form-link" target="_blank">Google Form</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h4>abc</h4>
+                    <span>7th August</span>
+                    <div class="dropdown">
                       <button
                         id="get-register-btn"
                        class="btn btn-light bg-black text-white dropdown-toggle"
@@ -430,14 +499,11 @@ window.addEventListener("load", () => {
                 </div>
               </div>
               <div class="col-auto p-0">
-                <div class="card border-0 shadow event-card rounded-3 m-3">
-                  <img
-                    class="card-img-top rounded-3"
-                    src="img/events_logo/elivator_pitch.png"
-                  />
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
                   <div class="card-body">
                     <span>Online | Free</span>
-                    <h5>Elivator Pitch</h5>
+                    <h4>abc</h4>
                     <span>7th August</span>
                     <div class="dropdown">
                       <button
@@ -459,6 +525,94 @@ window.addEventListener("load", () => {
                             Google Form
                           </a>
                         </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
+                  <div class="card-body">
+                    <span>Offline | Free</span>
+                    <h4>abc</h4>
+                    <span>7th August</span>
+                    <div class="dropdown">
+                      <button
+                        id="get-register-btn"
+                        class="btn btn-light bg-black text-white dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Register Here
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="https://forms.gle/your-google-form-link"
+                            target="_blank"
+                          >
+                            Google Form
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto p-0">
+                <div class="card event-card rounded-3 m-3">
+                  <img class="card-img-top" src="https://placehold.co/150" />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h4>abc</h4>
+                    <span>7th August</span>
+                    <div class="dropdown">
+                      <button
+                        id="get-register-btn"
+                      class="btn btn-light bg-black text-white dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        Register Here
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a
+                            class="dropdown-item"
+                            href="https://forms.gle/your-google-form-link"
+                            target="_blank"
+                          >
+                            Google Form
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <!-- Past Events -->
+          <div id="past-event-body" class="event-body">
+            <div class="row justify-content-center">
+              <div class="col-auto p-0">
+                <div class="card border-0 shadow event-card rounded-3 m-3">
+                  <img class="card-img-top rounded-3" src="img/events_logo/bussiness_quiz.png" />
+                  <div class="card-body">
+                    <span>Online | Free</span>
+                    <h5>Business Quiz</h5>
+                    <span>7th August</span>
+                    <div class="dropdown">
+                      <button class="btn btn-light bg-black text-white dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Register Here
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="https://forms.gle/your-google-form-link" target="_blank">Google Form</a></li>
                       </ul>
                     </div>
                   </div>
@@ -606,140 +760,44 @@ window.addEventListener("load", () => {
               </div>
             </div>
           </div>
-          <div id="past-event-body">
-            <div class="row justify-content-center">
-              <div class="col-auto p-0">
-                <div class="card event-card rounded-3 m-3">
-                  <img class="card-img-top" src="https://placehold.co/150" />
-                  <div class="card-body">
-                    <span>Online | Free</span>
-                    <h4>abc</h4>
-                    <span>7th August</span>
-                    <div class="dropdown">
-                      <button
-                        id="get-register-btn"
-                       class="btn btn-light bg-black text-white dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Register Here
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="https://forms.gle/your-google-form-link"
-                            target="_blank"
-                          >
-                            Google Form
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto p-0">
-                <div class="card event-card rounded-3 m-3">
-                  <img class="card-img-top" src="https://placehold.co/150" />
-                  <div class="card-body">
-                    <span>Online | Free</span>
-                    <h4>abc</h4>
-                    <span>7th August</span>
-                    <div class="dropdown">
-                      <button
-                        id="get-register-btn"
-                       class="btn btn-light bg-black text-white dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Register Here
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="https://forms.gle/your-google-form-link"
-                            target="_blank"
-                          >
-                            Google Form
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto p-0">
-                <div class="card event-card rounded-3 m-3">
-                  <img class="card-img-top" src="https://placehold.co/150" />
-                  <div class="card-body">
-                    <span>Offline | Free</span>
-                    <h4>abc</h4>
-                    <span>7th August</span>
-                    <div class="dropdown">
-                      <button
-                        id="get-register-btn"
-                        class="btn btn-light bg-black text-white dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Register Here
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="https://forms.gle/your-google-form-link"
-                            target="_blank"
-                          >
-                            Google Form
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-auto p-0">
-                <div class="card event-card rounded-3 m-3">
-                  <img class="card-img-top" src="https://placehold.co/150" />
-                  <div class="card-body">
-                    <span>Online | Free</span>
-                    <h4>abc</h4>
-                    <span>7th August</span>
-                    <div class="dropdown">
-                      <button
-                        id="get-register-btn"
-                      class="btn btn-light bg-black text-white dropdown-toggle"
-                        type="button"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false"
-                      >
-                        Register Here
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li>
-                          <a
-                            class="dropdown-item"
-                            href="https://forms.gle/your-google-form-link"
-                            target="_blank"
-                          >
-                            Google Form
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
+    </section>
+    
+    <script>
+      // Function to toggle visibility of event sections
+      function toggleEvents(isUpcoming) {
+        const upcomingBody = document.getElementById('upcoming-event-body');
+        const pastBody = document.getElementById('past-event-body');
+        const upcomingBtn = document.getElementById('upcoming-events-btn');
+        const pastBtn = document.getElementById('past-events-btn');
+    
+        if (isUpcoming) {
+          upcomingBody.classList.add('active');
+          pastBody.classList.remove('active');
+          upcomingBody.style.display = 'block';
+          pastBody.style.display = 'none';
+          upcomingBtn.classList.add('active');
+          pastBtn.classList.remove('active');
+        } else {
+          pastBody.classList.add('active');
+          upcomingBody.classList.remove('active');
+          pastBody.style.display = 'block';
+          upcomingBody.style.display = 'none';
+          pastBtn.classList.add('active');
+          upcomingBtn.classList.remove('active');
+        }
+      }
+    
+      // Event listeners for the buttons
+      document.getElementById('upcoming-events-btn').addEventListener('click', () => toggleEvents(true));
+      document.getElementById('past-events-btn').addEventListener('click', () => toggleEvents(false));
+    
+      // Initial setup
+      document.getElementById('upcoming-event-body').style.display = 'block';
+      document.getElementById('past-event-body').style.display = 'none';
+    </script>
+    
       <div class="d-flex justify-content-center">
         <div class="separator-y"></div>
       </div>
@@ -751,10 +809,16 @@ window.addEventListener("load", () => {
               <h1>What is iConnect??</h1>
               <br />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
-                numquam molestias itaque odio pariatur voluptates esse deserunt
-                harum dolores, in aliquid quam porro vero quae laborum dicta
-                ratione maxime earum.
+                Team iConnect is a vibrant student organization operating under 
+                the Pandit Deendayal Upadhyay Innovation & Incubation Center (PDUIIC) 
+                at Guru Jambheshwar University of Science and Technology (GJUS&T) in Hisar.
+                 We aim to nurture innovation, promote collaboration, and enhance skill development.
+                  iConnect is a dynamic platform for students to explore their potential and contribute to groundbreaking advancements.
+                  iConnect is supported by a well-structured administrative team, an experienced advisory panel, and a robust mentoring system, ensuring
+                 comprehensive guidance and assistance for its members. We are dedicated to bridging the gap between theoretical learning and practical 
+                  application through workshops, hackathons, seminars, and various projects.
+                Aligned with the vision of PDUIIC, iConnect strives to cultivate a culture of excellence and sustainable development, making it a cornerstone for aspiring innovators and changemakers within the university and beyond.
+
               </p>
               <a href="/aboutus.html">
                 <button
@@ -779,31 +843,31 @@ window.addEventListener("load", () => {
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="https://placehold.co/500x500"
+                        src="img/fin.png"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="https://placehold.co/500x500"
+                        src="img/codechef.png"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="https://placehold.co/500x500"
+                        src="img/bif.png"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="https://placehold.co/500x500"
+                        src="img/nearindia.png"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="https://placehold.co/500x500"
+                        src="img/unstop.png"
                       />
                     </li>
                     <li class="splide__slide">
@@ -841,25 +905,25 @@ window.addEventListener("load", () => {
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide">
-                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                  <img class="img-fluid" src="img/bif.png" />
                 </li>
                 <li class="splide__slide">
-                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                  <img class="img-fluid" src="img/codechef.png" />
                 </li>
                 <li class="splide__slide">
-                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                  <img class="img-fluid" src="img/fin.png" />
                 </li>
                 <li class="splide__slide">
-                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                  <img class="img-fluid" src="img/unstop.png" />
                 </li>
                 <li class="splide__slide">
-                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                  <img class="img-fluid" src="img/nearindia.png" />
                 </li>
                 <li class="splide__slide">
-                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                  <img class="img-fluid" src="img/iconnect.jpg" />
                 </li>
                 <li class="splide__slide">
-                  <img class="img-fluid" src="https://placehold.co/500x500" />
+                  <img class="img-fluid" src="img/bunny.png" />
                 </li>
                 <li class="splide__slide">
                   <img class="img-fluid" src="https://placehold.co/500x500" />
@@ -870,7 +934,7 @@ window.addEventListener("load", () => {
         </div>
       </div>
     </section>
-    <section id="section4">
+    <!-- <section id="section4">
       <div id="join-card">
         <div class="row m-0 position-relative">
           <div class="position-absolute text-center">
@@ -904,7 +968,7 @@ window.addEventListener("load", () => {
           </div>
         </div>
       </div>
-    </section> 
+    </section>  -->
      <section id="section5">
       <div class="container px-0">
         <div class="row px-0 align-items-center">
@@ -1012,7 +1076,7 @@ window.addEventListener("load", () => {
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="https://placehold.co/500x500"
+                        src="img/bif.png"
                       />
                     </li>
                     <li class="splide__slide">
@@ -1079,8 +1143,8 @@ window.addEventListener("load", () => {
                   <img class="rounded-3" src="https://placehold.co/300x400" />
                 </div>
               </div>
-            </div>
-            <div id="sponsers">
+             </div>
+             <div id="sponsers">
               <div class="row align-items-center m-0 text-center mt-5">
                 <div class="col">
                   <p>Our Sponsers</p>
@@ -1102,79 +1166,82 @@ window.addEventListener("load", () => {
     </section> 
 
     <footer class="footer text-center text-white p-5 mt-5" id="contactUs">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col">
-            <a href="#" target="_blank"
-              ><i class="fab fa-facebook icon facebook"></i
-            ></a>
-          </div>
-          <div class="footer-divider"></div>
-          <div class="col">
-            <a href="https://x.com/iconnectgjust" target="_blank"
-              ><i class="fab fa-x-twitter icon social-link" id="twitter"></i
-            ></a>
-          </div>
-          <div class="footer-divider"></div>
-          <div class="col">
-            <a href="https://www.instagram.com/iconnectgjust/" target="_blank"
-              ><i class="fab fa-instagram icon social-link" id="instagram"></i
-            ></a>
-          </div>
-          <div class="footer-divider"></div>
-          <div class="col">
-            <a
-              href="https://whatsapp.com/channel/0029VaELUPEGU3BNfgEAmU0h"
-              target="_blank"
-              ><i class="fab fa-whatsapp icon social-link" id="whatsapp"></i
-            ></a>
-          </div>
-          <div class="footer-divider"></div>
-          <div class="col">
-            <a
-              href="https://www.linkedin.com/company/iconnect-gjust/"
-              target="_blank"
-              ><i class="fab fa-linkedin icon social-link" id="linkedin"></i
-            ></a>
-          </div>
-          <div class="footer-divider"></div>
-          <div class="col">
-            <a href="https://youtube.com/@iConnectGJUST" target="_blank"
-              ><i class="fab fa-youtube icon social-link" id="youtube"></i
-            ></a>
-          </div>
-        </div>
-        <div class="row align-items-center mt-5">
-          <div class="col m-3">
-            <h2>Contact Us</h2>
-            <p>
-              <i class="fas fa-map-marker-alt"></i> 
-              <a 
-                href="https://maps.app.goo.gl/E3dDV9i2FQu32K8D9?g_st=ac" 
-                target="_blank" 
-                class="map-link"
-              >
-                Pandit Deendayal Upadhyaya Innovation & Incubation Centre (PDUIIC),
-                Guru Jambheshwar University of Science & Technology, Hisar, Haryana (125001)
-              </a>
-            </p>
-            <p><i class="fas fa-phone"></i> +919467905906</p>
-            <p>
-              <i class="fas fa-envelope"></i> 
-              <a href="mailto:iconnectgjust@gmail.com" class="map-link">iconnectgjust@gmail.com</a>
-            </p>
-            
-          </div>
-          <div class="separator"></div>
-          <div class="col p-5">
-            <a class="nav-link" href="/index.html"><h5>Home</h5></a>
-            <a class="nav-link" href="#event"><h5>Events</h5></a>
-            <a class="nav-link" href="#about"><h5>About Us</h5></a>
-          </div>
-        </div>
-        
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col">
+        <a href="#" target="_blank"
+          ><i class="fab fa-facebook icon facebook"></i
+        ></a>
       </div>
-    </footer>
+      <div class="footer-divider"></div>
+      <div class="col">
+        <a href="https://x.com/iconnectgjust" target="_blank"
+          ><i class="fab fa-x-twitter icon social-link" id="twitter"></i
+        ></a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="col">
+        <a href="https://www.instagram.com/iconnectgjust/" target="_blank"
+          ><i class="fab fa-instagram icon social-link" id="instagram"></i
+        ></a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="col">
+        <a
+          href="https://whatsapp.com/channel/0029VaELUPEGU3BNfgEAmU0h"
+          target="_blank"
+          ><i class="fab fa-whatsapp icon social-link" id="whatsapp"></i
+        ></a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="col">
+        <a
+          href="https://www.linkedin.com/company/iconnect-gjust/"
+          target="_blank"
+          ><i class="fab fa-linkedin icon social-link" id="linkedin"></i
+        ></a>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="col">
+        <a href="https://youtube.com/@iConnectGJUST" target="_blank"
+          ><i class="fab fa-youtube icon social-link" id="youtube"></i
+        ></a>
+      </div>
+    </div>
+    <div class="row align-items-center mt-5">
+      <div class="col m-3">
+        <h2>Contact Us</h2>
+        <p>
+          <i class="fas fa-map-marker-alt"></i> 
+          <a 
+            href="https://maps.app.goo.gl/E3dDV9i2FQu32K8D9?g_st=ac" 
+            target="_blank" 
+            class="map-link"
+          >
+            Pandit Deendayal Upadhyaya Innovation & Incubation Centre (PDUIIC),
+            Guru Jambheshwar University of Science & Technology, Hisar, Haryana (125001)
+          </a>
+        </p>
+        <p><i class="fas fa-phone"></i> +919467905906</p>
+        <p>
+          <i class="fas fa-envelope"></i> 
+          <a href="mailto:iconnectgjust@gmail.com" class="map-link">iconnectgjust@gmail.com</a>
+        </p>
+      </div>
+      <div class="separator"></div>
+      <div class="col p-5">
+        <a class="nav-link" href="/index.html"><h5>Home</h5></a>
+        <a class="nav-link" href="#event"><h5>Events</h5></a>
+        <a class="nav-link" href="#aboutus"><h5>About Us</h5></a>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <h6 class="text-white mt-4 all-rights">Copyright © 2024 All rights reserved</h6>
+      </div>
+    </div>
+  </div>
+</footer>
     <script src="
       https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="main.js"></script>
@@ -1247,8 +1314,8 @@ function initializeClock(endtime) {
   }, 1000);
 }
 
-// Set the end date to February 7, 2025
-var endtime = new Date(2025, 1, 7); // February is month 1 (0-based index)
+// Set the end date to February 5, 2025
+var endtime = new Date(2025, 1, 5); // February is month 1 (0-based index)
 initializeClock(endtime);
     </script>
   </body>
