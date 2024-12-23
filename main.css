@@ -1743,6 +1743,22 @@ button:hover {
   color: rgb(66, 66, 180);
 }
 
+.footer .footer-top a .fa-instagram:hover {
+  color: rgb(240, 8, 8);
+}
+
+.footer .footer-top a .fa-whatsapp:hover {
+  color: rgb(67, 143, 67);
+}
+
+.footer .footer-top a .fa-linkedin:hover {
+  color: rgb(63, 63, 174);
+}
+
+.footer .footer-top a .fa-youtube:hover {
+  color: rgb(192, 24, 24);
+}
+
 .footer .footer-top a i:hover {
   transform: scale(1.4);
 }
