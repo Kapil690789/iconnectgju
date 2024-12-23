@@ -1481,7 +1481,7 @@ body.dark-mode .event-head-item.active {
   position: relative;
   background-color: var(--card-color);
   border-radius: 0 0 40px 40px;
-  margin-bottom: 30px;
+/*   margin-bottom: 30px; */
   color: var(--card-text);
 }
 
@@ -1716,9 +1716,9 @@ body.dark-mode .event-head-item.active {
     margin-bottom: 20px;
   }
 
-  #section5 {
+/*   #section5 {
     margin-bottom: 10px;
-  }
+  } */
 
   /* Adjust about us heading font size for mobile */
   #aboutus-heading {
@@ -1827,6 +1827,61 @@ h1 {
 
 #iconnect_society-body button:hover {
   background-color: black;
+}
+
+@media (max-width: 576px) {
+  /* Terminal Body Styling */
+  .terminal-body {
+    padding: 15px;
+    max-width: 100%;
+    margin: 5px;
+    box-shadow: none; /* Simplify design */
+    border-radius: 5px;
+  }
+
+  /* Command Line */
+  .command-line {
+    font-size: 0.7rem;
+    padding: 6px 8px;
+    text-align: center;
+    margin-bottom: 8px;
+    word-wrap: break-word; /* Handle long text */
+  }
+
+  /* iConnect Body Section */
+  #iconnect_society-body {
+    padding: 10px;
+    border-radius: 5px;
+    
+  }
+
+  #iconnect_society-body h1 {
+    font-size: .9rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  #iconnect_society-body p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  /* Image Styling */
+  .image img {
+    max-width: 100px;
+    width: 100%;
+    /* margin: 10px 0; */
+    margin-bottom: 10px;
+  }
+
+  /* Button Styling */
+  #iconnect_society-body button {
+    width: 50%;
+    padding: 6px;
+    font-size: 0.6rem;
+    border-radius: 20px;
+  }
 }
 
 /* Very Small Screens (max-width: 480px) */
