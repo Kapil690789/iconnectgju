@@ -233,6 +233,10 @@
     padding: 10px;
   }
 
+  .navbar .container-fluid {
+    margin-left: 10px;
+  }
+
   .navbar-brand img {
     width: 40px;
   }
@@ -253,6 +257,10 @@
   .container-fluid {
     padding: 10px;
   }
+
+  .theme-button {
+    margin-top: -5px;
+  }
 }
 
 /* Tablet Styles */
@@ -267,6 +275,26 @@
 
   .navbar-collapse {
     flex-grow: 0;
+  }
+}
+
+/* Small Screen (383px or Less) */
+@media (max-width: 383px) {
+  
+  .navbar-brand .brand-text {
+    font-size: 1.1rem;
+  }
+
+  .navbar button span {
+    width: 15px;
+  }
+
+  .navbar .container-fluid {
+    margin-left: 10px;
+  }
+
+  .theme-button {
+    margin-top: -10px;
   }
 }
 
@@ -371,6 +399,19 @@ body {
   font-weight: bold; /* Maintain bold text */
   margin: 20px; /* Reset any extra margin */
   text-align: left; /* Ensure content aligns to the left */
+}
+
+.head-content h1 {
+  margin-right: 20px;
+}
+
+.word p {
+  margin-right: 40px;
+}
+
+.word button {
+  margin-right: 40px;
+  margin-top: 5px;
 }
 
 .section-bold-heading {
@@ -798,6 +839,13 @@ body.dark-mode .event-head-item.active {
 .dropdown-item:hover {
   background-color: #e6eff0; /* Slight hover effect */
   color: #0056b3;
+}
+
+@media (max-width: 383px) {
+
+   .head-content .tagline  {
+    margin-top: 50px;  
+  }
 }
 
 /* Section 2 Styling */
