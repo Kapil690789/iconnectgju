@@ -259,7 +259,7 @@
   }
 
   .theme-button {
-    margin-top: -5px;
+    margin-top: 5px;
   }
 }
 
@@ -294,7 +294,7 @@
   }
 
   .theme-button {
-    margin-top: -10px;
+    margin-top: 3px;
   }
 }
 
@@ -371,12 +371,11 @@ body {
 
 .theme-button {
   position: absolute;
-  top: 50px; /* Adjusted distance from the top */
-  right: 6px; /* Adjusted distance from the right */
+  top: 35px; /* Adjusted distance from the top */
+  right: 10px; /* Adjusted distance from the right */
   z-index: 1000; /* Ensures it's above other elements */
   display: flex;
   align-items: center;
-
 }
 
 #light-theme, #dark-theme {
