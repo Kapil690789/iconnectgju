@@ -956,6 +956,10 @@ body.dark-mode .event-head-item.active {
   font-weight: 600;
 }
 
+#features-description a:hover {
+  background-color: #fdb827;
+}
+
 /* Timer Styling */
 .timer {
   display: flex;
@@ -1541,6 +1545,10 @@ body.dark-mode .event-head-item.active {
   margin-bottom: -530px;
 }
 
+.container .sponser {
+  color: white;
+}
+
 /* Media Query for 480px and below */
 @media (max-width: 480px) {
   #aboutus {
@@ -1794,7 +1802,8 @@ h1 {
 /* Button Styling */
 /* Button Styling */
 #iconnect_society-body button {
-  background-color:  rgb(197, 197, 39);
+  background-color:  #f0ad4e;
+  font-weight: 600;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
