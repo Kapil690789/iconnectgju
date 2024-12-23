@@ -1492,12 +1492,14 @@ body.dark-mode .event-head-item.active {
 #aboutus .left-box {
   margin-bottom: 600px;
   margin-left: 40px;
+  color: white;
 }
 
 #aboutus .left-box h1 {
   font-weight: 700;
   margin-left: 500px;
   margin-bottom: 40px;
+  color: white;
 }
 
 #aboutus .left-box h2 {
