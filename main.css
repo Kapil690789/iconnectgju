@@ -2018,15 +2018,16 @@ h1 {
   }
 
   #iconnect_society-body h1 {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     margin: 5px 0; /* Reduced top and bottom space */
     font-weight: 600;
     text-align: center;
     width: 100%; /* Spans the full width */
+    margin-top: -30px;
   }
 
   #iconnect_society-body p {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     line-height: 1.3;
     margin: 10px 0; /* Reduced top and bottom space */
     width: 100%; /* Spans the full width */
@@ -2034,7 +2035,7 @@ h1 {
   }
 
   #iconnect_society-body .col {
-    margin: 0; /* Eliminated top and bottom margins for compactness */
+    margin-bottom: -40px; /* Eliminated top and bottom margins for compactness */
   }
 
   /* Image Styling */
