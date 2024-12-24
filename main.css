@@ -1136,6 +1136,39 @@ body.dark-mode .event-head-item.active {
   width: 200px;
 }
 
+#records {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+#records h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2e3a59; /* Darker text color for better contrast */
+  margin: 0;
+}
+
+#records .val {
+  margin-bottom: 2px; /* Less spacing below h1 */
+}
+
+#records span {
+  font-size: 1rem;
+  color: #6c757d; /* Subtle gray for descriptive text */
+}
+
+#records .row {
+  margin: 0;
+}
+
+#records .col-md-4 {
+  /* padding: 10px 20px; */
+  text-align: center;
+}
+
 /* Responsive Styles */
 
 /* For Tablets (min-width: 768px and max-width: 1024px) */
