@@ -1213,29 +1213,6 @@ body.dark-mode .event-head-item.active {
   #features-description h1 {
     font-size: 1.8rem; /* Smaller font for mobile */
   }
-
-  /* Adjust the record section */
-  #records .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #records .col {
-    margin-bottom: 10px;
-  }
-
-  #records h1 {
-    font-size: 1.5rem;
-  }
-
-  #records span {
-    font-size: 0.9rem;
-  }
-
-  #get-register-btn {
-    padding: 8px 15px;
-    font-size: 1rem;
-  }
 }
 
 /* For Phones (max-width: 480px) */
@@ -1243,6 +1220,10 @@ body.dark-mode .event-head-item.active {
 
   #features-description {
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  }
+
+  #features-description .col-md-4 {
+    margin-bottom: -23px;
   }
 
   #features-event {
@@ -1259,15 +1240,22 @@ body.dark-mode .event-head-item.active {
     margin-top: 10px;
   }
 
-  #records { 
-    max-width: 92%;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+  #records {
+    width: 90%;
+  }
+
+  #records h1 {
+    font-size: 1.4rem; /* Further reduce font size */
   }
 
   #records span {
-    color: black;
+    font-size: 0.9rem; /* Smaller descriptive text */
   }
 
+  .custom-shape-divider-bottom {
+    margin-top: -30px;
+  }
+  
   .counter .value {
     font-size: 1.1rem;
   }
