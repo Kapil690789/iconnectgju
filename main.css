@@ -147,6 +147,7 @@
   transition: background-color 0.3s, color 0.3s;
   background-color: transparent; 
   box-shadow: none; 
+  margin-top: 20px;
 }
 .navbar {
    /* Semi-transparent background */
@@ -231,6 +232,7 @@
 
   .navbar {
     padding: 10px;
+    margin-top: 10px;
   }
 
   .navbar .container-fluid {
@@ -298,10 +300,14 @@
 
 /* Small Screen (383px or Less) */
 @media (max-width: 383px) {
+  .navbar {
+    margin-top: 5px;
+  }
   
  .navbar .nav-content {
     text-align: center;
     margin-left: 30px;
+    opacity: 1;
   }
 
   .navbar .collapse .navbar-nav {
@@ -518,16 +524,16 @@ body {
 
 @media (max-width: 480px) {
   #section1 {
-    margin-bottom: -120px;
+    margin-bottom: -180px;
   }
 
   .head-content {
     padding: 90px 0 0 5%;
-    margin-bottom: 140px;
+    margin-bottom: 210px;
   }
 
   .head-content .col-8 {
-    margin-left: 35px;
+    margin-left: 40px;
   }
 
   .head-content .col-8 .section-bold-heading {
@@ -573,12 +579,12 @@ body {
 @media (max-width: 383px) {
   #section1 {
     /* background-color: blue; */
-    margin-bottom: -110px;
+    margin-bottom: -190px;
   }
 
   .head-content {
     padding: 90px 0 0 5%;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .head-content .col-8 {
@@ -601,7 +607,7 @@ body {
   }
 
   .word .text-center h1 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
   }
 
