@@ -258,8 +258,26 @@
     padding: 10px;
   }
 
+  .navbar .nav-content {
+    text-align: center;
+    margin-left: 30px;
+  }
+
+  .navbar .collapse .navbar-nav {
+    margin-bottom: -10px;
+  }
+
+  .navbar .collapse .navbar-nav .nav-item h5 {
+    margin-bottom: -9px;
+  }
+
   .theme-button {
     margin-top: 2px;
+  }
+
+  .navbar button {
+    margin-right: 10px;
+    padding: -1px;
   }
 }
 
@@ -281,20 +299,34 @@
 /* Small Screen (383px or Less) */
 @media (max-width: 383px) {
   
+ .navbar .nav-content {
+    text-align: center;
+    margin-left: 30px;
+  }
+
+  .navbar .collapse .navbar-nav {
+    margin-bottom: -10px;
+  }
+
+  .navbar .collapse .navbar-nav .nav-item h5 {
+    margin-bottom: -9px;
+  }
+
+  .navbar .nav-content a {
+    border-radius: 50%;
+  }
+  
   .navbar-brand .brand-text {
     font-size: 1.1rem;
   }
 
-  .navbar button span {
-    width: 15px;
-  }
-
-  .navbar .container-fluid {
-    margin-left: 10px;
+  .navbar button {
+    margin-right: 10px;
+    padding: -1px;
   }
 
   .theme-button {
-    margin-top: 1px;
+    margin-top: -9px;
   }
 }
 
