@@ -1788,6 +1788,16 @@ body.dark-mode .event-head-item.active {
     height: auto; /* Maintain aspect ratio */
     padding: 0 40px 10px 40px;
   }
+
+  .ss {
+    height: auto; /* Allow dynamic height based on content */
+    flex: 0 0 calc(100% / 4); /* Dynamically calculate for 4 slides */
+  }
+
+  .img-fluid {
+    max-width: 100%; /* Slight padding for smaller screens */
+    margin: 0 auto;
+  }
 }
 
 /* Custom Header Styling */
