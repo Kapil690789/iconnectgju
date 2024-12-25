@@ -1,3 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  width: 100%; /* Ensure the body does not exceed the viewport */
+}
+
 /* #about-header{
   position: relative;
   display: flex;
@@ -33,6 +40,105 @@
   font-weight: 400;
   font-style: normal;
   font-size: 50px;
+}
+
+@media (max-width: 480px) {
+  .display-heading {
+    display: none;
+  }
+
+  .btn-primary {
+    display: none;
+  }
+
+  .about-card {
+    position: relative;
+    padding: 20px;
+    margin-top: 8px;
+    width: 90%;
+    height: 80%;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.278);
+    box-sizing: border-box;
+  }
+
+  #our-story .text-primary {
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  #our-story .row h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  #our-story .shape-container {
+    display: none;
+  }
+
+  #our-story .ml-3 {
+    margin-top: -50px;
+  }
+
+  .row h3 {
+    margin-top: -15px;
+  }
+
+  .row ul li{
+    padding-top: 10px;
+  }
+
+  .row .gold {
+    padding: 15px 20px 15px 20px;
+  }
+
+  .row .gold h4 {
+    font-size: .8rem;
+  }
+
+  .row .purple {
+    padding: 15px 20px 15px 20px;
+  }
+
+  .row .purple h4 {
+    font-size: .7rem;
+  }
+
+  .position-relative p {
+    font-size: .8rem;
+  }
+
+  .row .pink {
+    padding: 15px 20px 15px 20px;
+  }
+
+  .position-relative {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container img {
+    width: 90%;
+    margin: 0 10px 30px 15px;
+  }
+
+  .col-md-6 h3 {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .col-md-6 p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+  }
+
+  .text-center h1 {
+    font-weight: 700;
+  }
 }
 
 #about-header {
@@ -300,7 +406,7 @@
     display: inline-block;
     text-align: center;
     position: relative;
-    padding: 10px 20px;
+    padding: 10px 10px;
     overflow: hidden; /* Ensures the animation stays within bounds */
     animation: text-animation 5s ease-in-out infinite;
   }
@@ -377,6 +483,7 @@
   position: relative;
   border-radius: 10px; /* Rounded corners for the card */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 90%;
 }
 
 .our-team:hover {
@@ -439,6 +546,61 @@
   font-weight: bold;
   color: #333;
   margin: 10px 0 5px;
+}
+
+.col-lg-3 h4 {
+  margin-bottom: 23px;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.text-black .hl1_team h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+.hl2_team h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+.hl3_team h4 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+.our-team .name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+@media (max-width: 480px) {
+  .col-lg-3 h4 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  
+  .text-black .hl1_team h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-bottom: 10px;
+  }
+  
+  .hl2_team h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-bottom: 10px;
+  }
+  
+  .hl3_team h4 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding-bottom: 10px;
+  }
 }
 
 /* Subtitle/description */
