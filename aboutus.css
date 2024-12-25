@@ -612,11 +612,21 @@ html, body {
 /* Social Links */
 .our-team .social {
   width: 100%;
+  height: 12%;
   background-color: #000000;
   position: absolute;
   bottom: -120px;
   left: 0;
   transition: all 0.5s ease;
+  text-align: start;
+}
+
+.our-team .social li a {
+  margin-left: 60px;
+}
+
+.our-team .social li a .fa-linkedin:hover {
+  color: rgb(58, 58, 170);
 }
 .team-image {
   background-image: url('img/team/kapil.jpeg');
