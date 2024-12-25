@@ -780,3 +780,34 @@ html, body {
 .align-items-center {
   align-items: center;
 }
+
+@media (max-width: 480px) {
+  .our-team .social {
+    width: 100%;
+    height: 16%;
+    background-color: #000000;
+    bottom: -120px;
+    transition: all 0.5s ease;
+    
+  }
+
+  .our-team .social li {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+  
+  .our-team .social li a {
+    margin-left: 7px;
+    
+  }
+  
+  .our-team .social li a .fa-linkedin:hover {
+    color: rgb(58, 58, 170);
+    
+  }
+
+  .our-team:hover .social {
+    bottom: -18px;
+    
+  }
+}
