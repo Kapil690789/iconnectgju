@@ -628,6 +628,29 @@ html, body {
 .our-team .social li a .fa-linkedin:hover {
   color: rgb(58, 58, 170);
 }
+
+@media (max-width: 480px) {
+  .our-team .social {
+    width: 100%;
+    height: 16%;
+    background-color: #000000;
+    bottom: -120px;
+    transition: all 0.5s ease;
+  }
+  
+  .our-team .social li a {
+    margin-left: 7px;
+  }
+  
+  .our-team .social li a .fa-linkedin:hover {
+    color: rgb(58, 58, 170);
+  }
+
+  .our-team:hover .social {
+    bottom: -14px;
+  }
+}
+
 .team-image {
   background-image: url('img/team/kapil.jpeg');
   background-size: cover; /* Ensures the image covers the div */
