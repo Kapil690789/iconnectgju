@@ -3021,8 +3021,8 @@ input:checked + .slider:before {
 
 .card-body p {
   margin: 10px 0;
-  line-height: 1.5;
-  font-size: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #555;
 }
 
