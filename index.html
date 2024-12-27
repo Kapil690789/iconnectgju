@@ -642,7 +642,7 @@
               style="border-radius: 40% 5% 30% 50%"
               src="img/rabit_about.jpg"
             /> -->
-            <div class="splide">
+            <div class="splide splide-about">
               <div class="splide__slider">
                 <div class="splide__track">
                   <ul class="splide__list">
@@ -778,7 +778,82 @@
         </div>
       </div>
     </section>  -->
-     <section id="section5">
+
+  <section id="section5">
+
+        <div class="section5-container">
+
+        <div class="section5-heading">
+          <h1>Gallery Of Events</h1>
+        </div>
+      <!-- <div class="container px-0">
+        <div class="d-lg-none d-block text-center"
+
+          <div class="right-box col-lg-6 px-0 text-center"> -->
+            <div class="splide splide-vision">
+              <div class="splide__slider">
+                <div class="splide__track">
+                  <ul class="splide__list">
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                    <li class="splide__slide">
+                      <img
+                        class="img-fluid"
+                        src="https://placehold.co/500x500"
+                      />
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <!-- </div>
+        </div>
+      </div> -->
+    </div>
+    </section>
+
+    
+<!--      <section id="section5">
       <div class="container px-0">
         <div class="row px-0 align-items-center">
           <div class="col-lg-6 px-0 order-2 order-lg-1 text-center">
@@ -913,7 +988,9 @@
           </div>
         </div>
       </div>
-    </section> 
+    </section>  -->
+
+    
     <section id="section4">
       <div class="container">
         <div class="terminal-window">
@@ -1066,13 +1143,28 @@
       https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="main.js"></script>
     <script>
-      var splide = new Splide(".splide", {
+      var splideAbout = new Splide(".splide-about", {
         type: "loop",
-        autoplay: "True",
+        autoplay: true,
         perPage: 1,
-        // noDrag: 1,
-        // arrows: 0,
+        });
+      splideAbout.mount();
+
+      var splideVision = new Splide(".splide-vision", {
+      type: "loop",
+      autoplay: true,
+      perPage: 1,
       });
+      splideVision.mount();
+
+      
+      // var splide = new Splide(".splide", {
+      //   type: "loop",
+      //   autoplay: "True",
+      //   perPage: 1,
+      //   noDrag: 1,
+      //   arrows: 0,
+      // });
       var sponser_splide = new Splide(".sponsers", {
         type: "loop",
         autoplay: "True",
@@ -1089,7 +1181,7 @@
       //   console.log(rate); // 0-1
       // });
 
-      splide.mount();
+      // splide.mount();
       sponser_splide.mount();
       function getTimeRemaining(endtime) {
   var t = Date.parse(endtime) - Date.parse(new Date());
