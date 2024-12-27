@@ -3209,3 +3209,167 @@ input:checked + .slider:before {
     margin: 0 2px; 
   }
 }
+.back-to-top {
+    position: fixed;
+    bottom: 10px;  /* Adjusted for base positioning */
+    right: 20px;   /* Adjusted for base positioning */
+    background-color: black; /* Black background */
+    color: white;  /* White text */
+    border: none;
+    border-radius: 50%;  /* Circular button */
+    padding: 6px 10px;  /* Smaller padding for compact size */
+    font-size: 18px;     /* Smaller font size */
+    display: none;       /* Hidden initially */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for floating effect */
+    z-index: 1000; /* Ensures the button is above other elements */
+}
+
+/* Hover effect for the button */
+.back-to-top:hover {
+    background-color: #555; /* Slightly lighter black on hover */
+    transform: scale(1.3);   /* Larger scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow effect */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .back-to-top {
+        bottom: 12px;  /* Adjust for smaller screens */
+        right: 15px;   /* Adjust for smaller screens */
+        font-size: 16px;  /* Reduce font size slightly */
+        padding: 5px 8px;  /* Adjust padding for compact design */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .back-to-top {
+        bottom: 8px;   /* Further adjust for extra small screens */
+        right: 10px;   /* Further adjust for extra small screens */
+        font-size: 14px;  /* Smaller font size for compact view */
+        padding: 4px 6px;  /* Further adjust padding */
+    }
+}
+/* Popup Modal */
+.popup-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Slightly transparent dark overlay */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px); /* Adds a subtle blur effect to the background */
+}
+
+.popup-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow for depth */
+  animation: popup-fade-in 0.3s ease;
+  position: relative;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.popup-content p {
+  font-size: 1rem;
+  color: #555;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #e74c3c; /* Subtle red color for hover */
+}
+
+/* Animation */
+@keyframes popup-fade-in {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .popup-content {
+      width: 90%;
+      padding: 20px;
+  }
+
+  .popup-content h2 {
+      font-size: 1.5rem;
+  }
+
+  .popup-content p {
+      font-size: 0.9rem;
+  }
+
+  .close-btn {
+      font-size: 1.2rem;
+  }
+}
+.view-details-btn {
+  background-color: #000000; /* Same color for consistency */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px; /* Slightly smaller padding for better responsiveness */
+  font-size: 14px; /* Adjust font size */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center; /* Ensures alignment */
+  display: inline-block;
+  margin-top: 10px; /* Adds spacing from other elements */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.view-details-btn:hover {
+  background-color: #b99729; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scaling effect */
+}
+
+@media (max-width: 768px) {
+  .view-details-btn {
+      font-size: 12px; /* Smaller font size for mobile */
+      padding: 6px 10px; /* Adjust padding for compact size */
+  }
+}
+
+@media (max-width: 480px) {
+  .view-details-btn {
+      font-size: 10px; /* Further reduce size for small devices */
+      padding: 5px 8px;
+  }
+}
