@@ -32,6 +32,7 @@ html, body {
 /* Splash Screen Styles */
 /* Splash Screen Styles */
 /* Splash Screen Styles */
+/* Splash Screen */
 #splash-screen {
   position: fixed;
   top: 0;
@@ -48,7 +49,6 @@ html, body {
   overflow: hidden;
   transition: opacity 1s ease;
 }
-
 
 .loading-container {
   position: relative;
@@ -86,14 +86,13 @@ html, body {
 
 .burst-piece {
   position: absolute;
-  width: 10%; /* Size should match the image size or adjust accordingly */
-  height: 10%;
+  width: 8%; /* Slightly smaller pieces for better scattering */
+  height: 8%;
   background: url("img/iconnect.jpg") no-repeat center center / contain;
   border-radius: 10px;
   animation: burst 4s ease-out forwards; /* Slow down by setting the duration to 4s */
-  opacity: 0;
+  opacity: 1;
 }
-
 
 /* Snowflake Animation */
 @keyframes fall {
@@ -114,7 +113,7 @@ html, body {
   height: 10px;
   background-color: red; /* Default color */
   border-radius: 50%;
-  animation: fall 5s linear infinite;
+  animation: fall 6s linear infinite; /* Slower animation for smoother falling */
   opacity: 0.8;
 }
 
