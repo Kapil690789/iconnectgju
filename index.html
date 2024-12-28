@@ -55,7 +55,7 @@
     ></script>
     <script>
   
- window.addEventListener("load", () => {
+window.addEventListener("load", () => {
   const splashScreen = document.getElementById("splash-screen");
   const loadingContainer = document.querySelector(".loading-container");
   const iconnectTextContainer = document.getElementById("iconnect-text-container");
@@ -68,7 +68,7 @@
       snowflake.classList.add("snowflake");
       snowflake.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 80%)`; // Random color
       snowflake.style.left = `${Math.random() * 100}%`; // Random horizontal position
-      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random fall duration
+      snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`; // Random fall duration (longer duration for smooth falling)
       snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
       target.appendChild(snowflake);
     }
@@ -81,19 +81,26 @@
   setTimeout(() => {
     loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
 
-    // Create snowflakes on the splash screen
-    createSnowflakes(splashScreen, 50);
+    // Create fewer snowflakes on the splash screen
+    createSnowflakes(splashScreen, 70);
 
     // After sliding completes, trigger the burst effect
     setTimeout(() => {
       const pieces = [];
-      const numPieces = 50; // Increase number of burst pieces to 50 (or more if you want)
+      const numPieces = 100; // Number of burst pieces for a denser burst effect
 
       for (let i = 0; i < numPieces; i++) {
         const piece = document.createElement("div");
         piece.classList.add("burst-piece");
-        piece.style.setProperty("--x-direction", Math.random() > 0.5 ? 1 : -1); // Random X direction
-        piece.style.setProperty("--y-direction", Math.random() > 0.5 ? 1 : -1); // Random Y direction
+
+        // Randomize X and Y direction with smoother scattering
+        piece.style.setProperty("--x-direction", Math.random() * 2 - 1); // Random values between -1 and 1
+        piece.style.setProperty("--y-direction", Math.random() * 2 - 1); // Random values between -1 and 1
+
+        // Random starting position for burst effect
+        piece.style.top = `${Math.random() * 100}%`; 
+        piece.style.left = `${Math.random() * 100}%`;
+
         pieces.push(piece);
         splashScreen.appendChild(piece);
       }
@@ -104,8 +111,8 @@
         setTimeout(() => {
           splashScreen.remove(); // Removes the splash screen element
 
-          // Create snowflakes on the main site body
-          createSnowflakes(document.body, 50);
+          // Create slightly fewer snowflakes on the main site body
+          createSnowflakes(document.body, 100);
 
           iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
           iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
@@ -124,12 +131,10 @@
             }, letters.length * 300);
           }, iconnectDisplayTime); // Adjust display time as needed
         }, 1000);
-      }, 2000); // After burst completes, fade out the splash screen
+      }, 3000); // Extended duration for the burst effect and snowflakes
     }, 1000); // Time before burst effect starts
   }, 1000); // Time before sliding animation starts
 });
-
-
 
 
 </script>
