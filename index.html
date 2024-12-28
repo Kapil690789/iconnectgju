@@ -55,7 +55,7 @@
     ></script>
     <script>
   
-  window.addEventListener("load", () => {
+ window.addEventListener("load", () => {
   const splashScreen = document.getElementById("splash-screen");
   const loadingContainer = document.querySelector(".loading-container");
   const iconnectTextContainer = document.getElementById("iconnect-text-container");
@@ -74,6 +74,9 @@
     }
   }
 
+  // Reduced iConnect text display duration
+  const iconnectDisplayTime = 1500; // 1.5 seconds
+
   // Start the sliding animation after the initial load
   setTimeout(() => {
     loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
@@ -84,13 +87,13 @@
     // After sliding completes, trigger the burst effect
     setTimeout(() => {
       const pieces = [];
-      for (let i = 0; i < 20; i++) { // Create 20 pieces for the burst effect
+      const numPieces = 50; // Increase number of burst pieces to 50 (or more if you want)
+
+      for (let i = 0; i < numPieces; i++) {
         const piece = document.createElement("div");
         piece.classList.add("burst-piece");
         piece.style.setProperty("--x-direction", Math.random() > 0.5 ? 1 : -1); // Random X direction
         piece.style.setProperty("--y-direction", Math.random() > 0.5 ? 1 : -1); // Random Y direction
-        piece.style.top = `${Math.random() * 100}%`; // Random starting position
-        piece.style.left = `${Math.random() * 100}%`; // Random starting position
         pieces.push(piece);
         splashScreen.appendChild(piece);
       }
@@ -119,11 +122,11 @@
             setTimeout(() => {
               iconnectTextContainer.remove();
             }, letters.length * 300);
-          }, 1500); // Adjust display time as needed
+          }, iconnectDisplayTime); // Adjust display time as needed
         }, 1000);
-      }, 2000);
-    }, 1000);
-  }, 1000);
+      }, 2000); // After burst completes, fade out the splash screen
+    }, 1000); // Time before burst effect starts
+  }, 1000); // Time before sliding animation starts
 });
 
 
