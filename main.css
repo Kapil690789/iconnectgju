@@ -38,8 +38,8 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.7); /* Transparent and blurred background */
-  backdrop-filter: blur(10px); /* Apply blur effect */
+  background: rgba(255, 255, 255, 0.5); /* Set opacity to 50% for transparency */
+  backdrop-filter: blur(3px); /* Reduced blur effect to make the background clearer */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,6 +48,7 @@ html, body {
   overflow: hidden;
   transition: opacity 1s ease;
 }
+
 
 .loading-container {
   position: relative;
