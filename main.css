@@ -33,6 +33,74 @@ html, body {
 /* Splash Screen Styles */
 /* Splash Screen Styles */
 /* Splash Screen */
+/* Pre-Splash Styling */
+#pre-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Dark background */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+/* Countdown Styling */
+#countdown-container {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#countdown-text {
+  font-size: 1.5rem;
+  color: lightgray;
+}
+
+/* Loading Dots Animation */
+#loading-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Smooth Transition to Splash Screen */
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
 #splash-screen {
   position: fixed;
   top: 0;
