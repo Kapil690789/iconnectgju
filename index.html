@@ -55,51 +55,79 @@
     ></script>
     <script>
   
-     window.addEventListener("load", () => {
+  window.addEventListener("load", () => {
   const splashScreen = document.getElementById("splash-screen");
   const loadingContainer = document.querySelector(".loading-container");
   const iconnectTextContainer = document.getElementById("iconnect-text-container");
   const letters = document.querySelectorAll(".letter");
 
-  // Set the duration for iConnect text display (2 seconds for all devices)
-  const iconnectDisplayTime = 2000; // 2 seconds
+  // Function to create snowflakes
+  function createSnowflakes(target, count) {
+    for (let i = 0; i < count; i++) {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 80%)`; // Random color
+      snowflake.style.left = `${Math.random() * 100}%`; // Random horizontal position
+      snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; // Random fall duration
+      snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
+      target.appendChild(snowflake);
+    }
+  }
 
   // Start the sliding animation after the initial load
   setTimeout(() => {
     loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
 
-    // After the sliding completes, fade out the splash screen
+    // Create snowflakes on the splash screen
+    createSnowflakes(splashScreen, 50);
+
+    // After sliding completes, trigger the burst effect
     setTimeout(() => {
-      splashScreen.style.transition = "opacity 1s ease"; // Smooth fade-out transition
-      splashScreen.style.opacity = "0"; // Fade out the splash screen
+      const pieces = [];
+      for (let i = 0; i < 20; i++) { // Create 20 pieces for the burst effect
+        const piece = document.createElement("div");
+        piece.classList.add("burst-piece");
+        piece.style.setProperty("--x-direction", Math.random() > 0.5 ? 1 : -1); // Random X direction
+        piece.style.setProperty("--y-direction", Math.random() > 0.5 ? 1 : -1); // Random Y direction
+        piece.style.top = `${Math.random() * 100}%`; // Random starting position
+        piece.style.left = `${Math.random() * 100}%`; // Random starting position
+        pieces.push(piece);
+        splashScreen.appendChild(piece);
+      }
 
-      // After the fade-out completes, display the iConnect text
+      // After the burst completes, fade out the splash screen
       setTimeout(() => {
-        splashScreen.remove(); // Removes the splash screen element
-        iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
-        iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
-
-        // Wait for 2 seconds before starting the letter disappearing animation
+        splashScreen.style.opacity = "0"; // Fade out the splash screen
         setTimeout(() => {
-          // Make each letter disappear one by one
-          letters.forEach((letter, index) => {
-            setTimeout(() => {
-              letter.classList.add("hide"); // Hide the letter with a delay
-            }, index * 500); // Add a delay of 500ms between each letter
-          });
+          splashScreen.remove(); // Removes the splash screen element
 
-         
+          // Create snowflakes on the main site body
+          createSnowflakes(document.body, 50);
+
+          iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
+          iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
+
+          // Wait briefly before starting the letter disappearing animation
           setTimeout(() => {
-            iconnectTextContainer.remove(); 
-          }, letters.length * 500);  
-        }, iconnectDisplayTime); 
-      }, 1000); 
-    }, 1000); 
-  }, 1000); 
+            letters.forEach((letter, index) => {
+              setTimeout(() => {
+                letter.classList.add("hide"); // Hide the letter with a delay
+              }, index * 300); // Add a delay of 300ms between each letter
+            });
+
+            // Remove the text container after all letters disappear
+            setTimeout(() => {
+              iconnectTextContainer.remove();
+            }, letters.length * 300);
+          }, 1500); // Adjust display time as needed
+        }, 1000);
+      }, 2000);
+    }, 1000);
+  }, 1000);
 });
 
-      
-      
+
+
 
 </script>
 
@@ -256,11 +284,12 @@
               ];
             </h2>
           </div>
-          <div class="col d-md-none d-none d-lg-block p-0">
-            <div class="ripple-container">
-              <img class="" src="img/bunny.png" width="300" />
-            </div>
-          </div>
+        <div class="col d-md-none d-none d-lg-block p-0">
+  <div class="ripple-container">
+    <img class="flip-on-hover" src="img/bunny.png" width="300" />
+  </div>
+</div>
+
         </div>
         <section class="word">
           <div class="text-center mt-20">
