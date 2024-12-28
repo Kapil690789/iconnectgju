@@ -1326,7 +1326,9 @@
       // splide.on("autoplay:playing", function (rate) {
       //   console.log(rate); // 0-1
       // });
-
+  document.querySelector('.close-btn').addEventListener('click', () => {
+    document.querySelector('.notification-box').style.display = 'none';
+  });
     //   splide.mount();
       sponser_splide.mount();
       function getTimeRemaining(endtime) {
