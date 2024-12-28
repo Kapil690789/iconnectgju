@@ -55,99 +55,133 @@
     ></script>
     <script>
   
-window.addEventListener("load", () => {
-  const splashScreen = document.getElementById("splash-screen");
-  const loadingContainer = document.querySelector(".loading-container");
-  const iconnectTextContainer = document.getElementById("iconnect-text-container");
-  const letters = document.querySelectorAll(".letter");
-
-  // Function to create snowflakes
-  function createSnowflakes(target, count) {
-    for (let i = 0; i < count; i++) {
-      const snowflake = document.createElement("div");
-      snowflake.classList.add("snowflake");
-      snowflake.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 80%)`; // Random color
-      snowflake.style.left = `${Math.random() * 100}%`; // Random horizontal position
-      snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`; // Random fall duration (longer duration for smooth falling)
-      snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
-      target.appendChild(snowflake);
-    }
-  }
-
-  // Reduced iConnect text display duration
-  const iconnectDisplayTime = 1500; // 1.5 seconds
-
-  // Start the sliding animation after the initial load
-  setTimeout(() => {
-    loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
-
-    // Create fewer snowflakes on the splash screen
-    createSnowflakes(splashScreen, 70);
-
-    // After sliding completes, trigger the burst effect
-    setTimeout(() => {
-      const pieces = [];
-      const numPieces = 80; // Number of burst pieces for a denser burst effect
-
-      for (let i = 0; i < numPieces; i++) {
-        const piece = document.createElement("div");
-        piece.classList.add("burst-piece");
-
-        // Randomize X and Y direction with smoother scattering
-        piece.style.setProperty("--x-direction", Math.random() * 2 - 1); // Random values between -1 and 1
-        piece.style.setProperty("--y-direction", Math.random() * 2 - 1); // Random values between -1 and 1
-
-        // Random starting position for burst effect
-        piece.style.top = `${Math.random() * 100}%`; 
-        piece.style.left = `${Math.random() * 100}%`;
-
-        pieces.push(piece);
-        splashScreen.appendChild(piece);
-      }
-
-      // After the burst completes, fade out the splash screen
-      setTimeout(() => {
-        splashScreen.style.opacity = "0"; // Fade out the splash screen
-        setTimeout(() => {
-          splashScreen.remove(); // Removes the splash screen element
-
-          // Create slightly fewer snowflakes on the main site body
-          createSnowflakes(document.body, 100);
-
-          iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
-          iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
-
-          // Wait briefly before starting the letter disappearing animation
-          setTimeout(() => {
-            letters.forEach((letter, index) => {
-              setTimeout(() => {
-                letter.classList.add("hide"); // Hide the letter with a delay
-              }, index * 300); // Add a delay of 300ms between each letter
-            });
-
-            // Remove the text container after all letters disappear
+      window.addEventListener("load", () => {
+        const preSplash = document.getElementById("pre-splash");
+        const countdownText = document.getElementById("countdown");
+        const splashScreen = document.getElementById("splash-screen");
+        const loadingContainer = document.querySelector(".loading-container");
+        const iconnectTextContainer = document.getElementById("iconnect-text-container");
+        const letters = document.querySelectorAll(".letter");
+      
+        // Function to create snowflakes
+        function createSnowflakes(target, count) {
+          for (let i = 0; i < count; i++) {
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+            snowflake.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 80%)`; // Random color
+            snowflake.style.left = `${Math.random() * 100}%`; // Random horizontal position
+            snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`; // Random fall duration (longer duration for smooth falling)
+            snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
+            target.appendChild(snowflake);
+          }
+        }
+      
+        // Countdown Logic
+        let countdown = 3; // Start countdown from 3
+        const countdownInterval = setInterval(() => {
+          countdownText.textContent = countdown;
+          if (countdown <= 0) {
+            clearInterval(countdownInterval);
+      
+            // Hide pre-splash and display splash screen
+            preSplash.classList.add("hidden");
             setTimeout(() => {
-              iconnectTextContainer.remove();
-            }, letters.length * 300);
-          }, iconnectDisplayTime); // Adjust display time as needed
+              preSplash.style.display = "none"; // Ensure pre-splash is removed
+            }, 1000);
+      
+            splashScreen.classList.remove("hidden");
+      
+            // Start sliding animation
+            setTimeout(() => {
+              loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
+      
+              // Create snowflakes on the splash screen
+              createSnowflakes(splashScreen, 70);
+      
+              // Trigger the burst effect
+              setTimeout(() => {
+                const pieces = [];
+                const numPieces = 80; // Number of burst pieces for a denser burst effect
+      
+                for (let i = 0; i < numPieces; i++) {
+                  const piece = document.createElement("div");
+                  piece.classList.add("burst-piece");
+      
+                  // Randomize X and Y direction with smoother scattering
+                  piece.style.setProperty("--x-direction", Math.random() * 2 - 1); // Random values between -1 and 1
+                  piece.style.setProperty("--y-direction", Math.random() * 2 - 1); // Random values between -1 and 1
+      
+                  // Random starting position for burst effect
+                  piece.style.top = `${Math.random() * 100}%`;
+                  piece.style.left = `${Math.random() * 100}%`;
+      
+                  pieces.push(piece);
+                  splashScreen.appendChild(piece);
+                }
+      
+                // After the burst completes, fade out the splash screen
+                setTimeout(() => {
+                  splashScreen.style.opacity = "0"; // Fade out the splash screen
+                  setTimeout(() => {
+                    splashScreen.style.display = "none"; // Ensure splash screen is removed
+                    splashScreen.style.pointerEvents = "none"; // Disable interactions
+      
+                    // Create snowflakes on the main site body
+                    createSnowflakes(document.body, 100);
+      
+                    iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
+                    iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
+      
+                    // Wait briefly before starting the letter disappearing animation
+                    setTimeout(() => {
+                      letters.forEach((letter, index) => {
+                        setTimeout(() => {
+                          letter.classList.add("hide"); // Hide the letter with a delay
+                        }, index * 300); // Add a delay of 300ms between each letter
+                      });
+      
+                      // Remove text container after all letters disappear
+                      setTimeout(() => {
+                        iconnectTextContainer.remove();
+                      }, letters.length * 300);
+                    }, 1500); // Adjust display time as needed
+                  }, 1000);
+                }, 3000); // Extended duration for the burst effect and snowflakes
+              }, 1000); // Time before burst effect starts
+            }, 1000); // Time before sliding animation starts
+          } else {
+            countdown--; // Decrease countdown
+          }
         }, 1000);
-      }, 3000); // Extended duration for the burst effect and snowflakes
-    }, 1000); // Time before burst effect starts
-  }, 1000); // Time before sliding animation starts
-});
-
+      });
+      
 
 </script>
 
 </head>
 
   <body>
-    <div id="splash-screen">
-      <div class="loading-container">
-        <img src="img/iconnect.jpg" alt="Splash Image" />
+    <body>
+      <!-- Pre-Splash with Countdown -->
+      <div id="pre-splash">
+        <div id="countdown-container">
+          <p id="countdown-text">Get ready to explore in... <span id="countdown">3</span></p>
+        </div>
+        <div id="loading-indicator">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
       </div>
-    </div>
-    <div id="iconnect-text-container" class="hidden">
+    
+      <!-- Splash Screen -->
+      <div id="splash-screen" class="hidden">
+        <div class="loading-container">
+          <img src="img/iconnect.jpg" alt="Splash Image" />
+        </div>
+      </div>
+      <!-- iConnect Text Container -->
+      <div id="iconnect-text-container" class="hidden">
       <h1 class="iconnect-text">
         <span class="letter">K</span>
         <span class="letter">o</span>
