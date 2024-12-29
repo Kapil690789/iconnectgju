@@ -3171,8 +3171,9 @@ input:checked + .slider:before {
 }
 
 .cards:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); */
+  box-shadow: 0 6px 12px rgba(255, 223, 0, 0.9);
 }
 
 .cards img {
