@@ -3561,7 +3561,15 @@ input:checked + .slider:before {
   font-weight: bold;
   display: inline-block;
   white-space: nowrap; 
-  animation: moveLeft 13s linear infinite; 
+  animation: moveLeft 18s linear infinite; 
+}
+
+.slidebar .heading  a{
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #1975d7;
+  letter-spacing: 2px;
 }
 
 .notification-slidebar {
@@ -3577,7 +3585,7 @@ input:checked + .slider:before {
   font-weight: bold;
   display: inline-block;
   white-space: nowrap; 
-  animation: moveLeft 13s linear infinite;
+  animation: moveLeft 18s linear infinite;
 }
 
 .notification-slidebar .notification-heading a:hover {
