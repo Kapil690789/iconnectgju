@@ -1229,7 +1229,7 @@ body.dark-mode .event-head-item.active {
 
 #records h1:hover, 
 #records span:hover {
-  transform: rotateX(180deg); 
+  transform: rotateX(360deg); 
 }
 
 /* Event Image Styling */
