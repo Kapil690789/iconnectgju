@@ -3595,7 +3595,7 @@ input:checked + .slider:before {
 
 @keyframes moveLeft {
   0% {
-    transform: translateX(220%); 
+    transform: translateX(200%); 
   }
   100% {
     transform: translateX(-410%); 
