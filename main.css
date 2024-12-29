@@ -3569,6 +3569,7 @@ input:checked + .slider:before {
   text-decoration: none;
   color: white;
   font-size: 1.5rem;
+  letter-spacing: 3px;
   font-weight: bold;
   display: inline-block;
   white-space: nowrap; 
