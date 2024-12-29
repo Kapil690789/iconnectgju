@@ -3560,6 +3560,25 @@ input:checked + .slider:before {
   animation: moveLeft 13s linear infinite; 
 }
 
+.notification-slidebar {
+  margin-top: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.notification-slidebar .notification-heading a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  white-space: nowrap; 
+  animation: moveLeft 13s linear infinite;
+}
+
+.notification-slidebar .notification-heading a:hover {
+  color: #fdb827;
+}
+
 
 @keyframes moveLeft {
   0% {
