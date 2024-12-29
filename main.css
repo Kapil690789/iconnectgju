@@ -3566,9 +3566,10 @@ input:checked + .slider:before {
   text-align: center;
   margin-top: 5px;
   z-index: 1000;
-  animation: slideIn 1s ease-out forwards;
+  animation: slideIn 0.5s ease-out forwards, fadeSlow 3s ease-in-out infinite;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  overflow: hidden; 
+  overflow: hidden;
+  /* background: rgba(215, 167, 90, 0.8); */
 }
 
 .slidebar .heading {
@@ -3578,14 +3579,18 @@ input:checked + .slider:before {
   font-weight: bold;
   display: inline-block;
   white-space: nowrap; 
-  animation: moveLeft 18s linear infinite; 
+  animation: moveLeft 18s linear infinite, colorCycle 5s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #FFD700, #fdb827, #ffffff, #FFD700);
 }
 
-.slidebar .heading  a{
+.slidebar .heading a {
   text-decoration: none;
   font-weight: bold;
   margin-left: 10px;
-  color: #1975d7;
+  color: #FFD700;
   letter-spacing: 2px;
 }
 
@@ -3602,12 +3607,60 @@ input:checked + .slider:before {
   font-weight: bold;
   display: inline-block;
   white-space: nowrap; 
-  animation: moveLeft 18s linear infinite;
+    animation: moveLeft 25s linear infinite, colorCycle 5s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, #FFD700, #fdb827, #ffffff, #FFD700);
 }
 
 .notification-slidebar .notification-heading a:hover {
   color: #fdb827;
 }
+
+/* Animations */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  80% {
+    transform: translateY(5%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeSlow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes colorCycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 
 
 @keyframes moveLeft {
