@@ -1646,12 +1646,12 @@ body.dark-mode .event-head-item.active {
 }
 
 .event-head {
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-  background-color: #5842a2;
+ border-radius: 15px;
+ display: flex;
+ justify-content: center;
+ /* gap: 20px; */
+ /* margin-bottom: 20px; */
+ background-color: #5842a2;
 }
 
 .event-head-item {
