@@ -11,6 +11,7 @@ html, body {
   --card-color: #ffffff;
   --card-text: black;
   --background-color: white;
+  --btn-color: #f0ad4e;
   --element-bg: white;
   --text-color: white;
   --nav-color: rgba(255, 255, 255, 0.779);
@@ -24,6 +25,7 @@ html, body {
   --card-color: #1c1c1c;
   --card-text: white;
   --background-color: black;
+  --btn-color: white;
   --element-bg: black;
   --nav-color: #222222a6;
   --nav-shadow: rgba(255, 255, 255, 0.185);
@@ -1263,15 +1265,16 @@ body.dark-mode .event-head-item.active {
 
 #features-description a {
   text-decoration: none;
-  background-color: white;
-  color: black;
+  background: #f0ad4e;
+  color: var(--text-color);
   padding: 10px 20px;
   border-radius: 90px;
   font-weight: 600;
 }
 
 #features-description a:hover {
-  background-color: #fdb827;
+  background-color: var(--text-color);
+  color: black;
 }
 
 /* Timer Styling */
@@ -1961,6 +1964,11 @@ body.dark-mode .event-head-item.active {
 
 #aboutus .left-box a button {
   margin-top: 30px;
+  color: var(--background-color);
+}
+
+#aboutus .left-box a button:hover {
+  background-color: var(--card-text);
 }
 
 #aboutus .right-box {
@@ -2276,14 +2284,14 @@ h1 {
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
-  color: white;
+  color: var(--background-color);
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 #iconnect_society-body button:hover {
-  background-color: black;
+ background-color: var(--card-text);
 }
 
 @media (max-width: 576px) {
@@ -3689,4 +3697,13 @@ input:checked + .slider:before {
   .slidebar .heading {
     font-size: 1rem;
   }
+}
+
+.word button {
+  background-color: #f0ad4e;
+}
+
+.word button:hover {
+  background-color: var(--card-text);
+  color: var(--background-color);
 }
