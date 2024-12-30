@@ -11,7 +11,6 @@ html, body {
   --card-color: #ffffff;
   --card-text: black;
   --background-color: white;
-  --btn-color: #f0ad4e;
   --element-bg: white;
   --text-color: white;
   --nav-color: rgba(255, 255, 255, 0.779);
@@ -25,7 +24,6 @@ html, body {
   --card-color: #1c1c1c;
   --card-text: white;
   --background-color: black;
-  --btn-color: white;
   --element-bg: black;
   --nav-color: #222222a6;
   --nav-shadow: rgba(255, 255, 255, 0.185);
@@ -1265,16 +1263,15 @@ body.dark-mode .event-head-item.active {
 
 #features-description a {
   text-decoration: none;
-  background: #f0ad4e;
-  color: var(--text-color);
+  background-color: white;
+  color: black;
   padding: 10px 20px;
   border-radius: 90px;
   font-weight: 600;
 }
 
 #features-description a:hover {
-  background-color: var(--text-color);
-  color: black;
+  background-color: #fdb827;
 }
 
 /* Timer Styling */
@@ -1964,11 +1961,6 @@ body.dark-mode .event-head-item.active {
 
 #aboutus .left-box a button {
   margin-top: 30px;
-  color: var(--background-color);
-}
-
-#aboutus .left-box a button:hover {
-  background-color: var(--card-text);
 }
 
 #aboutus .right-box {
@@ -2235,7 +2227,7 @@ h1 {
 /* Main Section Styling */
 #iconnect_society-body {
 /* background-color: #5842a2; */
-  background: #5842a2;
+  background: var(--primary-color);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -2284,14 +2276,14 @@ h1 {
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
-  color: var(--background-color);
+  color: white;
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 #iconnect_society-body button:hover {
- background-color: var(--card-text);
+  background-color: black;
 }
 
 @media (max-width: 576px) {
@@ -3568,6 +3560,7 @@ input:checked + .slider:before {
   }
 }
 
+/* Updated CSS */
 .slidebar {
   color: var(--text-color);
   padding: 5px 25px;
@@ -3577,6 +3570,7 @@ input:checked + .slider:before {
   animation: slideIn 0.5s ease-out forwards, fadeSlow 3s ease-in-out infinite;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  border-radius: 80px;
   /* background: rgba(215, 167, 90, 0.8); */
 }
 
@@ -3588,10 +3582,20 @@ input:checked + .slider:before {
   display: inline-block;
   white-space: nowrap; 
   animation: moveLeft 18s linear infinite, colorCycle 5s linear infinite;
+  animation-play-state: running; /* Default state */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  border-radius: 80px;
   background-image: linear-gradient(90deg, #FFD700, #fdb827, #ffffff, #FFD700);
+}
+
+.slidebar .heading + .heading {
+  margin-top: 20px; /* Add gap between multiple headings */
+}
+
+.slidebar .heading:hover {
+  animation-play-state: paused; /* Pause on hover */
 }
 
 .slidebar .heading a {
@@ -3615,7 +3619,8 @@ input:checked + .slider:before {
   font-weight: bold;
   display: inline-block;
   white-space: nowrap; 
-    animation: moveLeft 25s linear infinite, colorCycle 5s linear infinite;
+  animation: moveLeft 70s linear infinite, colorCycle 5s linear infinite;
+  animation-play-state: running; /* Default state */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -3623,6 +3628,7 @@ input:checked + .slider:before {
 }
 
 .notification-slidebar .notification-heading a:hover {
+  animation-play-state: paused; /* Pause on hover */
   color: #fdb827;
 }
 
@@ -3669,17 +3675,6 @@ input:checked + .slider:before {
   }
 }
 
-
-
-@keyframes moveLeft {
-  0% {
-    transform: translateX(200%); 
-  }
-  100% {
-    transform: translateX(-410%); 
-  }
-}
-
 @media (max-width: 768px) {
   .slidebar {
     padding: 6px 12px;
@@ -3697,13 +3692,4 @@ input:checked + .slider:before {
   .slidebar .heading {
     font-size: 1rem;
   }
-}
-
-.word button {
-  background-color: #f0ad4e;
-}
-
-.word button:hover {
-  background-color: var(--card-text);
-  color: var(--background-color);
 }
