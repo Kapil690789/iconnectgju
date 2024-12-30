@@ -3312,10 +3312,12 @@ input:checked + .slider:before {
 
 #section5 .splide__slide img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 10px;
   transform: scale(0.95);
   transition: transform 0.3s ease, filter 0.3s ease;
+  object-fit: contain;
+  background-repeat: no-repeat;
 }
 
 #section5 .splide__slide:hover img {
