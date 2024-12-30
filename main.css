@@ -160,24 +160,24 @@ html, body {
 }
 
 /* Burst Effect Animation */
-@keyframes burst {
-  0% {
-    transform: translate(0, 0) scale(1); /* Start at original size */
+/*@keyframes burst {*/
+/*  0% {*/
+    /* Start at original size 
     opacity: 1;
   }
   100% {
-    transform: translate(calc(100vw * (var(--x-direction))), calc(100vh * (var(--y-direction)))) scale(0); /* Move across the screen while decreasing size */
-    opacity: 0; /* Fade out completely */
+    transform: translate(calc(100vw * (var(--x-direction))), calc(100vh * (var(--y-direction)))) scale(0); /* Move across the screen while decreasing size 
+    opacity: 0; /* Fade out completely 
   }
 }
 
-.burst-piece {
-  position: absolute;
-  width: 8%; /* Slightly smaller pieces for better scattering */
+/*.burst-piece {*/
+/*  position: absolute;*/
+  /* Slightly smaller pieces for better scattering 
   height: 8%;
   background: url("img/iconnect1.png") no-repeat center center / contain;
   border-radius: 10px;
-  animation: burst 4s ease-out forwards; /* Slow down by setting the duration to 4s */
+  animation: burst 4s ease-out forwards; /* Slow down by setting the duration to 4s 
   opacity: 1;
 }
 
