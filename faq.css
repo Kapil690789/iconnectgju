@@ -4,7 +4,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-image: url('img/iconnect1.png');
+    background-image: url('img/iconnect1.jpg');
+    opacity: .9;
 }
 
 .faq-container {
