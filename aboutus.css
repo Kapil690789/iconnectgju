@@ -399,7 +399,8 @@ html, body {
   h2.team-flag {
     font-family: 'Arial', sans-serif;
     font-size: 2.5rem;
-    background: linear-gradient(90deg, #6ca6cd, #87ceeb, #4a839a);
+/*     background: linear-gradient(90deg, #6ca6cd, #87ceeb, #4a839a); */
+    background-image: linear-gradient(90deg, #FFD700, #fdb827, #FFD700);
     -webkit-background-clip: text; /* For WebKit-based browsers */
     background-clip: text;        /* Standard property for compatibility */
     -webkit-text-fill-color: transparent; /* Ensures the text is transparent for WebKit browsers */
@@ -408,7 +409,7 @@ html, body {
     position: relative;
     padding: 10px 10px;
     overflow: hidden; /* Ensures the animation stays within bounds */
-    animation: text-animation 5s ease-in-out infinite;
+    animation: text-animation 5s ease-in-out infinite, colorCycle 5s linear infinite;
   }
 
   /* Text Animation */
@@ -809,5 +810,80 @@ html, body {
   .our-team:hover .social {
     bottom: -18px;
     
+  }
+}
+
+.our-story1 {
+  margin: 20px 108px 0px 108px;
+}
+
+.our-story1 h3 {
+  font-size: 1.6rem;
+}
+
+.our-story1 .our-story-content li {
+  margin-bottom: 20px;
+}
+
+.container .row .col-md-6 li {
+  padding-top: 15px;
+}
+
+.head-content {
+  margin-top: 80px;
+}
+
+.head-content img {
+  margin-top: 20px;
+  border-radius: 8px;
+  width: 800px;
+  height: 420px;
+}
+
+.h3 {
+  font-size: 1.9rem;
+}
+
+.h4 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 480px) { 
+  .head-content {
+    margin-top: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .h3 {
+    font-size: 1.1rem;
+  }
+  
+  .h4 {
+    font-size: .9rem;
+  }
+
+  .head-content img {
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 90%;
+    height: 80%;
+  }
+
+  .our-story1 {
+    margin: 20px 10px 0px 10px;
+  }
+
+  .our-story1 ul {
+    margin-top: 25px;
+    
+  }
+  
+  .our-story1 h3 {
+    font-size: 1.2rem;
+  }
+  
+  .our-story1 .our-story-content li {
+    margin-bottom: 10px;
   }
 }
