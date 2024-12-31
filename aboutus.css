@@ -848,6 +848,10 @@ html, body {
   font-size: 1.5rem;
 }
 
+.our-vision-img-phn {
+  display: none;
+}
+
 @media (max-width: 480px) { 
   .head-content {
     margin-top: 10px;
@@ -893,5 +897,14 @@ html, body {
 
   .our-vision-content p {
     margin-top: 5px;
+  }
+
+  .our-vision-img-phn {
+    display: inline;
+    margin-top: 50px;
+  }
+
+  .our-vision-img-lp {
+    display: none;
   }
 }
