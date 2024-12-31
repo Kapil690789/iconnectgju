@@ -886,4 +886,12 @@ html, body {
   .our-story1 .our-story-content li {
     margin-bottom: 10px;
   }
+
+  .our-vision-content {
+    margin: 0px 10px 0px 10px;
+  }
+
+  .our-vision-content p {
+    margin-top: 5px;
+  }
 }
