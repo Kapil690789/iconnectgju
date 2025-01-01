@@ -144,14 +144,15 @@ a:hover {
 }
 
 .card h3 {
-  font-size: 18px;
+  font-size: 19px;
   margin-left: 10px;
+  margin-top: 10px;
   font-weight: 600;
   color: #444;
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 15px;
   color: #666;
   margin-left: 10px;
 }
