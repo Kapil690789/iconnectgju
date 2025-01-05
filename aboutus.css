@@ -145,7 +145,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 35vh;
   background-color: #65558F;
   background-image: radial-gradient(#ffffff21 2px, transparent 0);
   background-size: 30px 30px;
@@ -166,15 +166,58 @@ html, body {
 .about-card::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: 40px;
   left: 0;
   right: 0;
-  height: 50%;
+  height: 90%;
   background-image: radial-gradient(#65558fe6 1px, transparent 0);
   background-size: 30px 30px;
   background-position: -5px -5px;
 }
 
+.header-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  position: absolute;
+  bottom: 8px;
+  right: 20px;
+}
+
+.header-icons a {
+  text-decoration: none;
+  color: #65558F;
+  font-size: 1.7rem;
+}
+
+.header-icons a .fa-facebook:hover {
+  color: rgb(66, 66, 180);
+}
+
+.header-icons a .fa-x-twitter:hover {
+  color: black;
+}
+
+.header-icons a .fa-instagram:hover {
+  color: rgb(230, 16, 16);
+}
+
+.header-icons a .fa-whatsapp:hover {
+  color: rgb(16, 165, 16);
+}
+
+.header-icons a .fa-linkedin:hover {
+  color: rgb(84, 84, 202);
+}
+
+.header-icons a .fa-youtube:hover {
+  color: red;
+}
+
+.header-icons a i:hover {
+  transform: scale(1.4);
+  transition: .2s;
+}
 .circle-art {
   position: absolute;
   top: -100px;
