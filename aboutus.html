@@ -64,7 +64,107 @@
       </div>
     </div>
 
-    <div class="our-story1">
+    <div id="aboutus" class="container px-0 pt-3">
+      <div class="row px-0 align-items-center">
+
+        <div class="main-box col-lg-6 px-0">
+          
+          <div class=" left-box">
+            <h1 id="aboutus-heading" class="aboutus-heading">AboutUs</h1>
+            <h2 >What is iConnect ??</h2>
+            <br />
+            
+            <p>
+              Team iConnect is a vibrant student organization operating under the Pandit Deendayal Upadhyay Innovation & Incubation Center (PDUIIC) at Guru Jambheshwar University of Science and Technology (GJUS&T) in Hisar.
+              We aim to nurture innovation, promote collaboration, and enhance skill development.
+              iConnect is a dynamic platform for students to explore their potential and contribute to groundbreaking advancements.
+              iConnect is supported by a well-structured administrative team, an experienced advisory panel, and a robust mentoring system, ensuring comprehensive guidance and assistance for its members.  
+            </p>
+            <br>
+            <p>
+              We are dedicated to bridging the gap between theoretical learning and practical application through workshops, hackathons, seminars, and various projects. Aligned with the vision of PDUIIC, 
+              iConnect strives to cultivate a culture of excellence and sustainable development, making it a cornerstone for aspiring innovators and changemakers within the university and beyond.
+            </p>
+          
+            <!-- <a href="/gjust/aboutus.html">
+              <button
+                type="button"
+                class="btn btn-primary btn-md rounded-pill"
+              >
+                Know More
+              </button>
+            </a> -->
+          </div>
+        </div>
+        
+        
+          <!-- <img
+            class="img-fluid"
+            style="border-radius: 40% 5% 30% 50%"
+            src="img/rabit_about.jpg"
+          /> -->
+          <div class="right-box col-lg-6 px-0 text-center">
+          <div class="splide splide-about">
+            <div class="splide__slider">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                  <li class="splide__slide">
+                    <img
+                      class="img-fluid"
+                      src="https://placehold.co/500x500"
+                    />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--     <div class="our-story1">
       <h3 class="our-story-heading font-weight-bold">ABOUT OUR STORY</h3>
       <ul class="our-story-content ">
         <li>Team iConnect is a vibrant student organization operating under the Pandit Deendayal Upadhyay Innovation & Incubation Center (PDUIIC) at Guru Jambheshwar University of Science and Technology (GJUS&T) in Hisar.
@@ -76,7 +176,7 @@
           iConnect strives to cultivate a culture of excellence and sustainable development, making it a cornerstone for aspiring innovators and changemakers within the university and beyond.
         </li>
       </ul>
-    </div>
+    </div> -->
 
     <!-- our Story -->
 <!--     <div id="our-story" class="px-3 my-5">
@@ -183,7 +283,7 @@
           <img
             src="https://placehold.co/500x500"
             alt="Mission Image"
-            class="img-fluid border rounded"
+            class="img-fluid border rounded our-mission-img"
           />
 <!--           <img
             src="https://placehold.co/500x500"
@@ -197,7 +297,7 @@
           <img
             src="https://placehold.co/500x500"
             alt="Vision Image"
-            class="img-fluid border rounded mb-4 our-vision-img-lp"
+            class="img-fluid border rounded mb-4 our-vision-img-lp our-vision-img"
           />
           <div class="our-vision-content">
           <h3 class="font-weight-bold">Our Vision</h3>
@@ -1156,5 +1256,16 @@
         </div>
       </div>
     </div>
+    <script src="
+      https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+      var splideAbout = new Splide(".splide-about", {
+        type: "loop",
+        autoplay: true,
+        perPage: 1,
+        });
+      splideAbout.mount();
+    </script>
   </body>
 </html>
