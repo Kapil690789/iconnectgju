@@ -55,7 +55,7 @@
     ></script>
     <script>
   
-      window.addEventListener("load", () => {
+  window.addEventListener("load", () => {
   const preSplash = document.getElementById("pre-splash");
   const countdownText = document.getElementById("countdown");
   const splashScreen = document.getElementById("splash-screen");
@@ -112,62 +112,41 @@
         // Create snowflakes on the splash screen
         createSnowflakes(splashScreen, 70);
 
-        // Trigger the burst effect
+        // After the snowflakes animation, fade out the splash screen
         setTimeout(() => {
-          const pieces = [];
-          const numPieces = 80; // Number of burst pieces for a denser burst effect
-
-          for (let i = 0; i < numPieces; i++) {
-            const piece = document.createElement("div");
-            piece.classList.add("burst-piece");
-
-            // Randomize X and Y direction with smoother scattering
-            piece.style.setProperty("--x-direction", Math.random() * 2 - 1); // Random values between -1 and 1
-            piece.style.setProperty("--y-direction", Math.random() * 2 - 1); // Random values between -1 and 1
-
-            // Random starting position for burst effect
-            piece.style.top = `${Math.random() * 100}%`;
-            piece.style.left = `${Math.random() * 100}%`;
-
-            pieces.push(piece);
-            splashScreen.appendChild(piece);
-          }
-
-          // After the burst completes, fade out the splash screen
+          splashScreen.style.opacity = "0"; // Fade out the splash screen
           setTimeout(() => {
-            splashScreen.style.opacity = "0"; // Fade out the splash screen
+            splashScreen.style.display = "none"; // Ensure splash screen is removed
+            splashScreen.style.pointerEvents = "none"; // Disable interactions
+
+            // Create snowflakes on the main site body
+            createSnowflakes(document.body, 100);
+
+            iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
+            iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
+
+            // Wait briefly before starting the letter disappearing animation
             setTimeout(() => {
-              splashScreen.style.display = "none"; // Ensure splash screen is removed
-              splashScreen.style.pointerEvents = "none"; // Disable interactions
-
-              // Create snowflakes on the main site body
-              createSnowflakes(document.body, 100);
-
-              iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
-              iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
-
-              // Wait briefly before starting the letter disappearing animation
-              setTimeout(() => {
-                letters.forEach((letter, index) => {
-                  setTimeout(() => {
-                    letter.classList.add("hide"); // Hide the letter with a delay
-                  }, index * 300); // Add a delay of 300ms between each letter
-                });
-
-                // Remove text container after all letters disappear
+              letters.forEach((letter, index) => {
                 setTimeout(() => {
-                  iconnectTextContainer.remove();
-                }, letters.length * 300);
-              }, 1500); // Adjust display time as needed
-            }, 1000);
-          }, 3000); // Extended duration for the burst effect and snowflakes
-        }, 1000); // Time before burst effect starts
+                  letter.classList.add("hide"); // Hide the letter with a delay
+                }, index * 300); // Add a delay of 300ms between each letter
+              });
+
+              // Remove text container after all letters disappear
+              setTimeout(() => {
+                iconnectTextContainer.remove();
+              }, letters.length * 300);
+            }, 1500); // Adjust display time as needed
+          }, 1000);
+        }, 3000); // Extended duration for the snowflakes
       }, 1000); // Time before sliding animation starts
     } else {
       countdown--; // Decrease countdown
     }
   }, 1000);
 });
+
 
 </script>
 
@@ -874,7 +853,7 @@
       </div>
 
       <div class="container pb-5">
-        <h1 class="sponser">Our Sponsers</h1>
+        <h1 class="sponser">Our Past Sponsers</h1>
         <div class="splide sponsers">
           <div class="splide__slider">
             <div class="splide__track">
@@ -946,7 +925,7 @@
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/e4.JPG"
+                       src="img/ee.jpg"
                       />
                     </li>
                     <li class="splide__slide">
@@ -1173,7 +1152,7 @@
               <span>
                 <!-- mysql -u admin -p -e
                 <span class="text-success">"SELECT * FROM about_us;"</span> -->
-                iconnect_society
+                team_iconnect
               </span>
             </div>
             <div id="iconnect_society-body" class="">
@@ -1271,7 +1250,13 @@
             Guru Jambheshwar University of Science & Technology, Hisar, Haryana (125001)
           </a>
         </p>
-        <p><i class="fas fa-phone"></i> +91-9467905906</p>
+       <p>
+            <i class="fas fa-phone"></i> 
+         <a href="tel:+919467905906" class="map-link">
+                +919467905906
+             </a>
+        </p>
+
         <p>
           <i class="fas fa-envelope"></i> 
           <a href="mailto:iconnectgjust@gmail.com" class="map-link">iconnectgjust@gmail.com</a>
