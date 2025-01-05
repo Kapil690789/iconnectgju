@@ -904,3 +904,191 @@ html, body {
     display: none;
   }
 }
+
+#aboutus .left-box {
+  margin-bottom: 600px;
+  margin-left: 20px;
+  /* color: white; */
+  /* background-color: red; */
+}
+
+#aboutus .left-box h1 {
+  font-weight: 700;
+  margin-left: 560px;
+  margin-bottom: 40px;
+  /* color: black; */
+}
+
+#aboutus .left-box h2 {
+  font-weight: 700;
+  margin-top: 60px;
+  /* color: black; */
+}
+
+#aboutus .left-box p {
+  /* width: 700px; */
+  line-height: 1.5;
+  font-size: 1.1rem;
+  /* color: black; */
+}
+
+#aboutus .left-box a button {
+  margin-top: 30px;
+  background-color: #f0ad4e;
+  color: var(--background-color);
+}
+
+#aboutus .left-box a button:hover {
+  background-color: var(--card-text);
+}
+
+#aboutus .right-box {
+  width: 600px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+}
+
+#aboutus .right-box img {
+  /* margin-bottom: 40px; */
+  width: 80%;
+  height: 450px;
+}
+
+#aboutus .right-box .splide {
+  /* padding-left: 30px; */
+  /* padding-right: 30px; */
+  margin-top: -450px;
+  /* margin-right: -80px; */
+}
+
+#aboutus {
+  margin-top: 20px;
+  /* background-color: red; */
+  margin-bottom: -530px;
+}
+
+@media (max-width: 480px) {
+
+  #s-y {
+    height: 2px;
+    width: 70%;
+    background-color: var(--nav-shadow);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  #aboutus {
+    margin: 0;
+    padding: 10px;
+    /* margin-bottom: -70px; */
+  }
+
+  #aboutus .row {
+    margin-bottom: -50px;
+  }
+
+  /* Left Box Styling */
+  #aboutus .left-box {
+    margin: 0 auto 1px auto; /* Center align and adjust spacing */
+    padding: 30px; 
+  }
+
+  #aboutus .left-box h1 {
+    font-size: 10px;
+    margin-left: 0;
+    margin-bottom: 1px;
+    margin-top: -50px;
+    text-align: center; /* Center the heading */
+  }
+
+  #aboutus .left-box h2 {
+    font-size: 20px;
+    margin-top: 15px;
+    text-align: center; /* Center the subheading */
+  }
+
+  #aboutus .left-box p {
+    width: 100%; /* Full width on smaller screens */
+    font-size: .7rem;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: justify; /* Adjust readability */
+    margin-bottom: 15px;
+    padding-left: 15px; /* Added padding */
+    padding-right: 15px; /* Added padding */
+  }
+
+  #aboutus .left-box a button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%; /* Full width button */
+    font-size: 14px;
+    padding: 10px;
+    padding-left: 15px; /* Added padding */
+    padding-right: 15px; /* Added padding */
+  }
+
+  /* Right Box Styling */
+  #aboutus .right-box {
+    width: 80%; /* Take full width */
+    margin: 0 auto 20px auto; /* Adjust spacing */
+  }
+
+  #aboutus .right-box img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+
+  #aboutus .right-box .splide {
+    padding: 0 15px; /* Added left and right padding */
+    margin: 0 auto; /* Center the splide container */
+  }
+
+  #aboutus .right-box .splide__slider {
+    overflow: hidden;
+  }
+
+  /* Adjust Splide Images */
+  #aboutus .right-box .splide__slide img {
+    width: 100%; /* Full width inside splide */
+    height: auto; /* Maintain aspect ratio */
+    padding: 0 40px 10px 40px;
+  }
+
+  .ss {
+    height: auto; /* Allow dynamic height based on content */
+    flex: 0 0 calc(100% / 4); /* Dynamically calculate for 4 slides */
+  }
+
+  .img-fluid {
+    max-width: 100%; /* Slight padding for smaller screens */
+    margin: 0 auto;
+  }
+}
+
+/* Splide Slider Styling */
+.splide__slider {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.our-mission-img {
+  width: 350px;
+  height: 350px;
+  margin-top: 70px;
+  margin-left: 80px;
+}
+
+.our-vision-img {
+  width: 350px;
+  height: 350px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
+
+.our-vision-content {
+  margin-top: 60px;
+}
