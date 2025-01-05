@@ -218,6 +218,64 @@ html, body {
   transform: scale(1.4);
   transition: .2s;
 }
+
+@media (max-width: 480px) {
+
+  .position-absolute.w-100 {
+    position: absolute !important; /* Override Bootstrap's absolute positioning */
+    bottom: 6px !important;
+    left: 15px !important;
+    width: 40% !important; /* Adjust width */
+  }
+
+  .display-heading {
+    font-size: .7rem !important; /* Adjust font size */
+    margin-bottom: 0;
+  }
+
+  .btn {
+    font-size: .4rem !important; /* Adjust button font size */
+    padding: 4px 6px !important; /* Adjust button padding */
+  }
+
+  .about-card {
+    position: relative;
+    padding: 20px;
+    margin-top: 8px;
+    width: 90%;
+    height: 80%;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.278);
+    box-sizing: border-box;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    height: 90%;
+    background-image: radial-gradient(#65558fe6 1px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+  }
+  
+  .header-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+  }
+
+  .header-icons a {
+    font-size: .8rem;
+  }
+}
+
 .circle-art {
   position: absolute;
   top: -100px;
@@ -957,7 +1015,7 @@ html, body {
 
 #aboutus .left-box h1 {
   font-weight: 700;
-  margin-left: 560px;
+  margin-left: 540px;
   margin-bottom: 40px;
   /* color: black; */
 }
@@ -1010,6 +1068,10 @@ html, body {
   margin-bottom: -530px;
 }
 
+.our-mission-img-phn {
+  display: none;
+}
+
 @media (max-width: 480px) {
 
   #s-y {
@@ -1038,23 +1100,23 @@ html, body {
   }
 
   #aboutus .left-box h1 {
-    font-size: 10px;
+    font-size: 20px;
     margin-left: 0;
     margin-bottom: 1px;
-    margin-top: -50px;
+    margin-top: -30px;
     text-align: center; /* Center the heading */
   }
 
   #aboutus .left-box h2 {
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 15px;
     text-align: center; /* Center the subheading */
   }
 
   #aboutus .left-box p {
     width: 100%; /* Full width on smaller screens */
-    font-size: .7rem;
-    font-weight: 500;
+    font-size: .6rem;
+    font-weight: 400;
     line-height: 1.3;
     text-align: justify; /* Adjust readability */
     margin-bottom: 15px;
@@ -1072,10 +1134,15 @@ html, body {
     padding-right: 15px; /* Added padding */
   }
 
+  .our-mission-img {
+    width: 350px;
+    height: 100%;
+  }
+
   /* Right Box Styling */
   #aboutus .right-box {
     width: 80%; /* Take full width */
-    margin: 0 auto 20px auto; /* Adjust spacing */
+    margin: 0 50px 20px auto; /* Adjust spacing */
   }
 
   #aboutus .right-box img {
@@ -1085,9 +1152,14 @@ html, body {
     border-radius: 10px;
   }
 
+  #aboutus .splide__arrow--next {
+    /* background-color: red; */
+    margin-right: -28px;
+  }
+
   #aboutus .right-box .splide {
-    padding: 0 15px; /* Added left and right padding */
-    margin: 0 auto; /* Center the splide container */
+    padding: 0 0; /* Added left and right padding */
+    margin: 0 0; /* Center the splide container */
   }
 
   #aboutus .right-box .splide__slider {
@@ -1108,8 +1180,17 @@ html, body {
 
   .img-fluid {
     max-width: 100%; /* Slight padding for smaller screens */
-    margin: 0 auto;
+    margin: 0 0;
   }
+
+  .our-mission-img-lp{
+    display: none;
+  }
+
+  .our-mission-img-phn{
+    display: inline;
+  }
+
 }
 
 /* Splide Slider Styling */
@@ -1118,7 +1199,7 @@ html, body {
   border-radius: 10px;
 }
 
-.our-mission-img {
+.our-mission-img-lp {
   width: 350px;
   height: 350px;
   margin-top: 70px;
