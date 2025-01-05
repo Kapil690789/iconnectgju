@@ -43,14 +43,7 @@ html, body {
 }
 
 @media (max-width: 480px) {
-  .display-heading {
-    display: none;
-  }
-
-  .btn-primary {
-    display: none;
-  }
-
+  
   .about-card {
     position: relative;
     padding: 20px;
