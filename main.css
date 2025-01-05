@@ -159,28 +159,6 @@ html, body {
   display: none;
 }
 
-/* Burst Effect Animation */
-/*@keyframes burst {*/
-/*  0% {*/
-    /* Start at original size 
-    opacity: 1;
-  }
-  100% {
-    transform: translate(calc(100vw * (var(--x-direction))), calc(100vh * (var(--y-direction)))) scale(0); /* Move across the screen while decreasing size 
-    opacity: 0; /* Fade out completely 
-  }
-}
-
-/*.burst-piece {*/
-/*  position: absolute;*/
-  /* Slightly smaller pieces for better scattering 
-  height: 8%;
-  background: url("img/iconnect1.png") no-repeat center center / contain;
-  border-radius: 10px;
-  animation: burst 4s ease-out forwards; /* Slow down by setting the duration to 4s 
-  opacity: 1;
-}
-
 /* Snowflake Animation */
 @keyframes fall {
   0% {
@@ -226,20 +204,6 @@ html, body {
 }
 
 
-.flip-on-hover {
-  width: 300px;
-  height: auto;
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Smooth transitions */
-  transform-style: preserve-3d; /* Maintain 3D transform perspective */
-}
-
-.flip-on-hover:hover {
-  transform: rotateY(180deg); /* Flip the image */
-  opacity: 0.9; /* Slightly reduce opacity for a subtle effect */
-}
-.flip-on-hover:hover {
-  content: url('img/iconnect.jpg'); /* Changes the image */
-}
 /* Base styling for the iconnect text */
 #iconnect-text-container {
   position: fixed;
