@@ -24,28 +24,32 @@
     </div>
     
      <div class="separator-top"></div>
-        <hr>
-<div class="message-section row justify-content-center text-center mt-5 mb-5">
-  <div class="col-md-8 col-lg-6">
-    <h2 class="contact-heading mb-4">Send Us a Message</h2>
-    <form action="send_mail.php" method="POST" onsubmit="return validateMessage()">
-      <div class="mb-3">
-        <label for="name" class="form-label">Your Name</label>
-        <input type="text" class="form-control custom-input" id="name" name="name" required placeholder="Enter your name">
+        
+     <div class="message-section justify-content-center text-start col">
+          <p class="text-start">If you still have any questions, feel free to connect with us by filling out the form below.</p>
+          <div >
+            
+            <h3 class="contact-heading ">Connect With Us</h3>
+            <form action="send_mail.php" method="POST" onsubmit="return validateMessage()">
+              <div class="name-email">
+              <div class="mb-2">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control custom-input" id="name" name="name" required placeholder="Enter your name">
+              </div>
+              <div class="mb-2">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control custom-input" id="email" name="email" required placeholder="Enter your email">
+              </div>
+              </div>
+              <div class="mb-2">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control custom-input" id="message" name="message" rows="4" required placeholder="Write your message here"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block w-60">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Your Email</label>
-        <input type="email" class="form-control custom-input" id="email" name="email" required placeholder="Enter your email">
-      </div>
-      <div class="mb-3">
-        <label for="message" class="form-label">Your Message</label>
-        <textarea class="form-control custom-input" id="message" name="message" rows="4" required placeholder="Write your message here"></textarea>
-        <small id="word-count" class="text-muted">Maximum 100 words.</small>
-      </div>
-      <button type="submit" class="btn btn-primary btn-block w-40">Send Message</button>
-    </form>
-  </div>
-</div>
 
 <script>
   // Function to validate message word count
