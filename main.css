@@ -3671,3 +3671,18 @@ input:checked + .slider:before {
   margin-bottom: 3px;
   margin-right: 30px;
 }
+/* Style for the message section inputs and text area */
+.custom-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.custom-input:focus,
+.custom-input:hover {
+  box-shadow: 0 4px 8px rgba(255, 235, 59, 0.5); /* Light yellow shadow */
+  border-color: #ffeb3b; /* Light yellow border */
+  outline: none;
+}
+
