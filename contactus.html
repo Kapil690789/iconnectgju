@@ -4,24 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="contactus.css">
+     
 </head>
 <body>
     <div class="container">
         <h1>Contact Us</h1>
         <div class="contact-info">
             <h3>Contact Details:</h3>
-            <p><strong>Email:</strong> iconnectgjust@gmail.com</p>
-            <p><strong>Phone:</strong> +91-9467905906</p>
+            <p><strong>Email:</strong> <a href="mailto:iconnectgjust@gmail.com" class="map-link">iconnectgjust@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+919467905906" class="map-link">+919467905906</a></p>
             <p>
-                <strong>Address:</strong> Pandit Deendayal Upadhyaya Innovation & Incubation Centre (PDUIIC),
-                Guru Jambheshwar University of Science & Technology, Hisar, Haryana (125001)
+                <strong>Address:</strong> 
+                <a href="https://maps.app.goo.gl/E3dDV9i2FQu32K8D9?g_st=ac" target="_blank" class="map-link">
+                    Pandit Deendayal Upadhyaya Innovation & Incubation Centre (PDUIIC),
+                    Guru Jambheshwar University of Science & Technology, Hisar, Haryana (125001)
+                </a>
             </p>
         </div>
         <div class="map">
             <h3>Our Location:</h3>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6967.586653142698!2d75.73384207513935!3d29.170761975375182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1735065996659!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3471.746654309439!2d75.7190329766215!3d29.151284681888144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912038a7f6f7b4d%3A0x2d0a8e6a3f0a437e!2sPandit%20Deendayal%20Upadhyaya%20Innovation%20%26%20Incubation%20Centre%20(PDUIIC)!5e0!3m2!1sen!2sin!4v1735065996659!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
+        
+         <div class="separator-top"></div>
+        <hr>
+        
+       <div class="message-section row justify-content-center text-center mt-5 mb-5">
+  <div class="col-md-8 col-lg-6">
+    <h2 class="contact-heading mb-4">Send Us a Message</h2>
+    <form action="send_mail.php" method="POST" onsubmit="return validateMessage()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control custom-input" id="name" name="name" required placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" class="form-control custom-input" id="email" name="email" required placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Your Message</label>
+        <textarea class="form-control custom-input" id="message" name="message" rows="4" required placeholder="Write your message here"></textarea>
+        <small id="word-count" class="text-muted">Maximum 100 words.</small>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block w-40">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Function to validate message word count
+  function validateMessage() {
+    const message = document.getElementById("message").value;
+    const wordCount = message.trim().split(/\s+/).length;
+
+    // If the message exceeds 100 words, alert the user and prevent form submission
+    if (wordCount > 100) {
+      alert("Your message exceeds the 100-word limit. Please shorten it.");
+      return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+  }
+
+  // Function to update word count dynamically (optional)
+  document.getElementById("message").addEventListener("input", function() {
+    const message = this.value;
+    const wordCount = message.trim().split(/\s+/).length;
+    document.getElementById("word-count").textContent = `Words: ${wordCount}/100`;
+  });
+</script>
+
+
+     
+      
     </div>
 </body>
 </html>
