@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-image: url('/img/iconnect.jpg');
+    background-image: url('/img/iconnect1.png');
     opacity: .9;
 }
 
@@ -118,3 +118,57 @@ h1 {
         font-size: 15px;
     }
 }
+.custom-input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.custom-input:focus,
+.custom-input:hover {
+  box-shadow: 0 4px 8px rgba(255, 235, 59, 0.5); /* Light yellow shadow */
+  border-color: #ffeb3b; /* Light yellow border */
+  outline: none;
+}
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1000;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .popup.active {
+      display: block;
+    }
+
+    .popup-header {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .popup button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .popup button:hover {
+      background-color: #0056b3;
+    }
+ 
