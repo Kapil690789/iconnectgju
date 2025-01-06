@@ -68,7 +68,7 @@ h1 {
 }
 
 .map {
-    margin-top: 20px;
+    margin-top: 70px;
     text-align: center;
 }
 
@@ -187,4 +187,23 @@ iframe:hover {
       background-color: #0056b3;
     }
  
+    .message-section {
+        border-radius: 8px;
+        margin-top: 30px;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(255, 223, 0, 0.5);
+    }
 
+    .message-section .contact-heading {
+        font-weight: 700;
+    }
+
+    .message-section .btn-primary {
+        background-color: #5842a2;
+        margin-top: 10px;
+    }
+
+    .message-section .btn-primary:hover {
+        background-color: black;
+        transition: .3s;
+    }
