@@ -5,16 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ</title>
   <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
 </head>
 <body>
 
   <div class="faq-container">
     <h1>Frequently Asked Questions</h1>
     <p>Check most frequently asked questions here.</p>
-
+      
     <div id="faq-list" class="faq-list">
      
     </div>
+    
+     <div class="separator-top"></div>
+        <hr>
+<div class="message-section row justify-content-center text-center mt-5 mb-5">
+  <div class="col-md-8 col-lg-6">
+    <h2 class="contact-heading mb-4">Send Us a Message</h2>
+    <form action="send_mail.php" method="POST" onsubmit="return validateMessage()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control custom-input" id="name" name="name" required placeholder="Enter your name">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" class="form-control custom-input" id="email" name="email" required placeholder="Enter your email">
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Your Message</label>
+        <textarea class="form-control custom-input" id="message" name="message" rows="4" required placeholder="Write your message here"></textarea>
+        <small id="word-count" class="text-muted">Maximum 100 words.</small>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block w-40">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Function to validate message word count
+  function validateMessage() {
+    const message = document.getElementById("message").value;
+    const wordCount = message.trim().split(/\s+/).length;
+
+    // If the message exceeds 100 words, alert the user and prevent form submission
+    if (wordCount > 100) {
+      alert("Your message exceeds the 100-word limit. Please shorten it.");
+      return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+  }
+
+  // Function to update word count dynamically (optional)
+  document.getElementById("message").addEventListener("input", function() {
+    const message = this.value;
+    const wordCount = message.trim().split(/\s+/).length;
+    document.getElementById("word-count").textContent = `Words: ${wordCount}/100`;
+  });
+</script>
+
   </div>
 
   <script>
