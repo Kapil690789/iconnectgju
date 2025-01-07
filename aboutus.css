@@ -1221,11 +1221,11 @@ html, body {
 .about-card img {
   display: block;
   margin: 0 auto;
-  max-width: 110%; 
-  max-height: 110%; 
+  max-width: 60%; 
+  max-height: 50%; 
   object-fit: contain; 
   position: absolute; 
-  top: 36%;
+  top: 48%;
   left: 55%;
   transform: translate(-50%, -50%) scale(1.8); 
 }
