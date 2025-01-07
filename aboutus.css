@@ -1217,3 +1217,15 @@ html, body {
 .our-vision-content {
   margin-top: 60px;
 }
+
+.about-card img {
+  display: block;
+  margin: 0 auto;
+  max-width: 110%; 
+  max-height: 110%; 
+  object-fit: contain; 
+  position: absolute; 
+  top: 36%;
+  left: 55%;
+  transform: translate(-50%, -50%) scale(1.8); 
+}
