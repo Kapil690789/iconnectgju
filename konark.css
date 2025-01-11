@@ -16,14 +16,12 @@ a:hover {
 
 /* Header Section */
 .header {
-  background-color: #222;
   color: #fff;
-  padding: 10px 0;
 }
 
 .header-banner img {
   width: 100%;
-  height: auto;
+  height: 55vh;
 }
 
 /* Main Content Section */
@@ -41,15 +39,16 @@ a:hover {
 }
 
 .about-top img {
-  width: 140px;
-  height: 100px;
+  width: 170px;
+  height: 120px;
   border: 1px solid rgb(199, 199, 199);
   border-radius: 10px;
   margin: 20px;
 }
 
 .about-top .about-top-content {
-  padding-top: 10px;
+  /* padding-top: 10px; */
+  padding: 35px 0;
 }
 
 .about-top .about-top-content h3{
@@ -117,7 +116,7 @@ a:hover {
 
 .opportunities {
   display: grid;
-  grid-template-columns: repeat(3, 250px);
+  grid-template-columns: repeat(4, 250px);
   gap: 30px;
   margin-top: 25px;
   
@@ -140,6 +139,7 @@ a:hover {
 
 .card img {
   width: 100%;
+  height: 60%;
   border-bottom: 1px solid #ddd;
 }
 
@@ -196,17 +196,25 @@ a:hover {
 
 @media (max-width: 480px) { 
 
+  .header-banner img {
+    height: 20vh;
+  }
+
   .about-top img {
-    width: 90px;
-    height: 70px;
+    width: 100px;
+    height: 90px;
+  }
+
+  .about-top .about-top-content {
+    padding: 25px 0;
   }
 
   .about-top .about-top-content p span {
-    font-size: 1rem;
+    font-size: .9rem;
   }
 
   .about-top .about-top-content p {
-    font-size: .7rem;
+    font-size: .6rem;
   }
 
   .about-bottom h2 {
