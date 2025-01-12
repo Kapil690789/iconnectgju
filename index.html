@@ -540,10 +540,10 @@
                 </div>
                 <div class="cards">
                   <div>
-                    <img src="https://via.placeholder.com/300x200" alt="Card Image">
+                    <img src="/img/Brain battles2.jpeg" alt="Card Image">
                   </div>
                   <div class="card-body">
-                    <p>Event Name</p>
+                    <p>Brain-Battles</p>
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
                     <a href="/events.html">Register Here</a>
@@ -551,10 +551,10 @@
                 </div>
                 <div class="cards">
                   <div>
-                    <img src="https://via.placeholder.com/300x200" alt="Card Image">
+                    <img src="/img/Visionathon2.jpeg" alt="Card Image">
                   </div>
                   <div class="card-body">
-                    <p>Event Name</p>
+                    <p>Visionathon</p>
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
                     <a href="https://forms.gle/your-google-form-link">Register Here</a>
@@ -565,7 +565,7 @@
                     <img src="https://via.placeholder.com/300x200" alt="Card Image">
                   </div>
                   <div class="card-body">
-                    <p>Event Name</p>
+                    <p>Ideathon</p>
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
                     <a href="https://forms.gle/your-google-form-link">Register Here</a>
@@ -573,10 +573,10 @@
                 </div>
                 <div class="cards">
                   <div>
-                    <img src="https://via.placeholder.com/300x200" alt="Card Image">
+                    <img src="/img/CFC2.jpeg" alt="Card Image">
                   </div>
                   <div class="card-body">
-                    <p>Event Name</p>
+                    <p>Crown For Code</p>
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
                     <a href="https://forms.gle/your-google-form-link">Register Here</a>
@@ -643,14 +643,20 @@
         </div>
         </div>
         
-                 <div id="popup-modal" class="popup-modal">
+                 <!-- <div id="popup-modal" class="popup-modal">
                     <div class="popup-content">
                            <span class="close-btn">&times;</span>
                               <h2 id="popup-title">Event Title</h2>
                           <p id="popup-details">Event details will appear here.</p>
                          
                    </div>
-                </div>
+                </div> -->
+                <div id="popup-modal" class="popup-modal">
+                  <div class="popup-content">
+                      <span class="close-btn">&times;</span>
+                      <img id="popup-image" src="" alt="Event Image" style="max-width: 100%; height: auto; border-radius: 10px;">
+                  </div>
+              </div>
 
             </div>
           </div>
@@ -659,49 +665,99 @@
     </section>
     
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
+//     document.addEventListener("DOMContentLoaded", () => {
+//     const modal = document.getElementById("popup-modal");
+//     const closeBtn = document.querySelector(".close-btn");
+//     const popupTitle = document.getElementById("popup-title");
+//     const popupDetails = document.getElementById("popup-details");
+
+//     const eventDetails = {
+//         "business-quiz":  {
+//             title: "Business Quiz",
+//             details: "We are dedicated to bridging the gap between theoretical learning and practical application through workshops, hackathons, seminars, and various projects."
+//         },
+//         "startup-auction": {
+//             title: "Startup Auction",
+//             details: "Experience the thrill of bidding wars and showcase your entrepreneurial spirit in this innovative startup-themed event."
+//         },
+//         "startup-space": {
+//             title: "Startup Space",
+//             details: "Explore ideas and network with like-minded individuals to turn your innovative ideas into reality."
+//         },
+//         "trade-titans": {
+//             title: "Trade Titans",
+//             details: "Trade Titans is an exhilarating event designed to sharpen your trading skills and strategic thinking. Join us for a hands-on experience in the fast-paced world of business and trade."
+//         },
+//         "startup-spotlight": {
+//             title: "Startup Spotlight",
+//             details: "Join us to explore and celebrate the brightest startup minds with opportunities for innovation and networking."
+//         }
+//     };
+
+//     document.querySelectorAll(".view-details-btn").forEach((button) => {
+//         button.addEventListener("click", () => {
+//             const event = button.getAttribute("data-event");
+//             const { title, details } = eventDetails[event];
+
+//             popupTitle.textContent = title || "Event Details";
+//             popupDetails.textContent = details || "Details for this event are not available yet.";
+
+//             modal.style.display = "flex";
+//         });
+//     });
+
+//     closeBtn.addEventListener("click", () => {
+//         modal.style.display = "none";
+//     });
+
+//     window.addEventListener("click", (event) => {
+//         if (event.target === modal) {
+//             modal.style.display = "none";
+//         }
+//     });
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("popup-modal");
     const closeBtn = document.querySelector(".close-btn");
-    const popupTitle = document.getElementById("popup-title");
-    const popupDetails = document.getElementById("popup-details");
+    const popupContent = document.querySelector(".popup-content");
 
     const eventDetails = {
         "business-quiz": {
-            title: "Business Quiz",
-            details: "We are dedicated to bridging the gap between theoretical learning and practical application through workshops, hackathons, seminars, and various projects."
+            image: "img/past events/Business.jpeg"
         },
         "startup-auction": {
-            title: "Startup Auction",
-            details: "Experience the thrill of bidding wars and showcase your entrepreneurial spirit in this innovative startup-themed event."
+            image: "img/events_logo/startup_auction.png"
         },
         "startup-space": {
-            title: "Startup Space",
-            details: "Explore ideas and network with like-minded individuals to turn your innovative ideas into reality."
+            image: "img/events_logo/startup_space.png"
         },
         "trade-titans": {
-            title: "Trade Titans",
-            details: "Trade Titans is an exhilarating event designed to sharpen your trading skills and strategic thinking. Join us for a hands-on experience in the fast-paced world of business and trade."
+            image: "img/past events/Trade.jpeg"
         },
         "startup-spotlight": {
-            title: "Startup Spotlight",
-            details: "Join us to explore and celebrate the brightest startup minds with opportunities for innovation and networking."
+            image: "img/past events/Spotlight.jpeg"
         }
     };
 
     document.querySelectorAll(".view-details-btn").forEach((button) => {
         button.addEventListener("click", () => {
             const event = button.getAttribute("data-event");
-            const { title, details } = eventDetails[event];
+            const { image } = eventDetails[event];
 
-            popupTitle.textContent = title || "Event Details";
-            popupDetails.textContent = details || "Details for this event are not available yet.";
+            // Clear existing content and insert the image
+            popupContent.innerHTML = `
+                <span class="close-btn">&times;</span>
+                <img src="${image}" alt="${event}" style="max-width: 100%; height: auto; border-radius: 10px;">
+            `;
 
             modal.style.display = "flex";
-        });
-    });
 
-    closeBtn.addEventListener("click", () => {
-        modal.style.display = "none";
+            // Reattach close functionality
+            document.querySelector(".close-btn").addEventListener("click", () => {
+                modal.style.display = "none";
+            });
+        });
     });
 
     window.addEventListener("click", (event) => {
@@ -710,7 +766,6 @@
         }
     });
 });
-
 
     
       // Function to toggle visibility of event sections
