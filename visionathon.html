@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Events</title>
+    <meta name="description" content="Event details page for E-Summit 2024" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image" href="img/iconnect.jpg" />
+    <link rel="stylesheet" href="visionathon.css" />
+  </head>
+  <body>
+    <section>
+      <div class="event-card custom-shadow">
+        <div id="event-bg" class="d-none d-md-block"></div>
+        <div id="event-head" class="text-center text-md-start">
+          <div class="p-5 text-white">
+            <h1 id="event-title">Visionathon</h1>
+            <p style="color: #fdb827">Organized by iConnect_PDUIIC_GJUS&T</p>
+          </div>
+        </div>
+        <div id="event-detail">
+          <div class="row justify-content-center m-0 px-3">
+            <div class="col-lg-8 col-12 m-3 p-0">
+              <div class="event-detail-card mt-3">
+                <div class="d-flex align-items-center">
+                  <div class="m-1">
+                    <img class="event-icon" src="img/upcoming events/Visionathon2.jpeg" alt="Event Icon" />
+                  </div>
+                  <div class="m-1">
+                    <h1>Visionathon 2025 (Blaze Of Innovation)</h1>
+                  </div>
+                </div>
+                <div class="d-flex flex-column gap-2">
+                  <span><i class="fa-solid fa-location-dot"></i> offline</span>
+                  <span><i class="fa-solid fa-calendar"></i> Last Registration Date: Feb 7, 2025</span>
+                  <span><i class="fa-solid fa-medal"></i> GJUS&T, Hisar</span>
+                </div>
+              </div>
+
+              <!-- <div class="event-detail-card sticky-top">
+                <div>
+                  <ul class="list-group list-group-horizontal overflow-x-auto gap-1 user-select-none">
+                    <li class="list-item active">Timeline</li>
+                    <li class="list-item">Details</li>
+                    <li class="list-item">FAQs</li>
+                  </ul>
+                </div>
+              </div> -->
+
+              <div class="event-detail-card">
+                <div id="eventbox">
+                  <!-- Event 1 -->
+                  <div class="event-box">
+                    <div class="date-line">
+                      <div class="date">
+                        <div class="day"><a href="#" onclick="showCalendar(event)" data-bs-toggle="modal" data-bs-target="#calendarModal">Feb 19, 2025</a></div>
+                        <!-- <div class="monthAndyear">Feb 25</div> -->
+                      </div>
+                      <div class="line">
+                        <div class="circle"></div>
+                        <div class="linee"></div>
+                        <div class="circle2"></div>
+                      </div>
+                    </div>
+                    <div class="event">
+                      <h4>Round 1: Online Submissions (Synopsis or PPT)</h4>
+                      <p>
+                        <ul>
+                        <li>Submissions must be in the form of a concise synopsis (500 words max) or a presentation deck (10 slides max) outlining the key aspects of the proposed solution.</li>
+                        <li>Submissions must be original and unpublished work of the participants.</li>
+                        <li>Plagiarism or infringement of intellectual property will lead to disqualification.</li>
+                        </ul>
+                      </p>
+                      <div class="event-bottom">
+                        <div>
+                          <p>&nbsp;&nbsp;&nbsp;&nbsp;Start: 19 Feb 25, 09:30 AM IST</p>
+                          <!-- <p>End: 14 Aug 24, 05:45 PM IST</p> -->
+                        </div>
+                        <div>
+                            <br>
+                        <h4>Round 2: Intermediate Evaluation</h4> 
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Details to be provided after the completion of Round 1.</p>
+                        <br>
+                        <h4>Round 3: Final Evaluation at Venue (Selected Teams)</h4>
+                        <p>
+                            <ul>
+                                <li>Top teams shortlisted from Round 2 will be invited to present their solutions in person at the final event. </li>
+                                <li>All accommodation and travel expenses are not covered by the organizers.</li>
+                                <li>The final presentations will be 10-15 minutes long, followed by a 5-minute Q&A session with the judges.</li>
+                            </ul>
+                        </p>  
+                        <div>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;Date: 20 February 2025</p>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;Time: 09:30 AM IST</p>
+                            <!-- <p>&nbsp;&nbsp;&nbsp;&nbsp;Venue: Pandit Deendayal Upadhyay Innovation & Incubation Center, Guru Jambheshwar University of Science and Technology, Hisar, Haryana 125001.</p> -->
+                        </div> 
+                          <button id="button">Guidelines</button>
+                           <!-- Calendar Modal -->
+                            <div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="calendarModalLabel">Event Date & Time</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                    <p><strong>Date:</strong> 19 February 2025</p>
+                                    <p><strong>Time:</strong> 09:30 AM IST</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <script>
+                                function showCalendar(event) {
+                                  event.preventDefault();
+                                  console.log("Date clicked: Feb 19, 2025");
+                                }
+                              </script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Add more events here following the same structure -->
+                </div>
+              </div>
+
+              <div class="event-detail-card">
+                <h4>Details</h4>
+                <p>Date: 19 February 2025</p>
+                <p>Time: 9:30 AM</p>
+                <p>Venue: Pandit Deendayal Upadhyay Innovation & Incubation Center, Guru Jambheshwar University of Science and Technology, Hisar, Haryana 125001.</p>
+              </div>
+
+              <div class="event-detail-card">
+                <h4><a href="/faq.html">FAQs</a></h4>
+                <div>
+                  <div class="card m-2">
+                    <div
+                      class="card-header collapsed"
+                      id="headingOne"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#question1"
+                      aria-expanded="false"
+                      aria-controls="question1"
+                    >
+                      <div class="row justify-content-between">
+                        <span class="col-auto">How Do I register for this event?</span>
+                        <span class="col-auto"><i class="fas fa-chevron-down"></i></span>
+                      </div>
+                    </div>
+
+                    <div
+                      id="question1"
+                      class="collapse"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#questions"
+                    >
+                      <div class="card-body">
+                        You can click the register button on our website for registrations. Fill in the form and start the journey.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card m-2">
+                    <div
+                      class="card-header collapsed"
+                      id="headingTwo"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#question2"
+                      aria-expanded="false"
+                      aria-controls="question2"
+                    >
+                      <div class="row justify-content-between">
+                        <span class="col-auto">What are the accommodation facilities for the participants?</span>
+                        <span class="col-auto"><i class="fas fa-chevron-down"></i></span>
+                      </div>
+                    </div>
+
+                    <div
+                      id="question2"
+                      class="collapse"
+                      aria-labelledby="headingTwo"
+                    >
+                      <div class="card-body">
+                        Accommodation is not provided for this event.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar for Event Registration -->
+            <div class="col-lg-4 col-12 m-3 p-0">
+              <div class="sticky-top pt-3">
+                <div class="event-detail-card">
+                  <div class="row justify-content-between align-items-center">
+                    <div class="col-auto"><h3>Free</h3></div>
+                    <div class="col-auto">
+                      <button class="btn" onclick="sharePage()">
+                        <i class="fa-solid fa-share"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Updated Register Button -->
+                  <button type="button" class="btn btn-primary btn-lg w-100 mt-2" onclick="window.location.href='registration.html';">
+                    Register
+                    
+                  </button>
+                  <!-- <button type="button" class="btn btn-primary btn-lg w-100 mt-2" >
+                  <a
+                  class="dropdown-item"
+                  href="https://forms.gle/your-google-form-link"
+                  target="_blank"
+                >
+                  Google Form
+                </a>
+                </button> -->
+                  <hr />
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="m-1">
+                          <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <div class="m-1">
+                          <span>Team Size</span>
+                          <h6>1 - 6 Members</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="m-1">
+                          <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="m-1">
+                          <span>Event Date</span>
+                          <h6>19 Feb 2025</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        function sharePage() {
+          if (navigator.share) {
+            navigator
+              .share({
+                title: document.title,
+                text: "Check out this event!",
+                url: window.location.href,
+              })
+              .then(() => {
+                console.log("Page shared successfully!");
+              })
+              .catch((error) => {
+                console.error("Error sharing:", error);
+              });
+          } else {
+            alert("Your browser doesn't support the Share API.");
+          }
+        }
+      </script>
+  </body> 
+</html>
