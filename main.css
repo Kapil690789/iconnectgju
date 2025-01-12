@@ -3781,3 +3781,26 @@ input:checked + .slider:before {
   outline: none;
 }
 
+.popup-content {
+  padding: 0;
+  margin: 0;
+}
+
+.close-btn {
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+}
+
+.popup-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
