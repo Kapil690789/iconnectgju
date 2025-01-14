@@ -19,12 +19,12 @@ body{
     background-color: #241556 !important;
   }
   #event-bg{
-    width: 70%;
+    width: 60%;
     height: 100%;
     position: absolute;
     right: 0;
     /* background: linear-gradient(to left, #5935b500, #5935b500 50%, #5935b5 100%), url('https://placehold.co/500x150/?text=img'); */
-    background: linear-gradient(to left, #5935b500, #5935b500 50%, #5935b5 100%), url('img/Visionathon1.jpeg');
+    background: linear-gradient(to left, #5935b500, #5935b500 50%, #5935b5 100%), url('img/upcoming events/v3.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -461,4 +461,51 @@ body{
   .event-detail-card a {
     text-decoration: none;
     color: #1c1c1c;
+  }
+
+  @media (max-width: 480px) { 
+    #button {
+      margin: 0;
+      padding: 0;
+      width: 70px;
+      height: 30px;
+      font-size: .7rem;
+    }
+
+    #event-detail img {
+      width: 90px;
+      height: 70px;
+    }
+
+    #event-detail h1 {
+      font-size: 1.5rem;
+    }
+
+    .event-card1 {
+      padding: 0;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      
+    }
+
+    #eventbox {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    #eventbox .day {
+      margin-bottom: 10px;
+    }
+
+    #eventbox h4 {
+      font-size: 1.2rem;
+    }
+
+    #eventbox ul li {
+      font-size: .9rem;
+    }
+
+    .event-card1 .event {
+      max-width: 100%;
+    }
   }
