@@ -5,142 +5,471 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Registration</title>
     <link rel="stylesheet" href="registration.css" />
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+<!-- Add these to the bottom of your HTML body -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
-    <div id="main" class="d-flex justify-content-center align-items-center vh-100">
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top rounded-pill d-none" id="main-navbar">
+        <div class="container-fluid">
+          <!-- Logo -->
+          <a class="navbar-brand d-flex align-items-center" href="/">
+            <img
+              class="rounded-circle"
+              id="iconnect-logo"
+              src="img/iconnect.jpg"
+              alt="iConnect"
+              style="width: 40px; height: 40px;"
+            />
+            <span class="ms-2 fw-bold">iConnect</span>
+          </a>
+      
+          <!-- Hamburger Menu -->
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="fas fa-bars"></span>
+          </button>
+      
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto text-center">
+              <li class="nav-item">
+                <a class="nav-link" href="/eventregistration.html">Event Registration</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/search_registration.html">Already Registered?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/delete.html">Delete Account</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/aboutus.html">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/faq.html">FAQ's</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      
+      
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-overlay">
+        <div class="popup-content">
+            <h3>Choose an Option</h3>
+            <div class="popup-buttons">
+                <button class="btn btn-success" id="homePageBtn">Home Page</button>
+                <button class="btn btn-primary" id="newRegistrationBtn">New Registration</button>
+                <button class="btn btn-secondary" id="alreadyRegisteredBtn">Already Registered? Search your details here.</button>
+                <button class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <div id="main" class="d-flex justify-content-center align-items-center vh-100" style="display:none;">
         <div class="d-flex flex-wrap justify-content-center align-items-center">
-            <!-- Registration Form -->
             <form class="form" action="register.php" method="POST">
                 <div class="px-3">
-                    <p class="title m-0">E-Summit 2024</p>
+                    <p class="title m-0">Konark-2.O</p>
                 </div>
                 <div id="form-content">
                     <div class="flex flex-column gap-2 p-3">
                         <h3 class="message">Player Details</h3>
 
-                        <!-- Firstname -->
                         <label>
-                            <input class="input" type="text" name="firstname" required />
+                            <input class="input" type="text" name="firstname"  required />
                             <span>Firstname</span>
                         </label>
-
-                        <!-- Lastname -->
                         <label>
                             <input class="input" type="text" name="lastname" required />
                             <span>Lastname</span>
                         </label>
-
-                        <!-- Email -->
+                        <span>Please enter a valid email for OTP</span>
                         <label>
-                            <input class="input" type="email" name="email" required />
+                            <input class="input" type="email" name="email"  required />
                             <span>Email</span>
                         </label>
-
-                        <!-- Mobile -->
                         <label>
                             <input class="input" type="number" name="mobile" required />
                             <span>Mobile</span>
                         </label>
-
-                        <!-- Roll No -->
                         <label>
-                            <input class="input" type="text" name="roll_no" required />
+                            <input class="input" type="text" name="roll_no"  required />
                             <span>Roll No</span>
                         </label>
+                         
+                        <div class="dropdown-container">
+                          <label for="courseInput" style="color: black;">Course</label>
+                          <input 
+                            type="text" 
+                            class="dropdown-input" 
+                            id="courseInput" 
+                            name="course" 
+                            placeholder="Search or enter course..." 
+                            required 
+                            autocomplete="off" 
+                          />
+                          <ul class="dropdown-list" id="courseDropdown">
+                            <li class="dropdown-item">BTech Computer Science and Engineering</li>
+                            <li class="dropdown-item">BTech Electrical Engineering</li>
+                            <li class="dropdown-item">BTech Mechanical Engineering</li>
+                            <li class="dropdown-item">BTech Electronics and Communication Engineering</li>
+                            <li class="dropdown-item">BTech Civil Engineering</li>
+                            <li class="dropdown-item">BTech Printing Technology</li>
+                            <li class="dropdown-item">BTech Packaging Technology</li>
+                            <li class="dropdown-item">BTech Food Technology</li>
+                            <li class="dropdown-item">BTech Artificial Intelligence and Data Science</li>
+                            <li class="dropdown-item">BTech Electronics and Biomedical Engineering</li>
+                            <li class="dropdown-item">BTech Computer Science and Engineering (AI)</li>
+                            <li class="dropdown-item">BBA</li>
+                            <li class="dropdown-item">MBA</li>
+                            <li class="dropdown-item">MBA Finance</li>
+                            <li class="dropdown-item">MBA Marketing</li>
+                            <li class="dropdown-item">MBA International Business</li>
+                            <li class="dropdown-item">MBA Business Analytics</li>
+                            <li class="dropdown-item">MBA Healthcare</li>
+                            <li class="dropdown-item">Integrated BBA-MBA</li>
+                            <li class="dropdown-item">Masters in Computer Applications</li>
+                            <li class="dropdown-item">Integrated BCA-MCA</li>
+                            <li class="dropdown-item">M.Tech Computer Science and Engineering</li>
+                            <li class="dropdown-item">M.Tech Environmental Science and Engineering</li>
+                            <li class="dropdown-item">M.Tech Electronics and Communication Engineering</li>
+                            <li class="dropdown-item">M.Tech Food Technology</li>
+                            <li class="dropdown-item">M.Tech Geo Informatics</li>
+                            <li class="dropdown-item">M.Tech Mechanical Engineering</li>
+                            <li class="dropdown-item">M.Tech Printing Technology</li>
+                            <li class="dropdown-item">M.Sc Psychology</li>
+                            <li class="dropdown-item">M.Sc Biotechnology</li>
+                            <li class="dropdown-item">M.Sc Microbiology</li>
+                            <li class="dropdown-item">M.Sc Chemistry</li>
+                            <li class="dropdown-item">M.Sc Environmental Sciences</li>
+                            <li class="dropdown-item">M.Sc Food Technology</li>
+                            <li class="dropdown-item">M.Sc Mathematics</li>
+                            <li class="dropdown-item">M.Sc Physics</li>
+                            <li class="dropdown-item">M.Sc Economics</li>
+                            <li class="dropdown-item">M.Sc Yoga Science and Therapy</li>
+                            <li class="dropdown-item">M.Sc Botany</li>
+                            <li class="dropdown-item">M.Sc Zoology</li>
+                            <li class="dropdown-item">M.Sc Computer Science (Artificial Intelligence and Data Science)</li>
+                            <li class="dropdown-item">M.Sc Geography</li>
+                            <li class="dropdown-item">M.A Mass Communication</li>
+                            <li class="dropdown-item">M.A English</li>
+                            <li class="dropdown-item">M.A Hindi</li>
+                            <li class="dropdown-item">M.A Education</li>
+                            <li class="dropdown-item">M.Com</li>
+                            <li class="dropdown-item">Master of Library and Information Science</li>
+                            <li class="dropdown-item">PG Diploma in Yoga Science and Therapy</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Physics</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Chemistry</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Mathematics</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Biotechnology/Microbiology/Botany/Zoology/Chemistry</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Economics</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Psychology</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Geography</li>
+                            <li class="dropdown-item">Integrated B.Sc - M.Sc Yoga Science and Therapy</li>
+                            <li class="dropdown-item">Integrated B.Com - M.Com</li>
+                            <li class="dropdown-item">Integrated B.A - M.A Mass Communication</li>
+                            <li class="dropdown-item">Bachelor of Physiotherapy</li>
+                            <li class="dropdown-item">B.Sc Aviation</li>
+                            <li class="dropdown-item">B. Voc Food Processing and Engineering</li>
+                            <li class="dropdown-item">B.Sc B.Ed (under ITEP)</li>
+                            <li class="dropdown-item">B.A B.Ed (under ITEP)</li>
+                            <li class="dropdown-item">B.Sc Nursing</li>
+                            <li class="dropdown-item">B.Sc Medical Laboratory Technology</li>
+                            <li class="dropdown-item">B.Sc Radiography & Imaging Technology</li>
+                            <li class="dropdown-item">Other</li>
+                          </ul>
+                        </div>
+                        
+<label id="courseOtherLabel" style="display: none;">
+    <input class="input" type="text" name="other_course" id="otherCourseInput" placeholder="Enter Course" />
+    <span>Enter Course</span>
+</label>
 
-                        <!-- Course -->
-                        <label>
-                            <select class="input" name="course" id="course" onchange="handleOtherCourse()" required>
-                                <option value="" disabled selected>Select Course</option>
-                                <option value="BTech CSE">BTech CSE</option>
-                                <option value="BTech EE">BTech EE</option>
-                                <option value="BTech ME">BTech ME</option>
-                                <option value="BBA">BBA</option>
-                                <option value="MBA">MBA</option>
-                                <option value="Other">Other (Enter manually)</option>
-                            </select>
-                            <span>Course</span>
-                        </label>
-                        <label id="other-course-label" style="display: none;">
-                            <input class="input" type="text" name="other_course" id="other_course" />
-                            <span>Enter Course</span>
-                        </label>
+<div class="dropdown-container">
+  <label for="departmentInput" style="color: black;">Department</label>
+  <input 
+    type="text" 
+    class="dropdown-input" 
+    id="departmentInput" 
+    name="department" 
+    placeholder="Search or enter department..." 
+    required 
+    autocomplete="off" 
+  />
+  <ul class="dropdown-list" id="departmentDropdown">
+    <li class="dropdown-item">Department of Artificial Intelligence and Data Science</li>
+    <li class="dropdown-item">Department of Civil Engineering</li>
+    <li class="dropdown-item">Department of Computer Science & Engineering</li>
+    <li class="dropdown-item">Department of Electrical and Electronics Engineering</li>
+    <li class="dropdown-item">Department of Mechanical Engineering</li>
+    <li class="dropdown-item">Department of Printing Technology</li>
+    <li class="dropdown-item">Department of Biotechnology</li>
+    <li class="dropdown-item">Department of Botany</li>
+    <li class="dropdown-item">Department of Environmental Science & Engineering</li>
+    <li class="dropdown-item">Department of Food Technology</li>
+    <li class="dropdown-item">Department of Zoology</li>
+    <li class="dropdown-item">Board of Studies & Research in Education (Only for Affiliated Colleges)</li>
+    <li class="dropdown-item">Department of Education</li>
+    <li class="dropdown-item">Department of Applied Psychology</li>
+    <li class="dropdown-item">Department of Economics</li>
+    <li class="dropdown-item">Department of English and Foreign Languages</li>
+    <li class="dropdown-item">Department of Geography</li>
+    <li class="dropdown-item">Department of Hindi</li>
+    <li class="dropdown-item">Department of Library and Information Science</li>
+    <li class="dropdown-item">Department of Mass Communication</li>
+    <li class="dropdown-item">Department of Law</li>
+    <li class="dropdown-item">Department of Allied Health Sciences</li>
+    <li class="dropdown-item">Department of Pharmaceutical Sciences</li>
+    <li class="dropdown-item">Department of Physiotherapy</li>
+    <li class="dropdown-item">Department of Yoga Science</li>
+    <li class="dropdown-item">Department of Guru Jambeshwar Ji Maharaj Institute of Religious Studies</li>
+    <li class="dropdown-item">Department of Commerce</li>
+    <li class="dropdown-item">Haryana School Of Business</li>
+    <li class="dropdown-item">Department of Chemistry</li>
+    <li class="dropdown-item">Department of Mathematics</li>
+    <li class="dropdown-item">Department of Physics</li>
+    <li class="dropdown-item">Other</li>
+  </ul>
+</div>
 
-                        <!-- Year -->
-                        <label>
-                            <input class="input" type="text" name="year" required />
-                            <span>Year</span>
-                        </label>
+<label id="departmentOtherLabel" style="display: none;">
+    <input class="input" type="text" name="other_department" id="otherDepartmentInput" placeholder="Enter Department" />
+    <span>Enter Department</span>
+</label>
 
-                        <!-- Department -->
-                        <label>
-                            <select class="input" name="department" id="department" onchange="handleOtherDepartment()" required>
-                                <option value="" disabled selected>Select Department</option>
-                                <option value="Department of CSE">Department of CSE</option>
-                                <option value="Department of EE">Department of EE</option>
-                                <option value="Department of ME">Department of ME</option>
-                                <option value="Department of Management">Department of Management</option>
-                                <option value="Other">Other (Enter manually)</option>
-                            </select>
-                            <span>Department</span>
-                        </label>
-                        <label id="other-department-label" style="display: none;">
-                            <input class="input" type="text" name="other_department" id="other_department" />
-                            <span>Enter Department</span>
-                        </label>
 
-                        <!-- University -->
+<label>
+    <select class="input" name="year" required>
+        <option value="" disabled selected  > &nbsp; &nbsp;   None</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <span>Year</span>
+</label>
+
+
                         <label>
                             <input class="input" type="text" name="university" required />
                             <span>University</span>
                         </label>
-
-                        <!-- Submit Button -->
-                        <button class="submit" type="submit">Register</button>
+                        <button class="submit btn btn-primary mt-2" type="submit"> Send OTP</button>
                     </div>
                 </div>
             </form>
-
-            <!-- Image Section -->
             <div class="image-container d-none d-lg-flex">
                 <div class="image-flip">
-                    <div class="image-front" style="background-image: url('img/iconnect.jpg');"></div>
+                    <div class="image-front" style="background-image: url('img/iconnect1.png');"></div>
                     <div class="image-back" style="background-image: url('img/bunny.png');"></div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Handle 'Other' option for Course
-        function handleOtherCourse() {
-            const courseDropdown = document.getElementById('course');
-            const otherCourseLabel = document.getElementById('other-course-label');
-            if (courseDropdown.value === 'Other') {
-                otherCourseLabel.style.display = 'block';
-                document.getElementById('other_course').setAttribute('required', 'required');
-            } else {
-                otherCourseLabel.style.display = 'none';
-                document.getElementById('other_course').removeAttribute('required');
-            }
-        }
+       window.onload = function () {
+            document.getElementById('popup').style.display = 'flex';
+        };
 
-        // Handle 'Other' option for Department
-        function handleOtherDepartment() {
-            const departmentDropdown = document.getElementById('department');
-            const otherDepartmentLabel = document.getElementById('other-department-label');
-            if (departmentDropdown.value === 'Other') {
-                otherDepartmentLabel.style.display = 'block';
-                document.getElementById('other_department').setAttribute('required', 'required');
-            } else {
-                otherDepartmentLabel.style.display = 'none';
-                document.getElementById('other_department').removeAttribute('required');
-            }
-        }
+        document.getElementById('homePageBtn').addEventListener('click', function () {
+            window.location.href = 'index.html'; // Redirect to index.html
+        });
+
+        document.getElementById('newRegistrationBtn').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('main').style.display = 'flex';
+        });
+        document.getElementById('deleteAccountBtn').addEventListener('click', function () {
+              window.location.href = 'delete.html'; // Redirect to delete.html
+             });
+
+
+        document.getElementById('alreadyRegisteredBtn').addEventListener('click', function () {
+            window.location.href = 'search_registration.html'; // Redirect to search_registration.html
+        });
+        function setupDropdown(inputId, dropdownId, otherLabelId) {
+          const input = document.getElementById(inputId);
+          const dropdown = document.getElementById(dropdownId);
+          const otherLabel = document.getElementById(otherLabelId);
+      
+          // Show dropdown when input is focused
+          input.addEventListener('focus', () => {
+              dropdown.style.display = 'block';
+          });
+      
+          // Filter dropdown items as the user types
+          input.addEventListener('input', () => {
+              const query = input.value.toLowerCase();
+              const items = dropdown.getElementsByClassName('dropdown-item');
+              let isOther = false;
+              for (const item of items) {
+                  if (item.textContent.toLowerCase().includes(query)) {
+                      item.style.display = ''; // Show item if it matches
+                  } else {
+                      item.style.display = 'none'; // Hide item if it doesn't match
+                  }
+                  if (item.textContent === "Other" && query === "other") {
+                      isOther = true;
+                  }
+              }
+              otherLabel.style.display = isOther ? 'block' : 'none';
+          });
+      
+          // Handle item selection in the dropdown
+          dropdown.addEventListener('click', (e) => {
+              if (e.target && e.target.classList.contains('dropdown-item')) {
+                  input.value = e.target.textContent; // Set the input value to the selected item
+                  dropdown.style.display = 'none'; // Hide the dropdown after selection
+      
+                  // Show or hide the "Other" input field based on the selection
+                  if (e.target.textContent === "Other") {
+                      otherLabel.style.display = 'block';
+                      document.getElementById('otherCourseInput').focus(); // Focus on "Other" input if selected
+                  } else {
+                      otherLabel.style.display = 'none';
+                      const nextInput = input.closest('label').nextElementSibling?.querySelector('.input');
+                      if (nextInput) {
+                          nextInput.focus(); // Focus on the next input field
+                      }
+                  }
+              }
+          });
+      
+          // Close the dropdown if clicking outside of it
+          document.addEventListener('click', (e) => {
+              if (!dropdown.contains(e.target) && e.target !== input) {
+                  dropdown.style.display = 'none'; // Close dropdown if clicking outside
+              }
+          });
+      }
+      
+        setupDropdown('courseInput', 'courseDropdown', 'courseOtherLabel');
+        setupDropdown('departmentInput', 'departmentDropdown', 'departmentOtherLabel');
+        // Dropdown logic for both course and department
+function setupDropdown(inputId, dropdownId) {
+  const input = document.getElementById(inputId);
+  const dropdown = document.getElementById(dropdownId);
+
+  input.addEventListener('focus', () => {
+      dropdown.classList.add('show');
+  });
+
+  input.addEventListener('blur', () => {
+      setTimeout(() => dropdown.classList.remove('show'), 150);
+  });
+
+  dropdown.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+          input.value = item.textContent;
+          dropdown.classList.remove('show');
+      });
+  });
+}
+
+// Initialize dropdowns for course and department
+setupDropdown('courseInput', 'courseDropdown');
+setupDropdown('departmentInput', 'departmentDropdown');
+function setupDropdown(inputId, dropdownId) {
+  const input = document.getElementById(inputId);
+  const dropdown = document.getElementById(dropdownId);
+
+  input.addEventListener('focus', () => {
+      dropdown.classList.add('show');
+  });
+
+  input.addEventListener('blur', () => {
+      setTimeout(() => dropdown.classList.remove('show'), 150);
+  });
+
+  dropdown.querySelectorAll('.dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+          // Remove 'selected' class from all items
+          dropdown.querySelectorAll('.dropdown-item').forEach(el => el.classList.remove('selected'));
+
+          // Add 'selected' class to clicked item
+          item.classList.add('selected');
+
+          // Update input value
+          input.value = item.textContent;
+
+          // Hide dropdown
+          dropdown.classList.remove('show');
+      });
+  });
+}
+
+// Initialize both course and department dropdowns
+setupDropdown('courseInput', 'courseDropdown');
+setupDropdown('departmentInput', 'departmentDropdown');
+
+        // Responsive Navbar Toggle
+
+            // Selectors
+           // Navbar and Popup Elements
+// Navbar and Popup Elements
+// Navbar and Popup Elements
+const navbar = document.getElementById('main-navbar'); // Navbar element
+const popup = document.getElementById('popup'); // Popup element
+const popupButtons = document.querySelectorAll('.popup-buttons button'); // Popup buttons
+const navbarToggler = document.querySelector('.navbar-toggler'); // Hamburger button
+const navbarCollapse = document.querySelector('.collapse'); // Navbar collapse container
+const navbarLinks = document.querySelectorAll('.nav-link'); // Navbar links
+
+// Show popup on page load
+document.addEventListener('DOMContentLoaded', () => {
+  popup.style.display = 'flex'; // Show the popup
+  navbar.classList.add('d-none'); // Hide the navbar initially
+});
+
+// Show navbar when a popup button is clicked
+popupButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    popup.style.display = 'none'; // Hide the popup
+    navbar.classList.remove('d-none'); // Show the navbar
+  });
+});
+
+// Collapse navbar when a link is clicked on mobile
+navbarLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 200 && navbarCollapse.classList.contains('show')) {
+      navbarCollapse.classList.remove('show');
+    }
+  });
+});
+
+// Ensure proper navbar state on window resize
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 200) {
+    navbarCollapse.classList.remove('show'); // Ensure navbar dropdown is closed
+  }
+});
+
+          
+
     </script>
 </body>
 </html>
