@@ -3836,9 +3836,9 @@ input:checked + .slider:before {
 }
 
 .list-group-item {
-  background-color: var(--primary-color);
-  border: 1px solid #ddd;
-  color: white;
+  background-color: var(--element-bg);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .list-group-item a {
