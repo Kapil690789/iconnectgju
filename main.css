@@ -3804,3 +3804,69 @@ input:checked + .slider:before {
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+.notification-container {
+  background-color: var(--card-color);
+  width: 96%;
+  padding: 15px;
+  border-radius: 0 20px 0 20px;
+}
+
+.notification-section {
+  width: 100%;
+  max-height: 240px; 
+  overflow-y: auto; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.not-heading {
+  background-color: #1abc9c;
+}
+
+.notification-section h4 {
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  width: 170px;
+  background-color: #1abc9c;
+}
+
+.list-group-item {
+  background-color: var(--primary-color);
+  border: 1px solid #ddd;
+  color: white;
+}
+
+.list-group-item a {
+  text-decoration: none;
+}
+
+@media (max-width: 480px) { 
+
+  .notification-container {
+    border-radius: 0 20px 20px 20px;
+    width: 85%;
+    padding: 10px;
+    margin-top: 30px;
+  }
+
+  .notification-section h4 {
+    padding: 4px;
+    font-size: .9rem;
+    width: 125px;
+  }
+
+  .list-group-item {
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-shape-divider-bottom svg {
+    height: 90px; 
+  }
+}
