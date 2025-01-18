@@ -1372,3 +1372,7 @@ button:hover {
     padding: 8px;  /* Adjust button size */
   }
 }
+
+.team-content {
+  font-family: "Poppins", serif;
+}
