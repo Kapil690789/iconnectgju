@@ -3807,7 +3807,7 @@ input:checked + .slider:before {
 }
 
 .notification-container {
-  background-color: var(--card-color);
+  background-color: white;
   width: 96%;
   padding: 15px;
   border-radius: 0 20px 0 20px;
@@ -3846,6 +3846,29 @@ input:checked + .slider:before {
   text-decoration: none;
 }
 
+.list-group {
+  list-style-type: none; /* Remove default bullets */
+}
+
+/* Custom circle bullets for each list item */
+.list-group-item {
+  position: relative; /* Ensure pseudo-element is positioned correctly */
+  padding-left: 25px; /* Space for the custom bullet */
+}
+
+/* Adding custom circle bullets */
+.list-group-item::before {
+  content: '';
+  position: absolute;
+  left: 10px; /* Align bullet to the left of the text */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px; /* Bullet size */
+  height: 6px; /* Bullet size */
+  background-color: var(--secondary-color); /* Bullet color */
+  border-radius: 50%; /* Make the bullet circular */
+}
+
 @media (max-width: 480px) { 
 
   .notification-container {
@@ -3863,6 +3886,17 @@ input:checked + .slider:before {
 
   .list-group-item {
     font-size: .7rem;
+  }
+
+  .list-group-item::before {
+    width: 4px; /* Smaller bullet size on mobile */
+    height: 4px; /* Smaller bullet size on mobile */
+    left: 8px; /* Adjust bullet position on smaller screens */
+    top: 16px;
+  }
+
+  .list-group-item {
+    padding-left: 20px; /* Adjust padding for smaller screens */
   }
 }
 
