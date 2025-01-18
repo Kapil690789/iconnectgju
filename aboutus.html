@@ -66,7 +66,10 @@
             </div>
           </div>
         </div>
-        <img src="img/iconnect1.png" alt="">
+
+      
+          <img src="/img/ic.png" alt="">
+
         <div class="header-icons">
         <div class="">
           <a href="#" target="_blank"
@@ -113,6 +116,7 @@
     </div>
 
     <div id="aboutus" class="container px-0 pt-3">
+      
       <div class="row px-0 align-items-center">
 
         <div class="main-box col-lg-6 px-0">
@@ -330,7 +334,7 @@
           <img
             src="https://placehold.co/500x500"
             alt="Mission Image"
-            class="img-fluid our-mission-img-lp"
+            class="img-fluid  our-mission-img-lp"
           />
           <img
             src="https://placehold.co/500x500"
@@ -359,8 +363,21 @@
             To build a thriving community of students who are passionate about innovation, collaboration,
             and skill development, iConnect envisions a future where every member is empowered to transform
             ideas into impactful solutions.
-             Through its initiatives, iConnect aims to nurture a generation of creative 
+            Through its initiatives, iConnect aims to nurture a generation of creative 
             thinkers and problem solvers dedicated to driving sustainable development and making a meaningful contribution to society.
+          <!-- <li>
+            We foresee a gigantic acceleration towards digitalization in all
+            businesses. Businesses need to vet partners, hold money in escrow.
+          </li>
+          <li>
+            To build a thriving community of students who are passionate about innovation, collaboration,
+            and skill development, iConnect envisions a future where every member is empowered to transform
+            ideas into impactful solutions. 
+          </li>
+          <li>
+            Through its initiatives, iConnect aims to nurture a generation of creative 
+            thinkers and problem solvers dedicated to driving sustainable development and making a meaningful contribution to society.
+          </li> -->
           </ul>
         </div>
         <img
@@ -380,7 +397,46 @@
         <div class="head-content">
          <h3 class="h3">Pandit Deendayal Upadhyay Innovation & Incubation Center (PDUIIC)</h1>
          <h4 class="h4">Guru Jambheshwar University of Science & Technology, Hisar, Haryana</h4>
-         <img src="img/pd.jpg" alt="">
+         <!-- <img src="img/PDUIC.jpeg" alt=""> -->
+         <div class="slider">
+          <div class="slides">
+            <!-- Slide 1 -->
+            <div class="slide">
+              <img src="https://via.placeholder.com/800x400/7fff7f/333333?text=Image+1" alt="Image 1">
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide">
+              <img src="https://via.placeholder.com/800x400/7fff7f/333333?text=Image+2" alt="Image 2">
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide">
+              <img src="https://via.placeholder.com/800x400/7f7fff/333333?text=Image+3" alt="Image 3">
+            </div>
+          </div>
+      
+          <!-- Navigation Buttons -->
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <script>
+          let currentIndex = 0;
+
+            function moveSlide(step) {
+              const slides = document.querySelector('.slides');
+              const totalSlides = slides.children.length;
+
+              currentIndex += step;
+
+              if (currentIndex < 0) {
+                currentIndex = totalSlides - 1;
+              } else if (currentIndex >= totalSlides) {
+                currentIndex = 0;
+              }
+
+              slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+        </script>
         </div>
 <!--         <h2 class="team-flag">
           
@@ -576,14 +632,14 @@
                   <h4 class="title">Founder</h4>
                 </div>
                 <ul class="social">
-                  <li>
+                  <!-- <li>
                     <a
                       target="_blank"
                       href="https://www.instagram.com/mr_aman_panchal"
                       aria-hidden="true"
                       ><i class="fab fa-instagram"></i
                     ></a>
-                  </li>
+                  </li> -->
                   <li>
                     <a
                       target="_blank"
@@ -608,14 +664,14 @@
                   <h4 class="title">Founder</h4>
                 </div>
                 <ul class="social">
-                  <li>
+                  <!-- <li>
                     <a
                       target="_blank"
                       href="https://www.instagram.com/ch.malik.hr12"
                       aria-hidden="true"
                       ><i class="fab fa-instagram"></i
                     ></a>
-                  </li>
+                  </li> -->
                   <li>
                     <a
                       target="_blank"
@@ -645,14 +701,14 @@
                   <h5 class="title">Captain</h5>
                 </div>
                 <ul class="social">
-                  <li>
+                  <!-- <li>
                     <a
                       target="_blank"
                       href="https://www.instagram.com/sujal_.pruthi?igsh=OGQ5ZDc2ODk2ZA%3D%3D&amp;utm_source=qr"
                       aria-hidden="true"
                       ><i class="fab fa-instagram"></i
                     ></a>
-                  </li>
+                  </li> -->
                   <li>
                     <a
                       target="_blank"
@@ -827,39 +883,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3">
-              <div class="our-team">
-                <div class="picture">
-                  <div
-                    class="team-image"
-                    style="
-                      background-image: url('img/team/kushal-photo.jpg');
-                      background-position: center;
-                    "
-                  ></div>
-                </div>
-                <div class="team-content">
-                  <h3 class="name">Kushal Phogat</h3>
-                  <h4 class="title">Coordinator(VPM)</h4>
-                </div>
-                <ul class="social">
-                  <li>
-                    <a target="_blank"
-                      href="https://www.instagram.com/kushal_phogat57?igsh=MWY0NjUwYWh2ajE5cQ=="
-                      aria-hidden="true"
-                      ><i class="fab fa-instagram"></i
-                    ></a>
-                  </li>
-                  <li>
-                    <a target="_blank"
-                      href="https://www.linkedin.com/in/kushal-phogat-7b4493281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                      aria-hidden="true"
-                      ><i class="fab fa-linkedin" id="whatsapp"></i
-                    ></a>
-                  </li>
-                </ul>
-              </div>
-            </div> 
+            
             <div class="col-6 col-md-4 col-lg-3">
           <div class="our-team">
             <div class="picture">
@@ -894,14 +918,14 @@
               <h4 class="title">Organising Manager</h4>
             </div>
             <ul class="social">
-              <li>
+              <!-- <li>
                 <a
                   target="_blank"
                   href="https://codepen.io/collection/XdWJOQ/"
                   aria-hidden="true"
                   ><i class="fab fa-instagram"></i
                 ></a>
-              </li>
+              </li> -->
               <li>
                 <a
                   target="_blank"
@@ -1035,14 +1059,14 @@
                   <h4 class="title">Social Media Coordinator</h4>
                 </div>
                 <ul class="social">
-                  <li>
+                  <!-- <li>
                     <a
                       target="_blank"
                       href="https://www.instagram.com/kaynotebook?igsh=NHZ4Zm4ydHYyd3Az"
                       aria-hidden="true"
                       ><i class="fab fa-instagram"></i
                     ></a>
-                  </li>
+                  </li> -->
                   <li>
                     <a
                       target="_blank"
@@ -1069,14 +1093,14 @@
                     <h4 class="title">Website Coordinator</h4>
                   </div>
                   <ul class="social">
-                    <li>
+                    <!-- <li>
                       <a
                         target="_blank"
                         href="https://www.instagram.com/ka.pilshrma8998/profilecard/?igsh=MTU0bWp4cjQ4aWVmdg=="
                         aria-hidden="true"
                         ><i class="fab fa-instagram"></i
                       ></a>
-                    </li>
+                    </li> -->
                     <li>
                       <a
                         target="_blank"
@@ -1134,13 +1158,13 @@
                   <h4 class="title">Coordinator</h4>
                 </div>
                 <ul class="social">
-                  <li>
+                  <!-- <li>
                     <a target="_blank"
                       href="https://www.instagram.com/aditi_sh_09?igsh=eHl2M3ZtZGVuM2xv"
                       aria-hidden="true"
                       ><i class="fab fa-instagram"></i
                     ></a>
-                  </li>
+                  </li> -->
                   <li>
                     <a
                       target="_blank"
@@ -1281,13 +1305,13 @@
                   <h4 class="title">Coordinator</h4>
                 </div>
                 <ul class="social">
-                  <li>
+                  <!-- <li>
                     <a target="_blank"
                       href="https://www.instagram.com/aryanyadav079?igsh=dmh1eXNteWR3bWpx"
                       aria-hidden="true"
                       ><i class="fab fa-instagram"></i
                     ></a>
-                  </li>
+                  </li> -->
                   <li>
                     <a
                       target="_blank"
@@ -1314,14 +1338,14 @@
                     <h4 class="title">Coordinator</h4>
                   </div>
                   <ul class="social">
-                    <li>
+                    <!-- <li>
                       <a
                         target="_blank"
                         href="https://www.instagram.com/_shubhamvaishnav.18/"
                         aria-hidden="true"
                         ><i class="fab fa-instagram"></i
                       ></a>
-                    </li>
+                    </li> -->
                     <li>
                       <a
                         target="_blank"
@@ -1333,6 +1357,39 @@
                   </ul>
                 </div>
               </div>
+              <div class="col-6 col-md-4 col-lg-3">
+                <div class="our-team">
+                  <div class="picture">
+                    <div
+                      class="team-image"
+                      style="
+                        background-image: url('img/team/kushal-photo.jpg');
+                        background-position: center;
+                      "
+                    ></div>
+                  </div>
+                  <div class="team-content">
+                    <h3 class="name">Kushal Phogat</h3>
+                    <h4 class="title">Coordinator</h4>
+                  </div>
+                  <ul class="social">
+                    <!-- <li>
+                      <a target="_blank"
+                        href="https://www.instagram.com/kushal_phogat57?igsh=MWY0NjUwYWh2ajE5cQ=="
+                        aria-hidden="true"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
+                    </li> -->
+                    <li>
+                      <a target="_blank"
+                        href="https://www.linkedin.com/in/kushal-phogat-7b4493281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        aria-hidden="true"
+                        ><i class="fab fa-linkedin" id="whatsapp"></i
+                      ></a>
+                    </li>
+                  </ul>
+                </div>
+              </div> 
         </div>
       </div>
     </div>
