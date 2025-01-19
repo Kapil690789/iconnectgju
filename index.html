@@ -56,97 +56,110 @@
     <script>
   
   window.addEventListener("load", () => {
-  const preSplash = document.getElementById("pre-splash");
-  const countdownText = document.getElementById("countdown");
-  const splashScreen = document.getElementById("splash-screen");
-  const loadingContainer = document.querySelector(".loading-container");
-  const iconnectTextContainer = document.getElementById("iconnect-text-container");
-  const letters = document.querySelectorAll(".letter");
+        const preSplash = document.getElementById("pre-splash");
+        const countdownText = document.getElementById("countdown");
+        const splashScreen = document.getElementById("splash-screen");
+        const loadingContainer = document.querySelector(".loading-container");
+        const iconnectTextContainer = document.getElementById("iconnect-text-container");
+        const letters = document.querySelectorAll(".letter");
+      
+        
 
-  // Function to create snowflakes with 5 specific colors
-  function createSnowflakes(target) {
-    const colors = ["#FF6F61", "#6BAED6", "#58D68D", "#F7DC6F", "#AF7AC5"]; // Improved color palette
-    for (let i = 0; i < 5; i++) { // Limit to 5 snowflakes
-      const snowflake = document.createElement("div");
-      snowflake.classList.add("snowflake");
-
-      // Apply styles for snowflake
-      snowflake.style.backgroundColor = colors[i % colors.length]; // Cycle through the 5 colors
-      snowflake.style.left = `${Math.random() * 100}%`; // Random horizontal position
-      snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`; // Random fall duration
-      snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
-
-      // Randomize diagonal direction
-      const isLeftToRight = Math.random() > 0.5;
-      snowflake.style.animationName = isLeftToRight ? "fall-diagonal-right" : "fall-diagonal-left";
-
-      target.appendChild(snowflake);
-    }
-  }
-
-  // Countdown Logic with dynamic text color change
-  let countdown = 3; // Start countdown from 3
-  const countdownColors = ["#FFD700", "#FFC107", "#FFE4B5"]; // Light Gold, Amber, Light Beige
-
-  const countdownInterval = setInterval(() => {
-    countdownText.textContent = countdown;
-
-    // Change the countdown text color dynamically
-    countdownText.style.color = countdownColors[countdown % countdownColors.length];
-
-    if (countdown <= 0) {
-      clearInterval(countdownInterval);
-
-      // Hide pre-splash and display splash screen
-      preSplash.classList.add("hidden");
-      setTimeout(() => {
-        preSplash.style.display = "none"; // Ensure pre-splash is removed
-      }, 1000);
-
-      splashScreen.classList.remove("hidden");
-
-      // Start sliding animation
-      setTimeout(() => {
-        loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
-
-        // Create snowflakes on the splash screen
-        createSnowflakes(splashScreen, 70);
-
-        // After the snowflakes animation, fade out the splash screen
-        setTimeout(() => {
-          splashScreen.style.opacity = "0"; // Fade out the splash screen
-          setTimeout(() => {
-            splashScreen.style.display = "none"; // Ensure splash screen is removed
-            splashScreen.style.pointerEvents = "none"; // Disable interactions
-
-            // Create snowflakes on the main site body
-            createSnowflakes(document.body, 100);
-
-            iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
-            iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
-
-            // Wait briefly before starting the letter disappearing animation
-            setTimeout(() => {
-              letters.forEach((letter, index) => {
-                setTimeout(() => {
-                  letter.classList.add("hide"); // Hide the letter with a delay
-                }, index * 300); // Add a delay of 300ms between each letter
-              });
-
-              // Remove text container after all letters disappear
+        // Function to create snowflakes with 5 specific colors
+        function createSnowflakes(target) {
+          const colors = ["#FF6F61", "#6BAED6", "#58D68D", "#F7DC6F", "#AF7AC5"]; // Improved color palette
+          for (let i = 0; i < 5; i++) { // Limit to 5 snowflakes
+            const snowflake = document.createElement("div");
+            snowflake.classList.add("snowflake");
+      
+            // Apply styles for snowflake
+            snowflake.style.backgroundColor = colors[i % colors.length]; // Cycle through the 5 colors
+            snowflake.style.left = `${Math.random() * 100}%`; // Random horizontal position
+            snowflake.style.animationDuration = `${Math.random() * 5 + 3}s`; // Random fall duration
+            snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
+      
+            // Randomize diagonal direction
+            const isLeftToRight = Math.random() > 0.5;
+            snowflake.style.animationName = isLeftToRight ? "fall-diagonal-right" : "fall-diagonal-left";
+      
+            target.appendChild(snowflake);
+          }
+        }
+      
+        // Check if the full animation has been shown in this session
+        if (localStorage.getItem("hasSeenAnimation")) {
+          // Skip splash animations, only show snowflakes
+          preSplash.style.display = "none";
+          splashScreen.style.display = "none";
+          createSnowflakes(document.body, 100);
+        } else {
+          // Show full animation sequence
+          let countdown = 3; // Start countdown from 3
+          const countdownColors = ["#FFD700", "#FFC107", "#FFE4B5"]; // Light Gold, Amber, Light Beige
+      
+          const countdownInterval = setInterval(() => {
+            countdownText.textContent = countdown;
+      
+            // Change the countdown text color dynamically
+            countdownText.style.color = countdownColors[countdown % countdownColors.length];
+      
+            if (countdown <= 0) {
+              clearInterval(countdownInterval);
+      
+              // Hide pre-splash and display splash screen
+              preSplash.classList.add("hidden");
               setTimeout(() => {
-                iconnectTextContainer.remove();
-              }, letters.length * 300);
-            }, 1500); // Adjust display time as needed
+                preSplash.style.display = "none"; // Ensure pre-splash is removed
+              }, 1000);
+      
+              splashScreen.classList.remove("hidden");
+      
+              // Start sliding animation
+              setTimeout(() => {
+                loadingContainer.style.transform = "translateY(0)"; // Slide the content into view
+      
+                // Create snowflakes on the splash screen
+                createSnowflakes(splashScreen, 70);
+      
+                // After the snowflakes animation, fade out the splash screen
+                setTimeout(() => {
+                  splashScreen.style.opacity = "0"; // Fade out the splash screen
+                  setTimeout(() => {
+                    splashScreen.style.display = "none"; // Ensure splash screen is removed
+                    splashScreen.style.pointerEvents = "none"; // Disable interactions
+      
+                    // Create snowflakes on the main site body
+                    createSnowflakes(document.body, 100);
+      
+                    iconnectTextContainer.classList.remove("hidden"); // Show the iConnect text
+                    iconnectTextContainer.style.opacity = "1"; // Trigger fade-in effect
+      
+                    // Wait briefly before starting the letter disappearing animation
+                    setTimeout(() => {
+                      letters.forEach((letter, index) => {
+                        setTimeout(() => {
+                          letter.classList.add("hide"); // Hide the letter with a delay
+                        }, index * 300); // Add a delay of 300ms between each letter
+                      });
+      
+                      // Remove text container after all letters disappear
+                      setTimeout(() => {
+                        iconnectTextContainer.remove();
+                      }, letters.length * 300);
+                    }, 1500); // Adjust display time as needed
+                  }, 1000);
+                }, 3000); // Extended duration for the snowflakes
+              }, 1000); // Time before sliding animation starts
+      
+              // Save animation state in localStorage
+              localStorage.setItem("hasSeenAnimation", "true");
+            } else {
+              countdown--; // Decrease countdown
+            }
           }, 1000);
-        }, 3000); // Extended duration for the snowflakes
-      }, 1000); // Time before sliding animation starts
-    } else {
-      countdown--; // Decrease countdown
-    }
-  }, 1000);
-});
-
+        }
+      });
+      
 
 </script>
 
@@ -232,6 +245,12 @@
     
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-nav ms-auto">
+         <div class="nav-item">
+  <a class="nav-link" href="#sponser" id="sponsor-link">
+    <h5 class="nav-heading">Sponsors</h5>
+  </a>
+</div>
+
         <div class="nav-item">
           <a class="nav-link" href="#event" id="event-link">
             <h5 class="nav-heading">Events</h5>
@@ -553,13 +572,13 @@
             <div class="card-container">
                 <div class="cards">
                   <div>
-                    <img src="img/logo.png" alt="Card Image">
+                  <img src="img/logo.png" alt="Card Image">
                   </div>
                   <div class="card-body">
                     <p>Volunteer Registration Konark 2.0</p>
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
-                    <a href="/eventregistration.html">Register Here</a>
+                    <a href="/eventregistration.html">Closed</a>
                   </div>
                 </div>
 <!--                 <div class="cards">
@@ -574,7 +593,7 @@
                 </div> -->
                 <div class="cards">
                   <div>
-                    <img src="/img/Visionathon2.jpeg" alt="Card Image">
+                    <img src="/img/visionathon (1).png" alt="Card Image">
                   </div>
                   <div class="card-body">
                     <p>Visionathon</p>
@@ -585,7 +604,7 @@
                 </div>
                 <div class="cards">
                   <div>
-                    <img src="img/ideathon.png" alt="Card Image">
+                    <img src="img/ide1.png" alt="Card Image">
                   </div>
                   <div class="card-body">
                     <p>Ideathon</p>
@@ -746,7 +765,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const eventDetails = {
         "business-quiz": {
-            image: "img/Business.jpeg"
+            image: "img/b1.png"
         },
         "startup-auction": {
             image: "img/events_logo/startup_auction.png"
@@ -755,10 +774,10 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "img/events_logo/startup_space.png"
         },
         "trade-titans": {
-            image: "img/Trade.jpeg"
+            image: "img/t1.png"
         },
         "startup-spotlight": {
-            image: "img/Spotlight.jpeg"
+            image: "img/sn1.png"
         }
     };
 
@@ -927,7 +946,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       
      </section>
-
+<section id="sponser">
     <div class="container pb-5">
         <h1 class="sponser">Our Past Sponsers</h1>
         <div class="splide sponsers">
@@ -986,6 +1005,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </div>
+    </section >
     
      <section id="section5">
 
@@ -998,56 +1018,56 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="d-lg-none d-block text-center"
 
           <div class="right-box col-lg-6 px-0 text-center"> -->
-            <div class="splide splide-vision">
+           <div class="splide splide-vision">
               <div class="splide__slider">
                 <div class="splide__track">
                   <ul class="splide__list">
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/1.png"
+                        src="img/k1.jpeg"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/e2.JPG"
+                        src="img/k3.jpeg"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/e3.JPG"
+                        src="img/k9.jpeg"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                       src="img/ee.jpg"
+                       src="img/k4.jpeg"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/e5.jpg"
+                        src="img/k5.jpeg"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/e6.jpg"
+                        src="img/k6.jpeg"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/e7.jpg"
+                        src="img/k7.jpeg"
                       />
                     </li>
                     <li class="splide__slide">
                       <img
                         class="img-fluid"
-                        src="img/e8.jpg"
+                        src="img/k8.jpeg"
                       />
                     </li>
                   </ul>
@@ -1261,7 +1281,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     The iConnect Society is a dynamic student organization housed under the Pandit Deendayal Upadhyay Innovation & Incubation Center (PDUIIC) at GJUS&T, Hisar. 
                     Established with a vision to foster innovation, collaboration, and skill development among students, iConnect operates with a well-defined administrative team, an influential advisory panel, and a mentoring system.
                   </p>
-                  <button class="btn btn-dark">Know More</button>
+                <a href="aboutus.html">   <button  class="btn btn-dark">Know More</button></a>
                 </div>
                 <div class="image col-lg text-center">
                   <img class="rounded-3" src="img/ic.png" />
@@ -1534,7 +1554,7 @@ function initializeClock(endtime) {
 }
 
 // Set the end date to February 5, 2025
-var endtime = new Date(2025, 1, 5); // February is month 1 (0-based index)
+var endtime = new Date(2025, 1, 19); // February is month 1 (0-based index)
 initializeClock(endtime);
 
 let lastScrollTop = 0; // Track last scroll position
