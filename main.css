@@ -11,6 +11,7 @@ html, body {
   --card-color: #ffffff;
   --card-text: black;
   --background-color: white;
+  --feature-color: black;
   --element-bg: white;
   --text-color: white;
   --nav-color: rgba(255, 255, 255, 0.779);
@@ -24,6 +25,7 @@ html, body {
   --card-color: #1c1c1c;
   --card-text: white;
   --background-color: black;
+  --feature-color: #1c1c1c;
   --element-bg: black;
   --nav-color: #222222a6;
   --nav-shadow: rgba(255, 255, 255, 0.185);
@@ -1200,25 +1202,29 @@ body.dark-mode .event-head-item.active {
 /* Event Image Styling */
 .event-image {
   position: absolute;
-  bottom: -1%; /* Adjust this value to move the image lower */
-  right: -10%; /* Push the image outside the box */
-  width: 100%; /* Adjust size */
-  max-width: 350px; /* Restrict the maximum size */
-  z-index: 7; /* Ensure it's not behind other elements */
+  bottom: -1%;
+  right: -9%; 
+  width: 100%; 
+  max-width: 370px; 
+  z-index: 7; 
 }
 
 
 .event-image img {
   width: 100%;
-  height: auto;
-  border-radius: 30px 30px 0 30px; /* Rounded corners */
+  height: 100%;
+  border-radius: 30px 30px 0 30px; 
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional shadow for better visibility */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /* Adjust spacing to accommodate image */
 #features-description {
-  padding-right: 400px; 
+  padding-right: 400px;
+  background: var(--feature-color);
 }
 
 #features-description button {
@@ -2169,7 +2175,7 @@ h1 {
 .terminal-body {
   padding: 30px;
   /* background: #2c3e50; */
-  background: var(--background-color);
+  background: var(--card-color);
   border-radius: 10px;
   color: white;
   max-width: 1200px;
