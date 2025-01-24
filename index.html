@@ -211,7 +211,41 @@
       </h2>
     </div>
         
-    
+    <script>
+      // Create a div for the cursor ball and add it to the body
+      // Create a div for the cursor ball and add it to the body
+// Create a div for the cursor ball and add it to the body
+const cursorBall = document.createElement("div");
+cursorBall.classList.add("cursor-ball");
+document.body.appendChild(cursorBall);
+
+// Function to update cursor ball position
+const updateCursorPosition = (e) => {
+  const x = e.clientX || e.touches[0].clientX; // Support for touch devices
+  const y = e.clientY || e.touches[0].clientY; // Support for touch devices
+
+  // Update ball position
+  cursorBall.style.transform = `translate(${x}px, ${y}px)`;
+};
+
+// Add event listeners for mouse, touchmove, and scroll events
+document.addEventListener("mousemove", updateCursorPosition);
+document.addEventListener("touchmove", updateCursorPosition);
+
+// Handle scroll event to update position as user scrolls
+document.addEventListener("scroll", (e) => {
+  // Add an offset to the cursor ball position based on scroll
+  cursorBall.style.transform = `translate(${window.scrollX}px, ${window.scrollY}px)`;
+});
+
+// Optional: Add hover effect on interactive elements
+const interactiveElements = document.querySelectorAll("button, a, input, textarea");
+interactiveElements.forEach((el) => {
+  el.addEventListener("mouseenter", () => cursorBall.classList.add("hover"));
+  el.addEventListener("mouseleave", () => cursorBall.classList.remove("hover"));
+});
+
+    </script>
     
 
 
@@ -356,14 +390,127 @@
             <p class="event-subtitle">Please create account to continue.</p>
         
             <!-- Button to Open Modal -->
-            <button
-              class="btn btn-primary"
+             <button
+              class="btn btn-primary animated-button"
               type="button"
               data-bs-toggle="modal"
               data-bs-target="#loginSignupModal"
             >
              Create Your Account
             </button>
+          
+         <style>
+  .animated-button {
+    background: linear-gradient(45deg, #ff6f61, #6baed6, #58d68d, #f7dc6f, #af7ac5);
+    background-size: 400% 400%; /* Increase the size for a more dynamic effect */
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 14px 28px;
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    animation: gradientMove 3s ease infinite; /* Gradient movement */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+    font-size: 16px; /* Default font size */
+    position: relative;
+    overflow: hidden; /* Hide overflow for wave animation */
+  }
+
+  /* Hover effects with wave-like animation */
+  .animated-button:hover {
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background: linear-gradient(45deg, #6baed6, #58d68d, #f7dc6f, #af7ac5, #ff6f61); /* Reverse gradient */
+    animation: gradientMove 3s ease infinite; /* Keep the gradient animation on hover */
+  }
+
+  .animated-button:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1); /* White wave effect */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: waveEffect 2s ease-out infinite;
+    pointer-events: none; /* Prevent interaction with the wave */
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .animated-button {
+      padding: 12px 22px; /* Adjust padding for smaller screens */
+      font-size: 14px; /* Slightly smaller font size */
+    }
+  }
+
+  /* Zigzag gradient movement */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 50%;
+    }
+    50% {
+      background-position: 0% 100%;
+    }
+    75% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Wave effect */
+  @keyframes waveEffect {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.3);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  /* Lightning effect on click */
+  .lightning-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3); /* Flash effect */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: lightningEffect 0.4s ease-out forwards; /* Lightning animation */
+    pointer-events: none;
+  }
+
+  /* Keyframes for the lightning effect */
+  @keyframes lightningEffect {
+    0% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+    }
+  }
+</style>
+
+
+          
           </div>
         
           <!-- Modal Structure -->
@@ -438,7 +585,7 @@
             </li>
             
             <li class="list-group-item align-items-center">
-              <span>Registration for Visionathon and Ideathon is open.</span>
+              <span>Registration for Visionathon,Ideathon and E-Crafters Arena is open.</span>
               <a href="#event">Click here!</a>
             </li>
           </ul>
@@ -500,7 +647,7 @@
 </div>
 
       <div class="col-md-4 text-center event-image">
-        <img src="img/k1.png" alt="E-summit Featured" />
+        <img src="img/Konark.png" alt="konark 2.O Featured" />
       </div>
     </div>
   </div>
@@ -575,7 +722,8 @@
                   <img src="img/logo.png" alt="Card Image">
                   </div>
                   <div class="card-body">
-                    <p>Volunteer Registration Konark 2.0</p>
+                    <p>Volunteer (Registration Closed)
+</p>
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
                     <a href="/eventregistration.html">Closed</a>
@@ -596,7 +744,9 @@
                     <img src="/img/visionathon (1).png" alt="Card Image">
                   </div>
                   <div class="card-body">
+                      
                     <p>Visionathon</p>
+                    
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
                     <a href="/visionathon.html">Register Here</a>
@@ -615,10 +765,10 @@
                 </div>
               <div class="cards">
                   <div>
-                    <img src="" alt="Card Image">
+                    <img src="img/kp2.png" alt="Card Image">
                   </div>
                   <div class="card-body">
-                    <p>E-Crafters Arena</p>
+                    <p>Crafters Arena</p>
                     <!-- <p>abc</p>
                     <p>7th August</p> -->
                     <a href="/ecrafters.html">Register Here</a>
@@ -1262,6 +1412,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <!--    </div>-->
     <!--  </div>-->
     <!--</section> -->
+    
     <section id="section4">
       <div class="container">
         <div class="terminal-window">
@@ -1275,6 +1426,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <span>About-Us</span>
             </div> -->
           </div>
+          
           <div class="terminal-body">                            
             <div class="command-line">
               <!-- <div class="prompt">$</div> -->
@@ -1319,7 +1471,52 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </section> 
+    <div class="video-box">
+      <div class="video-wrapper">
+        <div class="video-container">
+          <div class="video-front">
+            <iframe
+              src="https://www.youtube.com/embed/BVC1SQJw5LE?si=gXTE0JTWh33gOnO5"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-back">
+            <p>
+              This is additional information about the video. It provides more context or key points about the video content.
+            </p>
+            <button class="back-to-video">Back to Video</button>
+          </div>
+        </div>
+        <div class="description">
+          <p>
+            This is the detailed description of the video. It provides an overview, key highlights, and other relevant information.
+          </p>
+        </div>
+      </div>
+      <button class="toggle-description">Show More</button>
+    </div>
+    
+    <script>
+      const toggleDescriptionButton = document.querySelector(".toggle-description");
+const description = document.querySelector(".description");
+const backToVideoButton = document.querySelector(".back-to-video");
+const videoContainer = document.querySelector(".video-container");
 
+toggleDescriptionButton.addEventListener("click", () => {
+  description.classList.toggle("active");
+  toggleDescriptionButton.textContent = description.classList.contains("active")
+    ? "Show Less"
+    : "Show More";
+});
+
+backToVideoButton.addEventListener("click", () => {
+  videoContainer.style.transform = "rotateY(0)";
+});
+
+    </script>
+    
     <footer class="footer text-start text-white p-3 mt-3" id="contactUs">
       <div class="separator-top"></div>
       <hr>
