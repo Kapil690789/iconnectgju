@@ -3911,226 +3911,191 @@ input:checked + .slider:before {
     height: 90px; 
   }
 }
+/* Cursor Ball */
+/* Cursor Ball */
+.cursor-ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px; /* Default size */
+  height: 15px;
+  border-radius: 50%;
+  pointer-events: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease, background-color 0.5s ease;
+  z-index: 1000;
+  animation: colorChange 3s infinite; /* Automatic color change */
+}
 
-/* css for tablets */
-@media (max-width: 1024px) {
-  .navbar .nav-item .nav-link h5{
-    font-size: 1.1rem;
+/* Hover effect */
+.cursor-ball.hover {
+  transform: scale(1.5); /* Enlarge the ball on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Keyframes for automatic color change */
+@keyframes colorChange {
+  0% {
+    background-color: #ff6f61; /* Coral */
   }
-
-  .navbar .navbar-brand span{
-    font-size: 1.3rem;
+  25% {
+    background-color: #6baed6; /* Light Blue */
+  }
+  50% {
+    background-color: #58d68d; /* Green */
+  }
+  75% {
+    background-color: #f7dc6f; /* Yellow */
+  }
+  100% {
+    background-color: #af7ac5; /* Purple */
   }
 }
 
-@media (max-width: 850px) {
-  .navbar .nav-item .nav-link h5{
-    font-size: .9rem;
-  }
-
-  .navbar .navbar-brand span{
-    font-size: 1.1rem;
-  }
+/* Make cursor ball responsive on mobile */
+/* General Styling */
+/* Outer Box with Border */
+/* Outer Box with Border */
+.video-box {
+  margin: 20px auto;
+  max-width: 1000px;
+  perspective: 1500px; /* Stronger 3D perspective */
 }
 
-@media (max-width: 1024px) {
-  .section-bold-heading {
-    font-size: 2.8rem;
-  }
-
-  .section-bolder-heading {
-    font-size: 2.3rem;
-  }
-
-  .ripple-container {
-    display: none;
-  }
-
-  .col-8 {
-    width: 100%;
-    margin-top: 20px;
-    text-align: center !important;
-  }
-
-  .section-bolder-heading {
-    justify-content: center !important;
-  }
-
-  .mt-20 {
-    margin-top: 220px !important;
-  }
-
-  .tagline {
-    width: 100%;
-    font-size: 2rem;
-    margin-top: 80px;
-  }
-
-    .notification-container {
-      margin-top: 20px !important;
-    }
-
-    #features-event {
-      margin-top: 0;
-      margin-bottom: 30px;
-    }
-
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 0 15px;
 }
 
-@media (max-width: 1024px) {
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  transform-style: preserve-3d; /* Ensure 3D effect works */
+  transition: transform 1s ease, box-shadow 1s ease-in-out; /* Slow down rotation and shadow transition */
+  border-radius: 15px; /* Rounded corners */
+  will-change: transform; /* Improve performance */
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.837);
 }
 
-@media (max-width: 720px) {
-  .card-container {
-  
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+.video-container:hover {
+  transform: rotateY(180deg) scale(1.05); /* Flip and scale the video */
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
 }
 
-@media (max-width: 992px) {
-  
-  .image {
-    width: 30%;
-  }
+.video-front,
+.video-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Hide the back face when flipped */
+  border-radius: 15px; /* Rounded corners */
+}
 
-  .rounded-3 {
-    width: 40% !important;
-    margin-bottom: 40px;
-  }
+.video-front iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px; /* Match the rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-front:hover iframe {
+  transform: scale(1.02); /* Slight zoom-in effect on hover */
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3); /* Light scattering effect */
+}
+
+.video-back {
+  background-color: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: rotateY(180deg); /* Make sure the back is rotated initially */
+  border-radius: 15px;
+  box-shadow: 0 24px 42px rgba(8, 2, 2, 0.773);
+  padding: 15px;
+  opacity: 0; /* Hide the back initially */
+  visibility: hidden; /* Hide the back side initially */
+  transition: opacity 0.6s ease, visibility 0s 0.6s; /* Transition for opacity */
+}
+
+.video-container:hover .video-back {
+  opacity: 1; /* Show the back on hover */
+  visibility: visible; /* Make the back visible */
+  transition: opacity 0.6s ease, visibility 0s 0s; /* Transition for visibility */
+}
+
+.video-back button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #b18f1fb9;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/* Description Animation */
+.description {
+  display: none; /* Hidden initially */
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #e3dddd;
+  padding: 15px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: justify;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.6s ease, max-height 0.6s ease, transform 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.6); /* Background color for the description */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-description {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #020303;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.description.active {
+  display: block;
+  opacity: 1;
+  max-height: 300px;
+  transform: translateY(10px); /* Slight upward motion */
 }
 
 @media (max-width: 768px) {
-  .p-5 {
-    padding: 0;
-    font-size: 1.1rem;
+  .video-wrapper {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  .rounded-3 {
-    display: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .rounded-3 {
-    display: inline-block;
-  }
-}
-
-
-@media (min-width: 700px) and (max-width: 1024px) {
-  .mt-20 {
-    margin-top: 280px !important;
+  .video-container {
+    max-width: 100%;
+    height: 265px; /* Increase height slightly on mobile */
+    /* You can adjust the height as needed for better look */
   }
 
-  .mt-20 h1 {
-    font-size: 2.3rem;
-    font-weight: 600;
-  }
-
-  .mt-20 p {
-    font-size: 1.7rem;
-    font-weight: 600;
-  }
-
-  .mt-20 button {
-    font-size: 1.3rem;
-  }
-
-  .col-8 {
-    margin-top: 80px;
-  }
-
-  .section-bold-heading {
-    font-size: 4rem;
-  }
-
-  .section-bolder-heading {
-    font-size: 3.5rem;
-  }
-
-  .tagline {
-    
-    font-size: 2rem;
-    margin-top: 140px;
-  }
-
-  .notification-container {
-    margin-top: 60px !important;
-  }
-
-  .pb-5 {
-    margin-left: 50px;
-  }
-
-  #section3 {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-
-  #section4 {
-    height: 60vh;
-  }
-
-  .rounded-3 {
-    display: none;
-  }
-
-  #section5 {
-    height: 60vh;
-  }
-
-  .pb-5 h1 {
-    font-size: 2.4rem;
-    font-weight: 600;
-  }
-
-  .footer .container .footer-mid {
-    gap: 0;
-  }
-
-  .footer .container .footer-mid-left {
-    height: 300px;
-  }
-  .footer .container .footer-mid-mid {
-    margin-left: 0;
-    height: 240px;
-  }
-  .footer .container .footer-mid-mid p{
-    font-size: 1.1rem;
-  }
-  .footer .container .footer-mid-right {
-    height: 280px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 1280px) {
-  .rounded-3 {
-    display: none;
-  }
-
-  .tagline {
-    margin-top: 100px;
-    font-size: 2.1rem;
-  }
-
-  .mt-20 h1 {
-    font-size: 2.3rem;
-    font-weight: 600;
-  }
-
-  .mt-20 p {
-    font-size: 1.7rem;
-    font-weight: 600;
-  }
-
-  .mt-20 button {
-    font-size: 1.3rem;
+  .description {
+    max-width: 100%;
+    height: 250px; /* Increase height of the description box on mobile */
+    overflow-y: auto; /* Enable scrolling if the content exceeds the height */
   }
 }
