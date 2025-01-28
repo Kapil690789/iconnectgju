@@ -355,24 +355,6 @@ html, body {
     font-size: 40px; /* Smaller font for headings */
   }
 
-  #about-header {
-    height: auto; /* Adjust height */
-    padding: 20px; /* Add some padding */
-    flex-direction: column; /* Stack content vertically */
-  }
-
-  .about-card {
-    width: 95%; /* Reduce width */
-    height: auto; /* Adjust height */
-    padding: 15px; /* Adjust padding */
-    margin-bottom: 20px; /* Add spacing between cards */
-  }
-
-  .btn-primary, .btn-outline-primary {
-    font-size: 14px;
-    padding: 8px 16px; /* Adjust button padding */
-  }
-
   .circle-art,
   .person-art,
   .curved-art,
