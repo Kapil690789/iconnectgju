@@ -250,3 +250,41 @@ a:hover {
     font-size: 11px;
   }
 }
+
+@media screen and (max-width: 1024px) {
+  .header-banner img {
+    height: 40vh;
+  }
+}
+
+@media (min-width: 715px) and (max-width: 950px) {
+
+  .header-banner img {
+    height: 30vh;
+  }
+
+  .opportunities {
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    gap: 0; 
+  }
+  
+  .card {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .header-banner img {
+    height: 30vh;
+  }
+
+  .opportunities {
+    grid-template-columns: repeat(2, 250px);
+    gap: 10px; 
+  }
+
+  .card {
+    width: 82%;
+  }
+}
