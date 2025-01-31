@@ -494,6 +494,37 @@ body{
     .event-card1 .event {
       max-width: 100%;
     }
+      #event-head h1{
+      display: none;
+    }
+
+    #event-head p{
+      display: none;
+    }
+
+    .event-card{
+      position: relative;
+      background: #5935b5;
+      border-radius: 30px;
+      margin: 10px;
+      height: 28vh;
+      box-shadow: 1px;
+    }
+
+    #event-head {
+      display: none;
+    } 
+
+    #event-bg{
+      display: inline-block !important;
+      width: 100%;
+      height: 100%;
+      background: url('img/idemob.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+    }
   }
   /* Styling for the link */
 .registration-link {
