@@ -24,7 +24,7 @@ body {
   position: absolute;
   right: 0;
   /* background: linear-gradient(to left, #5935b500, #5935b500 50%, #5935b5 100%), url('https://placehold.co/500x150/?text=img'); */
-  background: linear-gradient(to left, #5935b500, #5935b500 50%, #5935b5 100%), url('img/kp1.png');
+  background: linear-gradient(to left, #5935b500, #5935b500 50%, #5935b5 100%), url('');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
