@@ -1603,7 +1603,7 @@ body.dark-mode .event-head-item.active {
 .custom-shape-divider-bottom svg {
   position: relative;
   display: block;
-  width: 97%; /* Allow SVG to scale based on screen size */
+  width: 96.6%; /* Allow SVG to scale based on screen size */
   height: 195px;
   /* margin-left: 25px; */
   margin: 0 auto;
