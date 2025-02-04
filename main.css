@@ -3343,23 +3343,35 @@ input:checked + .slider:before {
 }
 
 #section5 .section5-container {
-  width: 90%; 
+  width: 94.9%; 
   text-align: center;
   background: var(--card-color);
-  border-radius: 15px;
-  padding: 40px; 
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+  border-radius: 18px;
+  padding: 20px 20px 20px 20px; 
+  margin: auto 0;
 }
 
 #section5 .section5-container h1 {
-  color: var(--card-text);
-  font-size: 1.8rem; 
-  font-weight: 900;
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5842a2; /* Bright green for a hacking terminal effect */
+  text-shadow: 0 0 5px #5842a2, 0 0 10px #5842a2;
+  letter-spacing: 1.3px;
+  margin-bottom: 20px;
+  margin-left: 12px;
+  animation: blinkCursor 1.5s infinite alternate;
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0.7;
+  }
 }
 
 /* Splide Container */
 #section5 .splide {
-  max-height: 600px; 
+  max-height: 750px; 
   max-width: 100%; 
   border-radius: 10px;
   overflow: hidden;
