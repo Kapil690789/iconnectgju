@@ -2178,35 +2178,47 @@ h1 {
   margin-bottom: 30px;
 }
 
+#section4 .container {
+  max-width: 96%;
+}
+
 /* Terminal Body Styling */
 .terminal-body {
-  padding: 30px;
+  padding: 10px 20px 20px 20px;
   /* background: #2c3e50; */
   background: var(--card-color);
-  border-radius: 10px;
+  border-radius: 18px;
   color: white;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 20px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.command-line {
-  background: #1abc9c;
-  padding: 10px 15px;
-  border-radius: 5px;
-  display: inline-block;
+.command-line span {
+  display: block;
+  font-size: 2rem;
   font-weight: bold;
-  font-size: 1.1rem;
-  color: white;
-  margin-bottom: 20px;
+  color: #5842a2; /* Bright green for a hacking terminal effect */
+  text-shadow: 0 0 5px #5842a2, 0 0 10px #5842a2;
+  letter-spacing: 1.3px;
+  margin-bottom: 10px;
+  margin-left: 12px;
+  animation: blinkCursor 1.5s infinite alternate;
+}
+
+/* Cursor effect */
+@keyframes blinkCursor {
+  50% {
+    opacity: 0.7;
+  }
 }
 
 /* Main Section Styling */
 #iconnect_society-body {
 /* background-color: #5842a2; */
   background: var(--primary-color);
-  border-radius: 10px;
-  padding: 20px;
+  border-radius: 18px;
+  padding: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -2236,7 +2248,7 @@ h1 {
 
 .image img {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   border-radius: 10px;
   transition: transform 0.3s;
 }
@@ -2249,12 +2261,12 @@ h1 {
 /* Button Styling */
 #iconnect_society-body button {
   background-color:  #f0ad4e;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
+  padding: 12px 20px;
+  font-size: 1.1rem;
   color: white;
-  border-radius: 30px;
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
