@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Events</title>
+    <meta name="description" content="Event details page for E-Summit 2024" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image" href="img/iconnect.jpg" />
+    <link rel="stylesheet" href="/brainbattle.css" />
+  </head>
+  <body>
+    <section>
+      <div class="event-card custom-shadow">
+        <div id="event-bg" class="d-none d-md-block"></div>
+        <div id="event-head" class="text-center text-md-start">
+          <div class="p-5 text-white">
+            <h1 id="event-title">Brain Battles</h1>
+            <p style="color: #fdb827">Organized by iConnect_PDUIIC_GJUS&T</p>
+          </div>
+        </div>
+
+        <div id="event-detail">
+          <div class="row justify-content-center m-0 px-3">
+            <div class="col-lg-7 col-12 m-3 p-0">
+              <div class="event-detail-card mt-3">
+                <div class="d-flex align-items-center">
+                  <div class="m-1">
+                    <img class="event-icon" src="img/bb.png" alt="Event Icon" />
+                  </div>
+                  <div class="m-1">
+                    <h1>Brain Battles 2025</h1>
+                  </div>
+                </div>
+                <div class="d-flex flex-column gap-2">
+               <span>
+  <i class="fa-solid fa-location-dot"></i> 
+  <strong>
+    Offline
+    <!-- <a href="https://maps.app.goo.gl/UYq3mdPXhxK3DEaJ9" target="_blank"  class="venue-link">
+      Venue: Chaudhary Ranbir Singh Auditorium, GJUST, Hisar
+    </a> -->
+  </strong>
+</span>
+
+                 <span class="event-info">
+  <i class="fa-solid fa-calendar"></i> 
+  <a 
+    href="https://www.google.com/calendar/render?action=TEMPLATE&text=Ideathon+2025+Registration+Deadline&dates=20250206T183000Z/20250206T183000Z&details=Last+date+to+register+for+the+event.+Don%27t+miss+it!&location=Online" 
+    target="_blank" 
+    class="registration-link"
+  >
+    Last Registration Date: Feb 17, 2025
+  </a>
+</span>
+
+                  <span><i class="fa-solid fa-medal"></i> GJUS&T, Hisar</span>
+                </div>
+              </div>
+
+              <!-- <div class="event-detail-card sticky-top">
+                <div>
+                  <ul class="list-group list-group-horizontal overflow-x-auto gap-1 user-select-none">
+                    <li class="list-item active">Timeline</li>
+                    <li class="list-item">Details</li>
+                    <li class="list-item">FAQs</li>
+                  </ul>
+                </div>
+              </div> -->
+
+              <div class="event-detail-card">
+                <div id="eventbox">
+                  <!-- Event 1 -->
+                  <div class="event-box">
+                    <div class="date-line">
+                      <div class="date">
+                        <div class="day">Feb 20, 2025</div>
+                        <!-- <div class="monthAndyear">Feb 25</div> -->
+                      </div>
+                      <div class="line">
+                        <div class="circle"></div>
+                        <div class="linee"></div>
+                        <div class="circle2"></div>
+                      </div>
+                    </div>
+                    <div class="event">
+                        <h3>Event Details</h3>
+                <p>
+                  Get ready to put your brainpower to the test at <strong>Brain Battles</strong>, a thrilling quiz competition under Konark 2025! 
+                  Designed for students across UG, PG, and Ph.D. programs, this event challenges participants in mental mathematics, 
+                  knowledge of inventions and inventors, and spelling skills. Compete individually, showcase your intellect, and claim victory in this battle of wits!
+                </p>
+                      
+                      <div class="event-bottom">
+                        <div>
+                            
+                         
+                        
+                         <button 
+                             id="button" 
+                                 onclick="window.open('https://drive.google.com/drive/folders/1or6aGM85_Sum_bCY928y1EhoGXQYQPJP?usp=sharing')">
+                                                 Guidelines
+                            </button>                   
+                           <!-- Calendar Modal -->
+                            <div class="modal fade" id="calendarModal" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="calendarModalLabel">Event Date & Time</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        
+                                    <p><strong>Date:</strong> 20 February 2025</p>
+                                    <p><strong>Time:</strong> 09:30 AM IST</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <script>
+                                function showCalendar(event) {
+                                  event.preventDefault();
+                                  console.log("Date clicked: Feb 19, 2025");
+                                }
+                              </script>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Add more events here following the same structure -->
+                </div>
+              </div>
+
+              <div class="event-detail-card details">
+                 <h3>Event Highlights</h3>
+                <p>
+                  <h5>🔥 Three Exciting Rounds:</h5>
+                 <span><strong>✔ Round 1</strong> - Mental Maths: Solve arithmetic puzzles and calculations with speed and accuracy.</span><br>
+                 <span><strong>✔ Round 2</strong> - Inventions & Inventors: Answer trivia on famous inventions and the minds behind them.</span><br>
+                 <span><strong>✔ Round 3</strong> - Spell Bee: Spell tricky words correctly and outlast the competition!</span>
+                </p>
+                <p>
+                  <h5>🏆 Awards & Recognition:</h5>
+                  <span><strong>Winner:</strong> Trophy + Certificate of Appreciation</span><br>
+                  <span><strong>All Participants:</strong> E-Certificates for Participation</span>
+                </p>
+                <p>
+                  <span><strong>Event Date:</strong> 20th February 2025</span><br>
+                  <span><strong>Venue:</strong> Work Space, Pandit Deendayal Upadhyaya Innovation and Incubation Center (PDUIIC)</span>
+                </p>
+               <p>Register now at <a href="http://www.iconnectgjust.in" target="_blank" style="color: blue;">www.iconnectgjust.in</a> and be part of the change towards a sustainable future. For more details, contact us at <a href="tel:+919467905906" style="color: green;">+91-9467905906</a> or <a href="tel:+919728901227" style="color: green;">+91-728901227</a> or <a href="mailto:iconnectgjust@gmail.com" style="color: blue;">iconnectgjust@gmail.com</a>.</p>
+
+                <p><strong>💡 Join Now & Prove Your Intellectual Prowess!</strong></p>
+              </div>
+
+              <div class="event-detail-card">
+                <h4><a href="/faq.html">FAQs</a></h4>
+                <div>
+                  <div class="card m-2">
+                    <div
+                      class="card-header collapsed"
+                      id="headingOne"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#question1"
+                      aria-expanded="false"
+                      aria-controls="question1"
+                    >
+                      <div class="row justify-content-between">
+                        <span class="col-auto">How Do I register for this event?</span>
+                        <span class="col-auto"><i class="fas fa-chevron-down"></i></span>
+                      </div>
+                    </div>
+
+                    <div
+                      id="question1"
+                      class="collapse"
+                      aria-labelledby="headingOne"
+                      data-bs-parent="#questions"
+                    >
+                      <div class="card-body">
+                        You can click the register button on our website for registrations. Fill in the form and start the journey.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card m-2">
+                    <div
+                      class="card-header collapsed"
+                      id="headingTwo"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#question2"
+                      aria-expanded="false"
+                      aria-controls="question2"
+                    >
+                      <div class="row justify-content-between">
+                        <span class="col-auto">Who can attend Konark 2025?</span>
+                        <span class="col-auto"><i class="fas fa-chevron-down"></i></span>
+                      </div>
+                    </div>
+
+                    <div
+                      id="question2"
+                      class="collapse"
+                      aria-labelledby="headingTwo"
+                    >
+                      <div class="card-body">
+                      Konark 2025 is open to students, professionals, and anyone with an interest in culture, technology, and networking.
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sidebar for Event Registration -->
+            <div class="col-lg-4 col-12 m-3 p-0">
+              <div class="sticky-top pt-3">
+                <div class="event-detail-card">
+                  <div class="row justify-content-between align-items-center">
+                    <div class="col-auto"><h3>Free</h3></div>
+                    <div class="col-auto">
+                      <button class="btn" onclick="sharePage()">
+                        <i class="fa-solid fa-share"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Updated Register Button -->
+                
+                  <button type="button" class="btn btn-primary btn-lg w-100 mt-2" onclick="window.location.href='eventregistration.html';">
+                    Register Here
+                  </button>
+                  <!-- <button type="button" class="btn btn-primary btn-lg w-100 mt-2" >
+                  <a
+                  class="dropdown-item"
+                  href="https://forms.gle/your-google-form-link"
+                  target="_blank"
+                >
+                  Google Form
+                </a>
+                </button> -->
+                  <hr />
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="m-1">
+                          <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <div class="m-1">
+                          <span>Team Size</span>
+                          <h6>Individual entries only</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="d-flex align-items-center">
+                        <div class="m-1">
+                          <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="m-1">
+                          <span>Last Date</span>
+                          <h6>17 Feb 2025</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        function sharePage() {
+          if (navigator.share) {
+            navigator
+              .share({
+                title: document.title,
+                text: "Check out this event!",
+                url: window.location.href,
+              })
+              .then(() => {
+                console.log("Page shared successfully!");
+              })
+              .catch((error) => {
+                console.error("Error sharing:", error);
+              });
+          } else {
+            alert("Your browser doesn't support the Share API.");
+          }
+        }
+      </script>
+  </body> 
+</html>
