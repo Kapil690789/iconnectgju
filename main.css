@@ -1635,10 +1635,13 @@ body.dark-mode .event-head-item.active {
 .event-display {
   padding: 20px;
   background: var(--background-color);
+  border-radius: 18px;
+  width: 97.6%;
+  margin-left: 20px;
 }
 
 .event-head {
- border-radius: 15px;
+ border-radius: 18px;
  display: flex;
  justify-content: center;
  /* gap: 20px; */
