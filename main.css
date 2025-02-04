@@ -1637,7 +1637,7 @@ body.dark-mode .event-head-item.active {
   background: var(--background-color);
   border-radius: 18px;
   width: 97.6%;
-  margin-left: 20px;
+  margin-left: 18px;
 }
 
 .event-head {
@@ -4287,5 +4287,16 @@ input:checked + .slider:before {
     color: #000000; /* Threads uses a bold black color as its brand identity */
   }    
   
-  
+  #sponser {
+  margin-top: 15px;
+}
+
+#sponser .container {
+  /* margin-left: 32px; */
+  max-width: 96.6% !important;
+}
+
+#sponser .container .splide__slider {
+  border-radius: 18px !important;
+}
     
