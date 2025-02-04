@@ -1794,6 +1794,7 @@ body.dark-mode .event-head-item.active {
 
   #section3 .event-display {
     padding: 10px;
+    margin-left: 0;
   }
 
   #section3 .event-display .event-head {
