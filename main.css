@@ -3992,16 +3992,14 @@ input:checked + .slider:before {
 @media (max-width: 480px) { 
 
   .notification-container {
-    border-radius: 0 20px 20px 20px;
+    border-radius: 18px;
     width: 85%;
     padding: 10px;
     margin-top: 30px;
   }
 
   .notification-section h4 {
-    padding: 4px;
-    font-size: .9rem;
-    width: 125px;
+    font-size: 1rem;
   }
 
   .list-group-item {
@@ -4022,7 +4020,14 @@ input:checked + .slider:before {
 
 @media (max-width: 480px) {
   .custom-shape-divider-bottom svg {
-    height: 90px; 
+    position: relative;
+    display: block;
+    width: 90%; /* Allow SVG to scale based on screen size */
+    height: 90px;
+    /* margin-left: 25px; */
+    margin: 0 auto;
+    min-width: 0; /* Remove the min-width to make it more responsive */
+    border-radius: 17px;
   }
 }
 /* Cursor Ball */
