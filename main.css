@@ -3942,19 +3942,19 @@ input:checked + .slider:before {
   display: block;
   font-size: 1.7rem;
   font-weight: bold;
-  color: #b29bff; /* Bright green for a hacking terminal effect */
-  text-shadow: 0 0 5px #b29bff, 0 0 10px #b29bff;
+  color: #C0A11F; /* Bright green for a hacking terminal effect */
+  text-shadow: 0 0 5px #C0A11F, 0 0 8px #C0A11F;
   letter-spacing: 1px;
   /* margin-bottom: 20px; */
   /* margin-left: 6px; */
-  animation: blinkCursor 1.5s infinite alternate;
+  /* animation: blinkCursor 1.5s infinite alternate; */
 }
 
-@keyframes blinkCursor {
+/* @keyframes blinkCursor {
   50% {
     opacity: 0.7;
   }
-}
+} */
 
 .list-group-item {
   background-color: var(--element-bg);
