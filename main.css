@@ -3467,9 +3467,9 @@ input:checked + .slider:before {
   }
 
   #section5 .section5-container {
-    width: 95%;
-    padding: 5px;
-    border-radius: 10px; 
+    width: 96%;
+    padding: 8px 0;
+    border-radius: 18px; 
   }
 
   #section5 .section5-container h1 {
