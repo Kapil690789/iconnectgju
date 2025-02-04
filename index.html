@@ -279,6 +279,11 @@ interactiveElements.forEach((el) => {
     
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-nav ms-auto">
+          <div class="nav-item">
+          <a class="nav-link" href="admin_login.php">
+            <h5 class="nav-heading">Team Login</h5>
+          </a>
+        </div>
          <div class="nav-item">
   <a class="nav-link" href="#sponser" id="sponsor-link">
     <h5 class="nav-heading">Sponsors</h5>
@@ -576,16 +581,16 @@ interactiveElements.forEach((el) => {
           <ul class="list-group">
             
             <li class="list-group-item  align-items-center">
-              <span>Konark 2.0 will be held from February 19 to February 21.</span>
+              <span>Konark 2025 will be held from February 19 to February 21.</span>
               <a href="/konark.html">Register now!</a>
             </li>
             
             <li class="list-group-item align-items-center">
-              <span>Volunteer registration for Konark 2.0 has been closed.</span>
+              <span>Volunteer registration for Konark 2025 has been closed.</span>
             </li>
             
             <li class="list-group-item align-items-center">
-              <span>Registration for Visionathon,Ideathon and E-Crafters Arena is open.</span>
+              <span>Registration for Visionathon,Ideathon,E-Crafters Arena and Reel-O-Mania is open.</span>
               <a href="#event">Click here!</a>
             </li>
           </ul>
@@ -602,7 +607,7 @@ interactiveElements.forEach((el) => {
       <div class="col-md-4">
         <div class="d-flex flex-column justify-content-between h-100 text-center text-md-start">
           <div class="featured-events">⭐ Featured Events</div>
-          <h2>Konark 2.O</h2>
+          <h2>Konark 2025</h2>
           <div class="dropdown-off mt-3">
             <a href="konark.html">Register</a>
             <!-- <button
@@ -717,29 +722,7 @@ interactiveElements.forEach((el) => {
           <!-- Upcoming Events -->
           <div id="upcoming-event-body" class="event-body active">
             <div class="card-container">
-                <div class="cards">
-                  <div>
-                  <img src="img/logo.png" alt="Card Image">
-                  </div>
-                  <div class="card-body">
-                    <p>Volunteer (Registration Closed)
-</p>
-                    <!-- <p>abc</p>
-                    <p>7th August</p> -->
-                    <a href="/eventregistration.html">Closed</a>
-                  </div>
-                </div>
-<!--                 <div class="cards">
-                  <div>
-                    <img src="/img/Brain battles2.jpeg" alt="Card Image">
-                  </div>
-                  <div class="card-body">
-                    <p>Brain-Battles</p>
-                    
-                    <a href="/events.html">Register Here</a>
-                  </div>
-                </div> -->
-                <div class="cards">
+               <div class="cards">
                   <div>
                     <img src="/img/visionathon (1).png" alt="Card Image">
                   </div>
@@ -774,9 +757,9 @@ interactiveElements.forEach((el) => {
                     <a href="/ecrafters.html">Register Here</a>
                   </div>
                 </div>
-              <div class="cards">
+                <div class="cards">
                   <div>
-                    <img src="" alt="Card Image">
+                    <img src="img/r1.png" alt="Card Image">
                   </div>
                   <div class="card-body">
                     <p>Reel-O-Mania</p>
@@ -785,6 +768,30 @@ interactiveElements.forEach((el) => {
                     <a href="/reelomania.html">Register Here</a>
                   </div>
                 </div>
+<!--                 <div class="cards">
+                  <div>
+                    <img src="/img/Brain battles2.jpeg" alt="Card Image">
+                  </div>
+                  <div class="card-body">
+                    <p>Brain-Battles</p>
+                    
+                    <a href="/events.html">Register Here</a>
+                  </div>
+                </div> -->
+                <!--<div class="cards">-->
+                <!--  <div>-->
+                <!--    <img src="/img/visionathon (1).png" alt="Card Image">-->
+                <!--  </div>-->
+                <!--  <div class="card-body">-->
+                      
+                <!--    <p>Visionathon</p>-->
+                    
+                    <!-- <p>abc</p>
+                <!--    <p>7th August</p> -->
+                <!--    <a href="/visionathon.html">Register Here</a>-->
+                <!--  </div>-->
+                <!--</div>-->
+                
 <!--                 <div class="cards">
                   <div>
                     <img src="/img/CFC2.jpeg" alt="Card Image">
@@ -940,10 +947,10 @@ document.addEventListener("DOMContentLoaded", () => {
             image: "img/b1.png"
         },
         "startup-auction": {
-            image: "img/events_logo/startup_auction.png"
+            image: "img/sc.jpeg"
         },
         "startup-space": {
-            image: "img/events_logo/startup_space.png"
+            image: "img/sce.jpeg"
         },
         "trade-titans": {
             image: "img/t1.png"
@@ -1423,7 +1430,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <!--    </div>-->
     <!--  </div>-->
     <!--</section> -->
-    
     <section id="section4">
       <div class="container">
         <div class="terminal-window">
@@ -1437,14 +1443,13 @@ document.addEventListener("DOMContentLoaded", () => {
               <span>About-Us</span>
             </div> -->
           </div>
-          
           <div class="terminal-body">                            
             <div class="command-line">
               <!-- <div class="prompt">$</div> -->
               <span>
                 <!-- mysql -u admin -p -e
                 <span class="text-success">"SELECT * FROM about_us;"</span> -->
-                team_iconnect
+                Team_iConnect
               </span>
             </div>
             <div id="iconnect_society-body" class="">
@@ -1482,7 +1487,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     </section> 
-    <div class="video-box">
+<div class="video-box">
       <div class="video-wrapper">
         <div class="video-container">
           <div class="video-front">
@@ -1493,23 +1498,41 @@ document.addEventListener("DOMContentLoaded", () => {
               allowfullscreen>
             </iframe>
           </div>
-          <div class="video-back">
-            <p>
-              This is additional information about the video. It provides more context or key points about the video content.
-            </p>
-            <button class="back-to-video">Back to Video</button>
-          </div>
+         <div class="video-back">
+  <p>
+    ◦ <strong>Konark 2025</strong> is open to students, professionals, and anyone with an interest in culture, technology, and networking.
+  </p>
+  <p>
+    ◦ The event will be held at <strong>Guru Jambheshwar University of Science and Technology</strong>, Hisar, Haryana, from 
+    <strong>19 Feb 2025</strong> to <strong>21 Feb 2025</strong>.
+  </p>
+  <!--<div class="action-links">-->
+  <!--  <a href="/registration.html" class="account-link">Create an Account</a>-->
+  <!--  <br />-->
+  <!--  <a href="/eventregistration.html" class="register-link">Register for the Event</a>-->
+  <!--</div>-->
+  <button class="back-to-video">Back to Video</button>
+</div>
+
         </div>
-        <div class="description">
-          <p>
-            This is the detailed description of the video. It provides an overview, key highlights, and other relevant information.
-          </p>
-        </div>
+      <div class="description">
+  <p>
+    Excited to join us? <strong>Click the buttons below</strong> to get started! Whether you're creating an account or registering for an event, we've made it easy for you. Simply choose what you need and take the first step toward an amazing experience!
+  </p>
+  <div class="action-links">
+    <a href="/registration.html" class="btn1 account-link">Create an Account</a>
+    <a href="/eventregistration.html" class="btn1 register-link">Register for the Event</a>
+  </div>
+</div>
+
+
+
+
+
       </div>
       <button class="toggle-description">Show More</button>
     </div>
-    
-    <script>
+     <script>
       const toggleDescriptionButton = document.querySelector(".toggle-description");
 const description = document.querySelector(".description");
 const backToVideoButton = document.querySelector(".back-to-video");
@@ -1532,13 +1555,13 @@ backToVideoButton.addEventListener("click", () => {
       <div class="separator-top"></div>
       <hr>
       <div class="container">
-        <div class="footer-top row align-items-center text-center">
+      <div class="footer-top row align-items-center text-center">
           <div class="col">
             <a href="#" target="_blank"><i class="fab fa-facebook icon facebook"></i></a>
           </div>
           <div class="footer-divider"></div>
           <div class="col">
-            <a href="https://x.com/iconnectgjust" target="_blank"><i class="fab fa-x-twitter icon social-link" id="twitter"></i></a>
+            <a href="https://x.com/iconnectgjust" target="_blank"><i class="fab fa-x-twitter icon social-link" id="threads"></i></a>
           </div>
           <div class="footer-divider"></div>
           <div class="col">
@@ -1555,6 +1578,10 @@ backToVideoButton.addEventListener("click", () => {
           <div class="footer-divider"></div>
           <div class="col">
             <a href="https://youtube.com/@iConnectGJUST" target="_blank"><i class="fab fa-youtube icon social-link" id="youtube"></i></a>
+          </div>
+          <div class="footer-divider"></div>
+          <div class="col">
+            <a href="https://discord.com/" target="_blank"><i class="fab fa-discord icon social-link" id="discord"></i></a>
           </div>
         </div>
     
@@ -1660,6 +1687,8 @@ backToVideoButton.addEventListener("click", () => {
   });
 </script>
 
+
+
         
         <div class="footer-bottom row">
           <hr>
@@ -1671,7 +1700,14 @@ backToVideoButton.addEventListener("click", () => {
           </div>
         </div>
         
-      <button id="backToTop" class="back-to-top">↑ Back to Top</button>
+        <button id="backToTop" aria-label="Back to top">
+          <svg width="49" height="72" viewBox="0 0 40 40">
+              <circle class="background" cx="20" cy="20" r="18" />
+              <circle class="progress" cx="20" cy="20" r="18" />
+              <path d="M20 15v10M15 20l5-5 5 5" stroke="none" />
+          </svg>
+      </button>
+        
     </footer>
     
     <script src="
@@ -1776,38 +1812,51 @@ function initializeClock(endtime) {
 var endtime = new Date(2025, 1, 19); // February is month 1 (0-based index)
 initializeClock(endtime);
 
-let lastScrollTop = 0; // Track last scroll position
-let backToTopButton = document.getElementById("backToTop");
 
-window.onscroll = function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+document.addEventListener("DOMContentLoaded", () => {
+  const backToTopButton = document.getElementById("backToTop")
+  const progressCircle = backToTopButton.querySelector("circle.progress")
+  const circumference = 2 * Math.PI * 18 // 2πr, where r = 18 (radius of the circle)
 
-    // If the page is scrolled down and the user scrolls up, show the button
-    if (currentScroll > 300) {  // You can adjust the threshold (300) to your needs
-        backToTopButton.style.display = "block"; // Show the button
+  progressCircle.style.strokeDasharray = `${circumference} ${circumference}`
+  progressCircle.style.strokeDashoffset = circumference
+
+  function updateProgress() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+    const scrollPercentage = (scrollTop / scrollHeight) * 100
+
+    const offset = circumference - (scrollPercentage / 100) * circumference
+    progressCircle.style.strokeDashoffset = offset
+
+    if (scrollTop > 300) {
+      if (!backToTopButton.classList.contains("visible")) {
+        backToTopButton.classList.add("visible")
+        backToTopButton.style.animation = "pulse 0.5s"
+        setTimeout(() => {
+          backToTopButton.style.animation = ""
+        }, 500)
+      }
     } else {
-        backToTopButton.style.display = "none"; // Hide the button when near the top
+      backToTopButton.classList.remove("visible")
     }
+  }
 
-    // Detect scrolling direction (up or down)
-    if (currentScroll < lastScrollTop) {
-        // Scrolling up
-        backToTopButton.style.display = "block";
-    } else {
-        // Scrolling down
-        backToTopButton.style.display = "none";
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
-};
-
-// Smooth scroll to top
-backToTopButton.addEventListener("click", function() {
+  function scrollToTop() {
     window.scrollTo({
-        top: 0,
-        behavior: "smooth" // Smooth scroll to the top
-    });
-});
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
+  window.addEventListener("scroll", updateProgress)
+  backToTopButton.addEventListener("click", scrollToTop)
+
+  // Initial update
+  updateProgress()
+})
+
+
 
     </script>
   </body>
