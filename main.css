@@ -4331,3 +4331,12 @@ input:checked + .slider:before {
   border-radius: 18px !important;
 }
     
+@media (max-width: 480px) {
+  #sponser .container {
+    max-width: 89.9% !important;
+  }
+
+  #sponser .container h1 {
+    margin-bottom: 10px;
+  }
+}
