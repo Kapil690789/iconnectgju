@@ -2334,7 +2334,7 @@ h1 {
 
   /* Image Styling */
   .image img {
-    width: 65% !important; /* Occupies 50% width */
+    width: 60% !important; /* Occupies 50% width */
     /* height: 100% !important; */
     /* max-width: 800px !important; */
     /* margin: 10px 0;  */
@@ -2348,9 +2348,9 @@ h1 {
   /* Button Styling */
   #iconnect_society-body button {
     width: 100%; /* Spans the full width */
-    padding: 7px;
+    padding: 6px;
     font-size: 1rem;
-    border-radius: 20px;
+    border-radius: 16px;
     text-align: center;
     /* margin: 5px 0;  */
   }
