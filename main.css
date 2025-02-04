@@ -3881,8 +3881,8 @@ input:checked + .slider:before {
 .notification-container {
   background-color: white;
   width: 96%;
-  padding: 15px;
-  border-radius: 0 20px 0 20px;
+  padding: 20px;
+  border-radius: 18px;
 }
 
 .notification-section {
@@ -3891,7 +3891,7 @@ input:checked + .slider:before {
   overflow-y: auto; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: var(--primary-color);
-  border-radius: 10px;
+  border-radius: 17px;
 }
 
 .not-heading {
@@ -3899,13 +3899,28 @@ input:checked + .slider:before {
 }
 
 .notification-section h4 {
-  padding: 6px;
+  /* padding: 6px;
   border-radius: 4px;
   font-size: 1.2rem;
   font-weight: 700;
   color: white;
   width: 170px;
-  background-color: #1abc9c;
+  background-color: #1abc9c; */
+  display: block;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: #b29bff; /* Bright green for a hacking terminal effect */
+  text-shadow: 0 0 5px #b29bff, 0 0 10px #b29bff;
+  letter-spacing: 1px;
+  /* margin-bottom: 20px; */
+  /* margin-left: 6px; */
+  animation: blinkCursor 1.5s infinite alternate;
+}
+
+@keyframes blinkCursor {
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .list-group-item {
