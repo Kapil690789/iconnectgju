@@ -4455,7 +4455,7 @@ input:checked + .slider:before {
 }
 
 .wrapper {
-  width: 95%;
+  width: 98%;
   max-width: 1536px;
   margin-inline: auto;
   margin-top: 50px;
