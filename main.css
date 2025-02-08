@@ -4354,3 +4354,81 @@ input:checked + .slider:before {
     margin-bottom: 10px;
   }
 }
+
+
+#sponser {
+  /* background-color: red; */
+  margin-top: 50px;
+}
+
+.sponser {
+  text-align: center;
+}
+
+.sponser1 {
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 4px white, 0 0 1px white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  margin-top: 50px;
+  position: relative;
+  height: 150px;
+  align-items: center;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -120px;
+  }
+}
+
+.item {
+  width: 100px;  
+  height: auto;
+  border-radius: 50%;
+  position: absolute;
+  left: max(calc(140px * 6), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.item1 {
+  animation-delay: calc(20s / 6 * (6 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(20s / 6 * (6 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(20s / 6 * (6 - 3) * -1);
+}
+
+.item4 {
+  animation-delay: calc(20s / 6 * (6 - 4) * -1);
+}
+
+.item5 {
+  animation-delay: calc(20s / 6 * (6 - 5) * -1);
+}
+
+.item6 {
+  animation-delay: calc(20s / 6 * (6 - 6) * -1);
+}
