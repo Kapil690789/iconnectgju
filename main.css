@@ -3383,8 +3383,8 @@ input:checked + .slider:before {
   display: block;
   font-size: 2rem;
   font-weight: bold;
-  color: #5842a2; /* Bright green for a hacking terminal effect */
-  text-shadow: 0 0 5px #5842a2, 0 0 10px #5842a2;
+  color: red; /* Bright green for a hacking terminal effect */
+  text-shadow: 0 0 5px red, 0 0 10px red;
   letter-spacing: 1.3px;
   margin-bottom: 20px;
   margin-left: 12px;
