@@ -348,3 +348,62 @@ body {
     font-size: 1rem;
   }
 }
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+  .poster {
+    min-height: 220px;
+    padding: 25px 15px;
+    margin-bottom: 25px;
+  }
+  
+  .poster h1 {
+    letter-spacing: 1px;
+  }
+  
+  .animated-underline {
+    width: 50px;
+    height: 2px;
+  }
+  
+  @keyframes stretch {
+    0%, 100% { width: 50px; }
+    50% { width: 70px; }
+  }
+  
+  .sparkles {
+    height: 10px;
+    margin: 8px 0;
+  }
+  
+  .sparkle {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) {
+  .poster {
+    height: 45vh; /* Slightly taller on tablets */
+    min-height: 350px;
+  }
+  
+  .poster h1 {
+    font-size: 3.5rem;
+  }
+  
+  .hiring-text {
+    font-size: 2.5rem;
+  }
+  
+  .animated-underline {
+    width: 100px;
+    height: 4px;
+  }
+  
+  @keyframes stretch {
+    0%, 100% { width: 100px; }
+    50% { width: 150px; }
+  }
+}
