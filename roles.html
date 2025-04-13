@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Roles | Team iConnect</title>
+    <link rel="stylesheet" href="hiring.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Add pointer cursor only to the plus icon */
+        .role-header i {
+            cursor: pointer;
+        }
+        /* Remove pointer cursor from the header text */
+        .role-header h3 {
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Poster Section -->
+        <div class="poster">
+            <h1>Team iConnect <span>Roles</span></h1>
+            <div class="decoration">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+        </div>
+
+        <!-- Roles Section -->
+        <div class="section">
+            <h2>Roles Available</h2>
+            <p class="subtitle">We are hiring for various core functional roles. Here's what each one is about:</p>
+            
+            <div class="roles-container">
+                <!-- Human Resource -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Human Resource</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Requires strong interpersonal skills, conflict resolution, and the ability to manage internal coordination and team wellbeing.
+                    </div>
+                </div>
+                
+                <!-- Documentation -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Documentation</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Demands structured writing, attention to detail, and proficiency in formal content creation and documentation tools.
+                    </div>
+                </div>
+                
+                <!-- Promotion -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Promotion</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Seeks creative minds with expertise in content creation, social media marketing, and visual storytelling.
+                    </div>
+                </div>
+                
+                <!-- Industrial Connect -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Industrial Connect</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Involves networking, professional communication, and collaboration with industry experts and organizations.
+                    </div>
+                </div>
+                
+                <!-- Website -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Website</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Requires basic web development, content updating, and technical maintenance skills.
+                    </div>
+                </div>
+                
+                <!-- Infographics -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Infographics</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Needs design thinking, visual communication, and creativity in creating informative and appealing graphics.
+                    </div>
+                </div>
+                
+                <!-- Media -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Media (Photo & Videography)</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Involves capturing, editing, and producing high-quality media for event coverage and promotions.
+                    </div>
+                </div>
+                
+                <!-- Hospitality & Volunteering -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Hospitality & Volunteering</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Demands strong coordination, on-ground management, and effective communication during events.
+                    </div>
+                </div>
+                
+                <!-- Planning & Organizing -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Planning & Organizing</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Focuses on strategic planning, task delegation, and smooth execution of events and initiatives.
+                    </div>
+                </div>
+                
+                <!-- Sponsors & Logistics -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Sponsors & Logistics</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Involves negotiation, outreach for sponsorships, and efficient logistical management.
+                    </div>
+                </div>
+                
+                <!-- Data Management -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Data Management</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Requires systematic handling of information, data entry, analysis, and report generation.
+                    </div>
+                </div>
+                
+                <!-- Content Writing -->
+                <div class="role-item">
+                    <div class="role-header">
+                        <h3>Content Writing</h3>
+                        <i class="fas fa-plus" onclick="toggleDescription(this)"></i>
+                    </div>
+                    <div class="role-description">
+                        Seeks well-articulated writers who can draft impactful content for posts, reports, and communication.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Button -->
+        <button class="register-btn" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSdZFnqiSy949U1Cu4b0QouIR9JmI3994d06Lh89bSc1qnbX8A/viewform?usp=header'">Register here <i class="fas fa-user-plus"></i></button>
+    </div>
+
+    <script>
+        function toggleDescription(icon) {
+            // Get the header parent and description
+            const header = icon.parentElement;
+            const description = header.nextElementSibling;
+            
+            // Get all role descriptions and icons
+            const allDescriptions = document.querySelectorAll('.role-description');
+            const allIcons = document.querySelectorAll('.role-header i');
+            
+            // Close all other descriptions first
+            allDescriptions.forEach(desc => {
+                if (desc !== description) {
+                    desc.classList.remove('show');
+                }
+            });
+            
+            // Reset all icons to plus
+            allIcons.forEach(i => {
+                if (i !== icon) {
+                    i.classList.remove('fa-minus');
+                    i.classList.add('fa-plus');
+                }
+            });
+            
+            // Toggle current description
+            description.classList.toggle('show');
+            
+            // Toggle current icon
+            if (description.classList.contains('show')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+    </script>
+</body>
+</html>

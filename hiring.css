@@ -1,0 +1,350 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Poster Styles */
+.poster {
+  background: linear-gradient(135deg, #5842a2 0%, #9d50bb 100%);
+  color: white;
+  height: 40vh;
+  min-height: 300px; /* Ensures content doesn't get too squished on smaller screens */
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 15px 40px rgba(88, 66, 162, 0.3);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.poster::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+  animation: rotate 20s linear infinite;
+}
+
+.poster-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.poster h1 {
+  font-size: 3rem; /* Reduced from 4rem */
+  margin-bottom: 5px; /* Reduced from 10px */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Reduced from 3px */
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to right, #fff 0%, #ffd700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-out;
+}
+
+.animated-text {
+  display: inline-block;
+  margin-bottom: 15px; /* Reduced from 30px */
+  position: relative;
+}
+
+.hiring-text {
+  font-size: 2rem; /* Reduced from 2.8rem */
+  font-weight: 700;
+  color: #ffd700;
+  display: block;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.animated-underline {
+  height: 3px; /* Reduced from 4px */
+  width: 80px; /* Reduced from 100px */
+  background: #ffd700;
+  margin: 8px auto; /* Reduced from 10px */
+  border-radius: 2px;
+  animation: stretch 3s ease-in-out infinite;
+}
+
+.sparkles {
+  position: relative;
+  height: 15px; /* Reduced from 20px */
+  margin: 15px 0; /* Reduced from 30px */
+}
+
+.sparkle {
+  position: absolute;
+  width: 6px; /* Reduced from 8px */
+  height: 6px; /* Reduced from 8px */
+  background: #ffd700;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkle 3s infinite;
+}
+
+.cta-text p {
+  font-size: 1.1rem; /* Reduced from 1.3rem */
+  margin-top: 10px; /* Reduced from 20px */
+  font-weight: 300;
+  letter-spacing: 0.5px; /* Reduced from 1px */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Keep all animations the same */
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes stretch {
+  0%, 100% { width: 80px; } /* Adjusted to match new size */
+  50% { width: 120px; } /* Reduced from 150px */
+}
+
+@keyframes sparkle {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(0); }
+}
+
+
+/* Section Styles */
+.section {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.section h2 {
+  color: #5842a2;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+}
+
+.section p {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.section ul {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.section li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* Button Styles */
+.next-btn, .register-btn {
+  display: block;
+  width: 200px;
+  margin: 30px auto;
+  padding: 15px;
+  background: linear-gradient(135deg, #5842a2 0%, #9d50bb 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(88, 66, 162, 0.3);
+  text-align: center;
+}
+
+.next-btn:hover, .register-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(88, 66, 162, 0.4);
+}
+
+.next-btn i, .register-btn i {
+  margin-left: 10px;
+}
+
+/* Roles Page Specific Styles */
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.roles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.role-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.role-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  transition: all 0.3s ease;
+}
+
+.role-header:hover {
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.role-header h3 {
+  color: #5842a2;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.role-header i {
+  color: #5842a2;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* Accordion Description Styles */
+.role-description {
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.role-description.show {
+  padding: 20px;
+  max-height: 500px;
+}
+
+.register-btn {
+  width: 250px;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .poster h1 {
+      font-size: 2.2rem;
+  }
+  
+  .poster h1 span {
+      font-size: 1.6rem;
+  }
+  
+  .section {
+      padding: 20px;
+  }
+  
+  .section h2 {
+      font-size: 1.5rem;
+  }
+  
+  .next-btn, .register-btn {
+      width: 180px;
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .poster {
+      padding: 30px 20px;
+  }
+  
+  .poster h1 {
+      font-size: 1.8rem;
+  }
+  
+  .poster h1 span {
+      font-size: 1.4rem;
+  }
+  
+  .section {
+      padding: 15px;
+  }
+  
+  .section h2 {
+      font-size: 1.3rem;
+  }
+  
+  .section p, .section li {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .poster h1 {
+    font-size: 2.5rem;
+  }
+  .hiring-text {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .poster {
+    min-height: 250px;
+    padding: 30px 20px;
+  }
+  .poster h1 {
+    font-size: 2rem;
+  }
+  .hiring-text {
+    font-size: 1.5rem;
+  }
+  .cta-text p {
+    font-size: 1rem;
+  }
+}
