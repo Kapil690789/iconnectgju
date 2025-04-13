@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -274,6 +274,21 @@ body {
   margin-top: 50px;
 }
 
+@media (max-width: 480px) {
+  .role-header h3 {
+    font-size: .8rem;
+  }
+
+  .role-header i {
+    color: #5842a2;
+    font-size: .8rem;
+  }
+
+  .role-description {
+    font-size: .8rem;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .poster h1 {
@@ -316,11 +331,11 @@ body {
   }
   
   .section h2 {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
   }
   
   .section p, .section li {
-      font-size: 1rem;
+      font-size: .8rem;
   }
 }
 
