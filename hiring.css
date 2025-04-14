@@ -20,12 +20,26 @@ body {
 
 /* Poster Styles */
 .poster {
+  width: 100%;
+  max-width: 1160px; /* Matches image width */
+  margin: 0 auto; /* Centers the poster */
+  overflow: hidden; /* Ensures no overflow */
+  border-radius: 3px; /* Optional: adds rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.poster img {
+  width: 100%;
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes extra space below image */
+}
+/* .poster {
   background: linear-gradient(135deg, #5842a2 0%, #9d50bb 100%);
   color: white;
   height: 40vh;
-  min-height: 300px; /* Ensures content doesn't get too squished on smaller screens */
+  min-height: 300px; 
   padding: 40px 30px;
-  border-radius: 15px;
+  border-radius: 2px;
   text-align: center;
   margin-bottom: 40px;
   box-shadow: 0 15px 40px rgba(88, 66, 162, 0.3);
@@ -46,7 +60,7 @@ body {
   height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
   animation: rotate 20s linear infinite;
-}
+} */
 
 .poster-content {
   position: relative;
@@ -149,23 +163,28 @@ body {
 .section {
   background: white;
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 2px;
   margin-bottom: 25px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-  border-bottom: 3px solid #d4d3d3;
+  margin-top: 25px;
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); */
+  border-bottom: 2px solid #d4d3d3;
+
 }
 
 .section h2 {
-  color: #5842a2;
+  background: linear-gradient(to bottom, #2B6DD6, #FFFFFF);
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  background-clip: text;
+  color: transparent;
   margin-bottom: 15px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 10px;
 }
 
 .section p {
   margin-bottom: 15px;
-  font-size: 1.1rem;
+  font-size: 1rem; 
 }
 
 .section ul {
@@ -184,7 +203,7 @@ body {
   width: 200px;
   margin: 30px auto;
   padding: 15px;
-  background: linear-gradient(135deg, #5842a2 0%, #9d50bb 100%);
+  background: #2b6dd6;
   color: white;
   border: none;
   border-radius: 50px;
@@ -243,13 +262,13 @@ body {
 }
 
 .role-header h3 {
-  color: #5842a2;
+  color: #2b6dd6;
   font-size: 1.3rem;
   margin: 0;
 }
 
 .role-header i {
-  color: #5842a2;
+  color: #2b6dd6;
   font-size: 1.2rem;
   transition: all 0.3s ease;
   cursor: pointer;
